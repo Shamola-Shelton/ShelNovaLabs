@@ -83,9 +83,17 @@ export default function Footer() {
           <p className="text-snl-muted text-xs">
             © {year} ShelNova Labs Ltd. All rights reserved.
           </p>
-          <p className="text-snl-muted text-xs">
-            Built with ❤️ and Next.js
-          </p>
+          <div className="flex items-center gap-4">
+            <a
+              href="/privacy"
+              className="text-snl-muted hover:text-snl-text text-xs transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <p className="text-snl-muted text-xs">
+              Built with ❤️ and Next.js
+            </p>
+          </div>
         </div>
       </div>
     </footer>
