@@ -20,8 +20,8 @@ const members = [
     bg: "rgba(0,212,255,0.12)",
   },
   {
-    initials: "TM",
-    name: "Team Member",
+    initials: "TK",
+    name: "Tom Kariuki",
     role: "Head of Design",
     tag: "Design",
     bio: "Crafting the visual language and user experience across ShelNova Labs' product suite — ensuring every interface is as beautiful as it is functional.",
@@ -29,8 +29,8 @@ const members = [
     bg: "rgba(244,114,182,0.12)",
   },
   {
-    initials: "TM",
-    name: "Team Member",
+    initials: "BO",
+    name: "Bob Otieno",
     role: "Head of Growth",
     tag: "Growth",
     bio: "Driving user acquisition, partnerships, and community building — bringing ShelNova Labs' apps to the people who need them most.",
