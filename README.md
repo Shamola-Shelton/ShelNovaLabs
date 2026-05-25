@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ShelNova Labs — Company Website
+
+Official website for **ShelNova Labs Ltd.** — a digital product studio building apps for communities, learners, and players.
+
+Live at: [shelnovalabs.com](https://shelnovalabs.com)
+
+---
+
+## About
+
+ShelNova Labs engineers digital experiences that simplify complexity, empower communities, and transform everyday challenges into intuitive, elegant solutions.
+
+**Our Apps:**
+- **Kadi Classic** — Fast-paced digital card game with multiplayer, AI, and online matchmaking. Live on app stores.
+- **JiraniFy** — Neighborhood social platform for local communities to connect, chat, and discover nearby opportunities. In development.
+- **Gist & Gain** — AI-powered self-improvement app with book summaries, podcasts, flashcards, and quizzes in Gist and Deep modes. In development.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Styling | Tailwind CSS v4 |
+| Animations | Framer Motion |
+| Language | TypeScript |
+| Fonts | Space Grotesk + Inter |
+| Hosting | Vercel |
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Open http://localhost:3000
+
+# Production build
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  layout.tsx        # Root layout, fonts, SEO metadata
+  page.tsx          # Page assembly
+  globals.css       # Brand tokens (Tailwind v4), base styles
 
-## Learn More
+components/
+  Navbar.tsx        # Sticky glassmorphism navigation
+  Hero.tsx          # Animated hero section
+  AppsShowcase.tsx  # App portfolio cards
+  About.tsx         # Mission, vision, and values
+  Team.tsx          # Meet the team
+  Contact.tsx       # Contact form
+  Footer.tsx        # Footer
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Brand Colors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Token | Value | Use |
+|---|---|---|
+| `snl-violet` | `#6c63ff` | Primary accent |
+| `snl-cyan` | `#00d4ff` | Secondary accent |
+| `snl-bg` | `#0a0a0f` | Background |
+| `snl-card` | `#111118` | Card surface |
+| `snl-text` | `#e2e8f0` | Body text |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+hello@shelnovalabs.com
+
+---
+
+© 2025 ShelNova Labs Ltd. All rights reserved.
