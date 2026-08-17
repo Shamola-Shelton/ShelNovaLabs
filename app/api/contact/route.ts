@@ -5,7 +5,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, projectType, message } = body;
 
-    // Server-side validation
+    // 1. Validation
     if (!name || !email || !message) {
       return NextResponse.json(
         { success: false, error: "Name, email, and message are required." },
@@ -13,48 +13,94 @@ export async function POST(request: Request) {
       );
     }
 
-    // Log the message on the server
-    console.log("=== NEW CONTACT INQUIRY ===");
-    console.log(`From: ${name} (${email})`);
-    console.log(`Type: ${projectType}`);
-    console.log(`Message: ${message}`);
-    console.log("===========================");
+    console.log(`[Contact Form Submission] From: ${name} (${email}) | Type: ${projectType}`);
 
-    // Asynchronously forward to Web3Forms / Formspree service if key available
-    try {
-      const apiKey = process.env.WEB3FORMS_ACCESS_KEY || "8f7481b7-a36c-4861-a06f-614fa9e28f11";
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: apiKey,
-          subject: `New Project Inquiry (${projectType || "General"}) from ${name}`,
-          from_name: "ShelNova Labs Website",
-          to_email: "hello@shelnovalabs.com",
-          name: name,
-          email: email,
-          project_type: projectType,
-          message: message,
-        }),
-      }).catch((err) => {
-        console.warn("External email forwarding notice:", err);
-      });
-    } catch (e) {
-      console.warn("Email dispatch notice:", e);
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const web3FormsKey = process.env.WEB3FORMS_ACCESS_KEY;
+
+    let emailDelivered = false;
+
+    // 2. Option A: Delivery via Resend (if RESEND_API_KEY is configured in .env.local)
+    if (resendApiKey) {
+      try {
+        const resendRes = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${resendApiKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "ShelNova Labs <onboarding@resend.dev>",
+            to: ["hello@shelnovalabs.com"],
+            reply_to: email,
+            subject: `New Project Inquiry (${projectType || "General"}) from ${name}`,
+            html: `
+              <h2>New Project Inquiry from ShelNova Labs Website</h2>
+              <p><strong>Name:</strong> ${name}</p>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Project Type:</strong> ${projectType}</p>
+              <hr />
+              <p><strong>Message:</strong></p>
+              <p style="white-space: pre-wrap;">${message}</p>
+            `,
+          }),
+        });
+
+        if (resendRes.ok) {
+          emailDelivered = true;
+          console.log("Email successfully sent via Resend!");
+        }
+      } catch (err) {
+        console.error("Resend error:", err);
+      }
     }
 
-    // Return success to the client
+    // 3. Option B: Delivery via Web3Forms (if WEB3FORMS_ACCESS_KEY is configured in .env.local)
+    if (!emailDelivered && web3FormsKey) {
+      try {
+        const w3Res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: web3FormsKey,
+            subject: `New Project Inquiry (${projectType || "General"}) from ${name}`,
+            from_name: "ShelNova Labs Website",
+            to_email: "hello@shelnovalabs.com",
+            name,
+            email,
+            project_type: projectType,
+            message,
+          }),
+        });
+
+        const w3Data = await w3Res.json();
+        if (w3Data.success) {
+          emailDelivered = true;
+          console.log("Email successfully sent via Web3Forms!");
+        }
+      } catch (err) {
+        console.error("Web3Forms error:", err);
+      }
+    }
+
+    // 4. Create local environment variable template notice if no key is set yet
+    if (!emailDelivered) {
+      console.log(
+        "Notice: To receive actual emails in your inbox, add RESEND_API_KEY or WEB3FORMS_ACCESS_KEY to .env.local"
+      );
+    }
+
     return NextResponse.json({
       success: true,
-      message: "Thank you for reaching out! Your message has been sent to hello@shelnovalabs.com.",
+      message: "Thank you! Your message has been submitted successfully.",
     });
   } catch (error) {
     console.error("Contact API error:", error);
     return NextResponse.json(
-      { success: false, error: "An error occurred. Please try again." },
+      { success: false, error: "Failed to send message. Please try again." },
       { status: 500 }
     );
   }
