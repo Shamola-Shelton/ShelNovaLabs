@@ -40,14 +40,15 @@ export default function Services({ onOpenContact }: ServicesProps) {
           {servicesData.map((service, index) => {
             const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Layers;
             return (
-              <motion.div
+              <motion.button
                 key={service.index}
+                type="button"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 onClick={onOpenContact}
-                className="group cursor-pointer bg-[#111318] border border border-snl-border hover:border-snl-accent/40 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-snl-accent/10 flex flex-col justify-between"
+                className="group cursor-pointer bg-[#111318] border border-snl-border hover:border-snl-accent/40 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-snl-accent/10 flex flex-col justify-between text-left"
               >
                 <div>
                   {/* Card Header: Icon & Index Tag */}
@@ -74,7 +75,7 @@ export default function Services({ onOpenContact }: ServicesProps) {
                   <span>Inquire service</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </div>
-              </motion.div>
+              </motion.button>
             );
           })}
         </div>

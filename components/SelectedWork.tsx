@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Smartphone, ExternalLink, Activity, Sparkles, Layers, Terminal } from "lucide-react";
+import { ArrowRight, Terminal } from "lucide-react";
 import { projectsData, CaseStudy } from "@/data/projectsData";
 import CaseStudyModal from "./CaseStudyModal";
 
@@ -52,6 +52,7 @@ export default function SelectedWork({ onOpenContact }: SelectedWorkProps) {
               <button
                 key={cat.id}
                 onClick={() => setSelectedFilter(cat.id)}
+                aria-pressed={selectedFilter === cat.id}
                 className={`px-4 py-2 rounded-full text-xs font-mono tracking-wide transition-all ${
                   selectedFilter === cat.id
                     ? "bg-snl-accent text-white shadow-lg shadow-snl-accent/25"
@@ -131,12 +132,13 @@ export default function SelectedWork({ onOpenContact }: SelectedWorkProps) {
                 {/* Right Column: High-Res Product Visual Mockup */}
                 <div className="lg:col-span-6 flex justify-center">
                   {project.imageSrc ? (
-                    <div className="w-full relative rounded-xl overflow-hidden border border-snl-border shadow-2xl group-hover:border-snl-accent/40 transition-colors bg-snl-card max-h-[320px] flex items-center justify-center">
-                      <img
+                    <div className="w-full relative rounded-xl overflow-hidden border border-snl-border shadow-2xl group-hover:border-snl-accent/40 transition-colors bg-snl-card h-[300px] sm:h-[320px]">
+                      <Image
                         src={project.imageSrc}
                         alt={`${project.name} product mockup`}
-                        loading="lazy"
-                        className="w-full h-full object-cover object-top rounded-xl group-hover:scale-105 transition-transform duration-500"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover object-top rounded-xl group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   ) : project.mockupType === "mobile" ? (

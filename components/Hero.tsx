@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Activity, Layers, Smartphone, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Activity } from "lucide-react";
 
 interface HeroProps {
   onOpenContact?: () => void;

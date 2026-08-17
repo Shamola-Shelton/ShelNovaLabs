@@ -25,7 +25,7 @@ export default function Home() {
       <Navbar onOpenContact={handleOpenContact} />
 
       {/* Main Page Layout */}
-      <main>
+      <main id="main">
         {/* Hero Section with 3D Product Stage */}
         <Hero onOpenContact={handleOpenContact} />
 
@@ -50,6 +50,7 @@ export default function Home() {
         {/* 06 / Final Call To Action & Contact Modal */}
         <ContactCTA
           isOpen={isContactOpen}
+          onOpen={handleOpenContact}
           onClose={() => setIsContactOpen(false)}
         />
       </main>

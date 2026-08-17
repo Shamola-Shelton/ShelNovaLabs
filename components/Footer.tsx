@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Globe, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,10 +14,12 @@ export default function Footer() {
               href="/"
               className="flex items-center gap-3 font-heading font-bold text-xl text-snl-text tracking-tight select-none"
             >
-              <img
+              <Image
                 src="/images/logo.png"
                 alt=""
                 aria-hidden="true"
+                width={720}
+                height={612}
                 className="h-12 w-auto md:h-14 object-contain drop-shadow-[0_0_10px_rgba(245,245,242,0.3)]"
               />
               <span>
@@ -70,7 +72,7 @@ export default function Footer() {
                 <span>GitHub</span>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/Shamola-Shelton"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-snl-text transition-colors"
@@ -81,7 +83,7 @@ export default function Footer() {
                 <span>LinkedIn</span>
               </a>
               <a
-                href="https://x.com"
+                href="https://x.com/shelnovalabs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-snl-text transition-colors"

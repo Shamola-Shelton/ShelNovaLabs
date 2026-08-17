@@ -10,9 +10,9 @@
   --color-snl-border-light: #2e323b;
   --color-snl-text: #F5F5F2;
   --color-snl-muted: #A1A1AA;
-  --color-snl-subtle: #686B73;
-  --color-snl-accent: #635BFF;
-  --color-snl-accent-hover: #5145CD;
+  --color-snl-subtle: #8B8E96;
+  --color-snl-accent: #7B74FF;
+  --color-snl-accent-hover: #6A61E8;
 
   /* Fonts */
   --font-heading: var(--font-space-grotesk), system-ui, sans-serif;
@@ -30,6 +30,44 @@ body {
   color: #F5F5F2;
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
+}
+
+/* Accessible focus indicators */
+:focus-visible {
+  outline: 2px solid #7B74FF;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: #7B74FF;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0 0 0.5rem 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Subtle dot-grid hero background */

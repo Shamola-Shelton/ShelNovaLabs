@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 interface NavbarProps {
@@ -19,11 +20,20 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
   }, []);
 
   const navItems = [
-    { label: "Work", href: "/#work" },
-    { label: "Services", href: "/#services" },
-    { label: "About", href: "/#about" },
-    { label: "Process", href: "/#process" },
+    { label: "Work", href: "#work" },
+    { label: "Services", href: "#services" },
+    { label: "About", href: "#about" },
+    { label: "Process", href: "#process" },
   ];
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
 
   return (
     <nav
@@ -39,10 +49,12 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
           href="/"
           className="group flex items-center gap-3 font-heading font-bold text-lg md:text-xl tracking-tight text-snl-text select-none"
         >
-          <img
+          <Image
             src="/images/logo.png"
             alt=""
             aria-hidden="true"
+            width={720}
+            height={612}
             className="h-10 w-auto md:h-11 object-contain drop-shadow-[0_0_10px_rgba(245,245,242,0.3)] transition-transform group-hover:scale-105"
           />
           <span>
@@ -67,7 +79,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
         <div className="flex items-center gap-4">
           <button
             onClick={onOpenContact}
-            className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2.5 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-full text-xs font-semibold tracking-wide uppercase transition-all duration-200 shadow-lg shadow-snl-accent/20 hover:scale-[1.02]"
+            className="hidden sm:inline-flex group items-center gap-1.5 px-5 py-2.5 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-full text-xs font-semibold tracking-wide uppercase transition-all duration-200 shadow-lg shadow-snl-accent/20 hover:scale-[1.02]"
           >
             <span>Let&apos;s Talk</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -76,8 +88,10 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
           {/* Mobile Menu Toggle */}
           <button
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 text-snl-muted hover:text-snl-text focus:outline-none"
+            className="md:hidden p-2 text-snl-muted hover:text-snl-text"
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -86,7 +100,10 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
 
       {/* Mobile Dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-[#0D0F12] border-b border-snl-border px-6 py-6 flex flex-col gap-5 animate-in slide-in-from-top duration-200">
+        <div
+          id="mobile-menu"
+          className="md:hidden bg-[#0D0F12] border-b border-snl-border px-6 py-6 flex flex-col gap-5 animate-in slide-in-from-top duration-200"
+        >
           {navItems.map(({ label, href }) => (
             <a
               key={label}

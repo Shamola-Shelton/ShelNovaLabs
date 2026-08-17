@@ -148,7 +148,6 @@ export const projectsData: CaseStudy[] = [
     ],
     storeLinks: {
       webDemo: "https://jiranify.com",
-      playStore: "https://jiranify.com",
     },
     mockupType: "mobile",
     primaryBadge: "Community & Local Commerce",

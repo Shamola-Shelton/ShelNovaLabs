@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { UserCheck, ShieldCheck, HeartHandshake, Sparkles, Layers, Users } from "lucide-react";
+import { UserCheck, HeartHandshake, Sparkles, Layers, Users } from "lucide-react";
 import { teamMembers } from "@/data/projectsData";
 
 export default function AboutSection() {

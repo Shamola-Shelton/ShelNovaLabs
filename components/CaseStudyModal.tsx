@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { X, ExternalLink, ArrowLeft, CheckCircle2, ShieldAlert, Image as ImageIcon } from "lucide-react";
 import { CaseStudy } from "@/data/projectsData";
 
@@ -90,9 +91,11 @@ export default function CaseStudyModal({
               {/* Main Featured Image Preview */}
               {selectedGalleryImg && (
                 <div className="w-full max-h-[380px] bg-snl-card border border-snl-border rounded-xl p-3 flex justify-center items-center overflow-hidden">
-                  <img
+                  <Image
                     src={selectedGalleryImg}
                     alt={`${project.name} screenshot`}
+                    width={600}
+                    height={1000}
                     className="max-h-[350px] w-auto object-contain rounded-lg shadow-xl"
                   />
                 </div>
@@ -104,17 +107,23 @@ export default function CaseStudyModal({
                   <button
                     key={img}
                     onClick={() => setSelectedGalleryImg(img)}
+                    aria-pressed={selectedGalleryImg === img}
+                    aria-label={`View screenshot ${i + 1} of ${project.name}`}
                     className={`relative rounded-lg border overflow-hidden p-1 transition-all ${
                       selectedGalleryImg === img
                         ? "border-snl-accent ring-1 ring-snl-accent"
                         : "border-snl-border opacity-70 hover:opacity-100"
                     }`}
                   >
-                    <img
-                      src={img}
-                      alt={`Thumbnail ${i + 1}`}
-                      className="h-20 w-full object-cover rounded"
-                    />
+                    <div className="relative h-20 w-full overflow-hidden rounded">
+                      <Image
+                        src={img}
+                        alt={`Thumbnail ${i + 1} of ${project.name}`}
+                        fill
+                        sizes="(max-width: 640px) 30vw, 120px"
+                        className="object-cover rounded"
+                      />
+                    </div>
                   </button>
                 ))}
               </div>
@@ -188,28 +197,30 @@ export default function CaseStudyModal({
           {project.storeLinks && (
             <div className="pt-4 border-t border-snl-border flex flex-wrap gap-4 items-center justify-between">
               <div className="flex flex-wrap gap-3">
-                {project.storeLinks.webDemo && (
-                  <a
-                    href={project.storeLinks.webDemo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-5 py-2.5 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-2 transition-colors"
-                  >
-                    <span>Visit Product Site</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                )}
-                {project.storeLinks.playStore && (
-                  <a
-                    href={project.storeLinks.playStore}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-5 py-2.5 bg-snl-border hover:bg-snl-card text-snl-text border border-snl-border-light rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-2 transition-colors"
-                  >
-                    <span>Google Play Store</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                )}
+                {project.storeLinks.webDemo &&
+                  project.storeLinks.webDemo !== "#" && (
+                    <a
+                      href={project.storeLinks.webDemo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2.5 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-2 transition-colors"
+                    >
+                      <span>Visit Product Site</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                {project.storeLinks.playStore &&
+                  project.storeLinks.playStore !== "#" && (
+                    <a
+                      href={project.storeLinks.playStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2.5 bg-snl-border hover:bg-snl-card text-snl-text border border-snl-border-light rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-2 transition-colors"
+                    >
+                      <span>Google Play Store</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
                 {project.storeLinks.github && (
                   <a
                     href={project.storeLinks.github}
