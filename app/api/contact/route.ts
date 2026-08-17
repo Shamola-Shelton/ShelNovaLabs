@@ -16,9 +16,9 @@ export async function POST(request: Request) {
     console.log(`[Contact Form Submission] From: ${name} (${email}) | Type: ${projectType}`);
 
     const resendApiKey = process.env.RESEND_API_KEY;
-    const web3FormsKey = process.env.WEB3FORMS_ACCESS_KEY;
 
     let emailDelivered = false;
+    let lastError: string | null = null;
 
     // 2. Option A: Delivery via Resend (if RESEND_API_KEY is configured in .env.local)
     if (resendApiKey) {
@@ -49,13 +49,20 @@ export async function POST(request: Request) {
         if (resendRes.ok) {
           emailDelivered = true;
           console.log("Email successfully sent via Resend!");
+        } else {
+          const errorBody = await resendRes.text();
+          lastError = `Resend request failed (${resendRes.status}): ${errorBody}`;
+          console.error(lastError);
         }
       } catch (err) {
-        console.error("Resend error:", err);
+        lastError = `Resend error: ${(err as Error).message}`;
+        console.error(lastError);
       }
     }
 
     // 3. Option B: Delivery via Web3Forms (if WEB3FORMS_ACCESS_KEY is configured in .env.local)
+    const web3FormsKey = process.env.WEB3FORMS_ACCESS_KEY;
+
     if (!emailDelivered && web3FormsKey) {
       try {
         const w3Res = await fetch("https://api.web3forms.com/submit", {
@@ -86,10 +93,18 @@ export async function POST(request: Request) {
       }
     }
 
-    // 4. Create local environment variable template notice if no key is set yet
+    // 4. Return the real result to the caller
     if (!emailDelivered) {
-      console.log(
-        "Notice: To receive actual emails in your inbox, add RESEND_API_KEY or WEB3FORMS_ACCESS_KEY to .env.local"
+      console.error(
+        "Notice: Email was not delivered. " +
+          (lastError ?? "No RESEND_API_KEY/WEB3FORMS_ACCESS_KEY set in .env.local.")
+      );
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Email delivery failed. Please try again or email hello@shelnovalabs.com directly.",
+        },
+        { status: 502 }
       );
     }
 

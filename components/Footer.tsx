@@ -18,7 +18,7 @@ export default function Footer() {
                 src="/images/logo.png"
                 alt=""
                 aria-hidden="true"
-                className="h-10 w-auto md:h-12 object-contain drop-shadow-[0_0_10px_rgba(245,245,242,0.3)]"
+                className="h-12 w-auto md:h-14 object-contain drop-shadow-[0_0_10px_rgba(245,245,242,0.3)]"
               />
               <span>
                 Shel<span className="text-snl-accent">Nova</span> Labs

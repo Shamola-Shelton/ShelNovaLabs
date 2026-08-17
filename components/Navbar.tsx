@@ -43,7 +43,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
             src="/images/logo.png"
             alt=""
             aria-hidden="true"
-            className="h-8 w-auto md:h-9 object-contain drop-shadow-[0_0_10px_rgba(245,245,242,0.3)] transition-transform group-hover:scale-105"
+            className="h-10 w-auto md:h-11 object-contain drop-shadow-[0_0_10px_rgba(245,245,242,0.3)] transition-transform group-hover:scale-105"
           />
           <span>
             Shel<span className="text-snl-accent">Nova</span> Labs
