@@ -1,98 +1,108 @@
+import Link from "next/link";
+import { Globe, ExternalLink } from "lucide-react";
+
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-snl-border bg-snl-bg">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
-          {/* Brand */}
-          <div className="flex flex-col items-center md:items-start gap-3">
-            <span className="font-heading font-bold text-lg tracking-tight">
-              Shel<span className="text-snl-violet">Nova</span>{" "}
-              <span className="text-snl-text">Labs</span>
-            </span>
-            <p className="text-snl-muted text-sm max-w-xs text-center md:text-left leading-relaxed">
-              Building apps that matter — for communities, learners, and players.
+    <footer className="border-t border-snl-border bg-[#08090B] py-16 px-6 md:px-10 text-snl-muted">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-snl-border/60">
+          {/* Brand Info */}
+          <div className="md:col-span-6 space-y-4">
+            <Link
+              href="/"
+              className="flex items-center gap-2.5 font-heading font-bold text-xl text-snl-text tracking-tight select-none"
+            >
+              <div className="w-7 h-7 rounded-lg bg-snl-accent/15 border border-snl-accent/40 flex items-center justify-center text-snl-accent font-mono text-xs">
+                S
+              </div>
+              <span>
+                Shel<span className="text-snl-accent">Nova</span> Labs
+              </span>
+            </Link>
+            <p className="text-sm text-snl-muted max-w-sm leading-relaxed">
+              Building digital products for ambitious businesses — websites, mobile applications,
+              platforms, and AI-powered software systems.
             </p>
           </div>
 
-          {/* Links */}
-          <div className="flex flex-col items-center md:items-start gap-2">
-            <span className="text-snl-text text-xs font-semibold uppercase tracking-wider mb-1">
-              Navigate
-            </span>
-            {[
-              { label: "Apps", href: "#apps" },
-              { label: "About", href: "#about" },
-              { label: "Contact", href: "#contact" },
-            ].map(({ label, href }) => (
-              <a
-                key={label}
-                href={href}
-                className="text-snl-muted hover:text-snl-text transition-colors text-sm"
-              >
-                {label}
-              </a>
-            ))}
+          {/* Navigation Column */}
+          <div className="md:col-span-3 space-y-3">
+            <h4 className="font-mono text-xs font-bold text-snl-text uppercase tracking-wider">
+              Navigation
+            </h4>
+            <ul className="space-y-2 text-sm font-medium">
+              {[
+                { label: "Selected Work", href: "/#work" },
+                { label: "Our Services", href: "/#services" },
+                { label: "Our Process", href: "/#process" },
+                { label: "About Studio", href: "/#about" },
+                { label: "Contact Us", href: "/#contact" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="hover:text-snl-text transition-colors">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Apps */}
-          <div className="flex flex-col items-center md:items-start gap-2">
-            <span className="text-snl-text text-xs font-semibold uppercase tracking-wider mb-1">
-              Our Apps
-            </span>
-            {[
-              { label: "Kadi Classic", href: "#apps" },
-              { label: "JiraniFy", href: "#apps" },
-              { label: "Gist & Gain", href: "#apps" },
-            ].map(({ label, href }) => (
-              <a
-                key={label}
-                href={href}
-                className="text-snl-muted hover:text-snl-text transition-colors text-sm"
-              >
-                {label}
-              </a>
-            ))}
-          </div>
-
-          {/* Contact */}
-          <div className="flex flex-col items-center md:items-start gap-2">
-            <span className="text-snl-text text-xs font-semibold uppercase tracking-wider mb-1">
+          {/* Connect & Socials Column */}
+          <div className="md:col-span-3 space-y-3">
+            <h4 className="font-mono text-xs font-bold text-snl-text uppercase tracking-wider">
               Connect
-            </span>
-            <a
-              href="mailto:hello@shelnovalabs.com"
-              className="text-snl-muted hover:text-snl-text transition-colors text-sm"
-            >
-              hello@shelnovalabs.com
-            </a>
-            <a
-              href="https://github.com/shelnovalabs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-snl-muted hover:text-snl-text transition-colors text-sm"
-            >
-              GitHub
-            </a>
+            </h4>
+            <div className="flex flex-col gap-2.5 text-sm">
+              <a
+                href="https://github.com/Shamola-Shelton"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-snl-text transition-colors"
+              >
+                <svg className="w-4 h-4 fill-current text-snl-accent" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-snl-text transition-colors"
+              >
+                <svg className="w-4 h-4 fill-current text-snl-accent" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-snl-text transition-colors"
+              >
+                <svg className="w-4 h-4 fill-current text-snl-accent" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                <span>X / Twitter</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-snl-border flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-snl-muted text-xs">
-            © {year} ShelNova Labs Ltd. All rights reserved.
-          </p>
-          <div className="flex items-center gap-4">
-            <a
-              href="/privacy"
-              className="text-snl-muted hover:text-snl-text text-xs transition-colors"
-            >
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-snl-subtle">
+          <p>© {currentYear} ShelNova Labs Ltd. All rights reserved.</p>
+
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="hover:text-snl-text transition-colors">
               Privacy Policy
-            </a>
-            <p className="text-snl-muted text-xs">
-              Built with ❤️ and Next.js
-            </p>
+            </Link>
+            <Link href="/privacy/biblewise" className="hover:text-snl-text transition-colors">
+              BibleWise Privacy
+            </Link>
           </div>
         </div>
       </div>

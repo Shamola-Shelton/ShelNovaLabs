@@ -1,48 +1,82 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand colors */
-  --color-snl-bg: #0a0a0f;
-  --color-snl-card: #111118;
-  --color-snl-border: #1e1e2e;
-  --color-snl-violet: #6c63ff;
-  --color-snl-cyan: #00d4ff;
-  --color-snl-text: #e2e8f0;
-  --color-snl-muted: #64748b;
+  /* Brand color tokens - Apple x Linear x Vercel palette */
+  --color-snl-bg: #08090B;
+  --color-snl-bg-sec: #0D0F12;
+  --color-snl-card: #111318;
+  --color-snl-card-hover: #161920;
+  --color-snl-border: #24272D;
+  --color-snl-border-light: #2e323b;
+  --color-snl-text: #F5F5F2;
+  --color-snl-muted: #A1A1AA;
+  --color-snl-subtle: #686B73;
+  --color-snl-accent: #635BFF;
+  --color-snl-accent-hover: #5145CD;
 
   /* Fonts */
-  --font-heading: var(--font-space-grotesk);
-  --font-sans: var(--font-inter);
+  --font-heading: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
-  background-color: #0a0a0f;
-  color: #e2e8f0;
+  background-color: #08090B;
+  color: #F5F5F2;
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
 }
 
-/* Dot-grid hero background */
+/* Subtle dot-grid hero background */
 .hero-grid {
   background-image:
-    linear-gradient(rgba(108, 99, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(108, 99, 255, 0.07) 1px, transparent 1px);
-  background-size: 60px 60px;
+    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Glassmorphic surface utility */
+.glass-panel {
+  background: rgba(17, 19, 24, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid #24272D;
+}
+
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 50px -10px rgba(99, 91, 255, 0.25);
+}
+
+.glow-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-card:hover {
+  border-color: rgba(99, 91, 255, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(99, 91, 255, 0.15);
+  transform: translateY(-2px);
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: #08090B;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e1e2e;
-  border-radius: 3px;
+  background: #24272D;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6c63ff;
+  background: #635BFF;
+}
+
+/* Selection */
+::selection {
+  background: rgba(99, 91, 255, 0.3);
+  color: #F5F5F2;
 }

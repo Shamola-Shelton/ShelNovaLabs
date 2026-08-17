@@ -2,112 +2,108 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
-export default function Navbar() {
+interface NavbarProps {
+  onOpenContact?: () => void;
+}
+
+export default function Navbar({ onOpenContact }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const navItems = [
+    { label: "Work", href: "/#work" },
+    { label: "Services", href: "/#services" },
+    { label: "About", href: "/#about" },
+    { label: "Process", href: "/#process" },
+  ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-snl-bg/85 backdrop-blur-md border-b border-snl-border"
-          : "bg-transparent"
+          ? "bg-[#08090B]/85 backdrop-blur-md border-b border-snl-border shadow-xl py-3.5"
+          : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
+        {/* Brand Logo */}
         <Link
           href="/"
-          className="font-heading font-bold text-lg tracking-tight select-none"
+          className="group flex items-center gap-2.5 font-heading font-bold text-lg md:text-xl tracking-tight text-snl-text select-none"
         >
-          Shel<span className="text-snl-violet">Nova</span>{" "}
-          <span className="text-snl-text">Labs</span>
+          <div className="w-7 h-7 rounded-lg bg-snl-accent/15 border border-snl-accent/40 flex items-center justify-center text-snl-accent group-hover:bg-snl-accent group-hover:text-white transition-all duration-300">
+            <span className="font-mono text-xs font-bold">S</span>
+          </div>
+          <span>
+            Shel<span className="text-snl-accent">Nova</span> Labs
+          </span>
         </Link>
 
-        {/* Desktop nav links */}
-        <div className="hidden md:flex items-center gap-8">
-          {[
-            { label: "Apps", href: "#apps" },
-            { label: "About", href: "#about" },
-            { label: "Team", href: "#team" },
-            { label: "Contact", href: "#contact" },
-          ].map(({ label, href }) => (
+        {/* Desktop Nav Links */}
+        <div className="hidden md:flex items-center gap-9">
+          {navItems.map(({ label, href }) => (
             <a
               key={label}
               href={href}
-              className="text-snl-muted hover:text-snl-text transition-colors text-sm font-medium"
+              className="text-snl-muted hover:text-snl-text text-sm font-medium transition-colors duration-200 tracking-wide"
             >
               {label}
             </a>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="flex items-center gap-3">
-          <a
-            href="#apps"
-            className="hidden md:inline-flex items-center px-4 py-2 bg-snl-violet hover:bg-snl-violet/80 text-white rounded-full text-sm font-medium transition-all hover:shadow-lg hover:shadow-snl-violet/25"
+        {/* Right CTA */}
+        <div className="flex items-center gap-4">
+          <button
+            onClick={onOpenContact}
+            className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2.5 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-full text-xs font-semibold tracking-wide uppercase transition-all duration-200 shadow-lg shadow-snl-accent/20 hover:scale-[1.02]"
           >
-            Explore Apps
-          </a>
+            <span>Let&apos;s Talk</span>
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </button>
 
-          {/* Mobile hamburger */}
+          {/* Mobile Menu Toggle */}
           <button
             aria-label="Toggle menu"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden flex flex-col gap-1.5 p-1"
+            className="md:hidden p-2 text-snl-muted hover:text-snl-text focus:outline-none"
           >
-            <span
-              className={`block w-5 h-0.5 bg-snl-text transition-all duration-200 ${
-                menuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-            />
-            <span
-              className={`block w-5 h-0.5 bg-snl-text transition-all duration-200 ${
-                menuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block w-5 h-0.5 bg-snl-text transition-all duration-200 ${
-                menuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-            />
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Mobile Dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-snl-card border-b border-snl-border px-6 py-4 flex flex-col gap-4">
-          {[
-            { label: "Apps", href: "#apps" },
-            { label: "About", href: "#about" },
-            { label: "Team", href: "#team" },
-            { label: "Contact", href: "#contact" },
-          ].map(({ label, href }) => (
+        <div className="md:hidden bg-[#0D0F12] border-b border-snl-border px-6 py-6 flex flex-col gap-5 animate-in slide-in-from-top duration-200">
+          {navItems.map(({ label, href }) => (
             <a
               key={label}
               href={href}
               onClick={() => setMenuOpen(false)}
-              className="text-snl-muted hover:text-snl-text transition-colors text-sm font-medium"
+              className="text-snl-muted hover:text-snl-text text-base font-medium transition-colors"
             >
               {label}
             </a>
           ))}
-          <a
-            href="#apps"
-            onClick={() => setMenuOpen(false)}
-            className="inline-flex items-center justify-center px-4 py-2 bg-snl-violet text-white rounded-full text-sm font-medium"
+          <button
+            onClick={() => {
+              setMenuOpen(false);
+              onOpenContact?.();
+            }}
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-snl-accent text-white rounded-full text-sm font-semibold tracking-wide uppercase mt-2"
           >
-            Explore Apps
-          </a>
+            <span>Let&apos;s Talk</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </button>
         </div>
       )}
     </nav>
