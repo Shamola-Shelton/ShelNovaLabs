@@ -12,12 +12,12 @@ export default function Footer() {
           <div className="md:col-span-6 space-y-4">
             <Link
               href="/"
-              className="flex items-center gap-2.5 font-heading font-bold text-xl text-snl-text tracking-tight select-none"
+              className="flex items-center gap-3 font-heading font-bold text-xl text-snl-text tracking-tight select-none"
             >
               <img
                 src="/images/logo.png"
                 alt="ShelNova Labs"
-                className="w-8 h-8 object-contain rounded-lg"
+                className="h-8 sm:h-9 w-auto object-contain"
               />
               <span>
                 Shel<span className="text-snl-accent">Nova</span> Labs

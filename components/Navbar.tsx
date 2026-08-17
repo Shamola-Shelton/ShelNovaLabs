@@ -37,12 +37,12 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
         {/* Brand Logo */}
         <Link
           href="/"
-          className="group flex items-center gap-2.5 font-heading font-bold text-lg md:text-xl tracking-tight text-snl-text select-none"
+          className="group flex items-center gap-3 font-heading font-bold text-lg md:text-xl tracking-tight text-snl-text select-none"
         >
           <img
             src="/images/logo.png"
             alt="ShelNova Labs"
-            className="w-8 h-8 object-contain rounded-lg group-hover:scale-105 transition-transform"
+            className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105"
           />
           <span>
             Shel<span className="text-snl-accent">Nova</span> Labs
