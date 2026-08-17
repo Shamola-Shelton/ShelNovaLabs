@@ -13,7 +13,7 @@ export default function ContactCTA({ isOpen: externalIsOpen, onClose: externalOn
   const [internalIsOpen, setInternalIsOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [projectType, setProjectType] = useState("Web Application");
+  const [projectType, setProjectType] = useState("Web Application / SaaS");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,20 +25,16 @@ export default function ContactCTA({ isOpen: externalIsOpen, onClose: externalOn
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate clean AJAX submission
+    // Clean inline submission state (no automatic window.location mailto trigger)
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-      // Fallback mailto trigger if user prefers
-      const subject = `New Project Inquiry: ${projectType} from ${name || "Client"}`;
-      const body = `Name: ${name}\nEmail: ${email}\nProject Type: ${projectType}\n\nMessage:\n${message}`;
-      window.location.href = `mailto:hello@shelnovalabs.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    }, 600);
+    }, 500);
   };
 
   return (
     <>
-      {/* Footer CTA Banner (Matches reference image) */}
+      {/* Footer CTA Banner */}
       <section id="contact" className="py-28 px-6 md:px-10 bg-[#08090B] relative overflow-hidden border-t border-snl-border scroll-mt-20">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-snl-accent/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -65,7 +61,7 @@ export default function ContactCTA({ isOpen: externalIsOpen, onClose: externalOn
             </button>
           </div>
 
-          {/* Direct contact line */}
+          {/* Direct contact info */}
           <div className="pt-8 flex flex-wrap justify-center items-center gap-6 sm:gap-10 text-xs font-mono text-snl-subtle">
             <a
               href="mailto:hello@shelnovalabs.com"
@@ -117,17 +113,22 @@ export default function ContactCTA({ isOpen: externalIsOpen, onClose: externalOn
                   Message Sent!
                 </h4>
                 <p className="text-snl-muted text-sm max-w-xs mx-auto">
-                  Thank you for reaching out to ShelNova Labs. We will review your project requirements and follow up shortly.
+                  Thank you for reaching out to ShelNova Labs. We will review your project requirements and follow up at <span className="text-snl-text font-medium">{email}</span>.
                 </p>
-                <button
-                  onClick={() => {
-                    setSubmitted(false);
-                    handleClose();
-                  }}
-                  className="px-6 py-2.5 bg-snl-border text-snl-text rounded-full text-xs font-mono uppercase"
-                >
-                  Close Window
-                </button>
+                <div className="pt-2 flex flex-col gap-2">
+                  <button
+                    onClick={() => {
+                      setSubmitted(false);
+                      setName("");
+                      setEmail("");
+                      setMessage("");
+                      handleClose();
+                    }}
+                    className="px-6 py-2.5 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-full text-xs font-mono uppercase"
+                  >
+                    Done
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">

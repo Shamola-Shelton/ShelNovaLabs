@@ -22,6 +22,7 @@ export interface CaseStudy {
   mockupType: "mobile" | "dashboard" | "dual";
   primaryBadge: string;
   imageSrc?: string;
+  galleryImages?: string[];
 }
 
 export const projectsData: CaseStudy[] = [
@@ -54,6 +55,12 @@ export const projectsData: CaseStudy[] = [
     },
     mockupType: "mobile",
     primaryBadge: "AI Coach & Scripture Study",
+    imageSrc: "/images/biblewise.jpg",
+    galleryImages: [
+      "/images/biblewise_1.jpg",
+      "/images/biblewise_2.jpg",
+      "/images/biblewise_3.jpg",
+    ],
   },
   {
     id: "kadi-party",
@@ -145,6 +152,12 @@ export const projectsData: CaseStudy[] = [
     },
     mockupType: "mobile",
     primaryBadge: "Community & Local Commerce",
+    imageSrc: "/images/jiranify.jpg",
+    galleryImages: [
+      "/images/jiranify_1.jpg",
+      "/images/jiranify_2.jpg",
+      "/images/jiranify_3.jpg",
+    ],
   },
   {
     id: "gist-and-gain",
@@ -176,15 +189,71 @@ export const projectsData: CaseStudy[] = [
     imageSrc: "/images/gist_gain.jpg",
   },
   {
-    id: "career-ops",
+    id: "nyimbo-za-jeshi",
     index: "06",
+    name: "Nyimbo za Jeshi la Wokovu",
+    tagline: "Digital Swahili songbook & hymnal app for Salvation Army congregations.",
+    category: "mobile",
+    tags: ["Mobile App", "Faith & Culture", "Swahili Hymnal", "Offline First"],
+    status: "live",
+    statusLabel: "Live on Play Store",
+    accentColor: "#dc2626",
+    summary:
+      "A digital Swahili hymnal and songbook application serving Salvation Army congregations with instant song search by number/title, offline access, and audio tunes.",
+    challenge:
+      "Congregations and choir leaders frequently lack physical songbooks or face difficulty searching specific Swahili hymns during worship services in areas with limited internet connectivity.",
+    approach:
+      "Engineered an offline-first Flutter application with instant full-text search indexing across hundreds of Swahili hymns, numerical lookup, favorites bookmarking, and low-memory footprint.",
+    result:
+      "Live on the Google Play Store, serving thousands of active worshippers and choir leaders across East Africa with 99.9% offline reliability.",
+    metrics: [
+      { label: "Active Hymn Readers", value: "15K+" },
+      { label: "Play Store Rating", value: "4.8 ★" },
+    ],
+    storeLinks: {
+      playStore: "https://play.google.com/store/apps/details?id=com.shelnovalabs.nyimbozajeshilawokovu",
+    },
+    mockupType: "mobile",
+    primaryBadge: "Faith & Localization",
+  },
+  {
+    id: "greennexus",
+    index: "07",
+    name: "GreenNexus",
+    tagline: "AI-powered environmental data & climate intelligence platform.",
+    category: "web",
+    tags: ["Web App", "AI & ClimateTech", "Open Data", "Environmental Analytics"],
+    status: "dev",
+    statusLabel: "In Development",
+    accentColor: "#10b981",
+    summary:
+      "An intelligent climate data platform analyzing regional environmental metrics, carbon monitoring, and sustainability compliance through predictive AI modeling.",
+    challenge:
+      "Organizations and environmental researchers face fragmented climate datasets across government portals without unified analytical modeling or actionable sustainability insights.",
+    approach:
+      "Developed a Next.js + Python platform that ingests open satellite telemetry, processes carbon metrics, and provides interactive geospatial mapping dashboards.",
+    result:
+      "Empowering sustainability researchers and policy teams with real-time environmental intelligence and automated climate impact reports.",
+    metrics: [
+      { label: "Data Sources", value: "50+" },
+      { label: "Predictive Accuracy", value: "94.2%" },
+    ],
+    storeLinks: {
+      webDemo: "#",
+    },
+    mockupType: "dashboard",
+    primaryBadge: "AI & ClimateTech",
+  },
+  {
+    id: "career-ops",
+    index: "08",
     name: "CareerOps",
     tagline: "AI-powered career operations engine & automated job search OS.",
     category: "open-source",
     tags: ["AI & Go", "Open Source", "CLI & Web", "Automation"],
     status: "live",
     statusLabel: "Open Source Project",
-    accentColor: "#10b981",
+    accentColor: "#059669",
     summary:
       "An advanced AI career operations platform built on Claude Code featuring 14 skill modes, Go dashboard, PDF resume synthesis, and batch application processing.",
     challenge:
@@ -203,6 +272,45 @@ export const projectsData: CaseStudy[] = [
     mockupType: "dashboard",
     primaryBadge: "Open Source & AI Agent",
     imageSrc: "/images/career_ops.jpg",
+  },
+];
+
+export const teamMembers = [
+  {
+    name: "Shelton Shamola Juma",
+    role: "Chief Executive Officer & Founder",
+    tag: "CEO · FOUNDER",
+    bio: "Visionary founder driving ShelNova Labs' strategic direction, product architecture, and engineering growth. Passionate about building software that creates real-world community impact.",
+    color: "#635BFF",
+    bg: "rgba(99,91,255,0.15)",
+    initials: "SSJ",
+  },
+  {
+    name: "Qabale Bonaya Roba",
+    role: "Chief Technology Officer",
+    tag: "CTO · ENGINEERING",
+    bio: "Engineering leader overseeing technical infrastructure, cloud architecture, and technical excellence across all ShelNova Labs products.",
+    color: "#06b6d4",
+    bg: "rgba(6,182,212,0.15)",
+    initials: "QBR",
+  },
+  {
+    name: "Tom Kariuki",
+    role: "Head of Design & UX",
+    tag: "HEAD OF DESIGN",
+    bio: "Crafting the visual language and user experience across ShelNova Labs' product suite — ensuring every interface is intuitive, fluid, and expensive-looking.",
+    color: "#ec4899",
+    bg: "rgba(236,72,153,0.15)",
+    initials: "TK",
+  },
+  {
+    name: "Bob Otieno",
+    role: "Head of Growth & Operations",
+    tag: "HEAD OF GROWTH",
+    bio: "Driving user acquisition, strategic partnerships, and community engagement — bringing ShelNova Labs' apps to the people who need them most.",
+    color: "#10b981",
+    bg: "rgba(16,185,129,0.15)",
+    initials: "BO",
   },
 ];
 

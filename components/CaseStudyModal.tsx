@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import { X, ExternalLink, Play, ArrowLeft, CheckCircle2, ShieldAlert } from "lucide-react";
+import { useEffect, useState } from "react";
+import { X, ExternalLink, ArrowLeft, CheckCircle2, ShieldAlert, Image as ImageIcon } from "lucide-react";
 import { CaseStudy } from "@/data/projectsData";
 
 interface CaseStudyModalProps {
@@ -15,6 +15,8 @@ export default function CaseStudyModal({
   onClose,
   onOpenContact,
 }: CaseStudyModalProps) {
+  const [selectedGalleryImg, setSelectedGalleryImg] = useState<string | null>(null);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -22,6 +24,7 @@ export default function CaseStudyModal({
     if (project) {
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
+      setSelectedGalleryImg(project.galleryImages?.[0] || project.imageSrc || null);
     }
     return () => {
       document.body.style.overflow = "";
@@ -32,7 +35,7 @@ export default function CaseStudyModal({
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/80 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/85 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto">
       <div
         className="relative w-full max-w-4xl bg-[#0D0F12] border border-snl-border rounded-2xl shadow-2xl overflow-hidden my-auto max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
@@ -75,6 +78,48 @@ export default function CaseStudyModal({
               {project.tagline}
             </p>
           </div>
+
+          {/* Screenshot Showcase Gallery */}
+          {project.galleryImages && project.galleryImages.length > 0 && (
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-snl-subtle uppercase">
+                <ImageIcon className="w-4 h-4 text-snl-accent" />
+                <span>Verified App Screenshots</span>
+              </div>
+
+              {/* Main Featured Image Preview */}
+              {selectedGalleryImg && (
+                <div className="w-full max-h-[380px] bg-snl-card border border-snl-border rounded-xl p-3 flex justify-center items-center overflow-hidden">
+                  <img
+                    src={selectedGalleryImg}
+                    alt={`${project.name} screenshot`}
+                    className="max-h-[350px] w-auto object-contain rounded-lg shadow-xl"
+                  />
+                </div>
+              )}
+
+              {/* Thumbnail Selector */}
+              <div className="grid grid-cols-3 gap-3">
+                {project.galleryImages.map((img, i) => (
+                  <button
+                    key={img}
+                    onClick={() => setSelectedGalleryImg(img)}
+                    className={`relative rounded-lg border overflow-hidden p-1 transition-all ${
+                      selectedGalleryImg === img
+                        ? "border-snl-accent ring-1 ring-snl-accent"
+                        : "border-snl-border opacity-70 hover:opacity-100"
+                    }`}
+                  >
+                    <img
+                      src={img}
+                      alt={`Thumbnail ${i + 1}`}
+                      className="h-20 w-full object-cover rounded"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Metrics bar if available */}
           {project.metrics && (
@@ -143,12 +188,23 @@ export default function CaseStudyModal({
           {project.storeLinks && (
             <div className="pt-4 border-t border-snl-border flex flex-wrap gap-4 items-center justify-between">
               <div className="flex flex-wrap gap-3">
+                {project.storeLinks.webDemo && (
+                  <a
+                    href={project.storeLinks.webDemo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-2 transition-colors"
+                  >
+                    <span>Visit Product Site</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
                 {project.storeLinks.playStore && (
                   <a
                     href={project.storeLinks.playStore}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-2.5 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-2 transition-colors"
+                    className="px-5 py-2.5 bg-snl-border hover:bg-snl-card text-snl-text border border-snl-border-light rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-2 transition-colors"
                   >
                     <span>Google Play Store</span>
                     <ExternalLink className="w-3.5 h-3.5" />
