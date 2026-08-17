@@ -46,6 +46,14 @@ export const metadata: Metadata = {
     siteName: "ShelNova Labs",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "https://shelnovalabs.com/og.png",
+        width: 1200,
+        height: 630,
+        alt: "ShelNova Labs",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
