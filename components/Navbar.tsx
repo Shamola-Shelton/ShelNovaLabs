@@ -39,9 +39,11 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
           href="/"
           className="group flex items-center gap-2.5 font-heading font-bold text-lg md:text-xl tracking-tight text-snl-text select-none"
         >
-          <div className="w-7 h-7 rounded-lg bg-snl-accent/15 border border-snl-accent/40 flex items-center justify-center text-snl-accent group-hover:bg-snl-accent group-hover:text-white transition-all duration-300">
-            <span className="font-mono text-xs font-bold">S</span>
-          </div>
+          <img
+            src="/images/logo.png"
+            alt="ShelNova Labs"
+            className="w-8 h-8 object-contain rounded-lg group-hover:scale-105 transition-transform"
+          />
           <span>
             Shel<span className="text-snl-accent">Nova</span> Labs
           </span>

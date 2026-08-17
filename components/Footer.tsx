@@ -14,9 +14,11 @@ export default function Footer() {
               href="/"
               className="flex items-center gap-2.5 font-heading font-bold text-xl text-snl-text tracking-tight select-none"
             >
-              <div className="w-7 h-7 rounded-lg bg-snl-accent/15 border border-snl-accent/40 flex items-center justify-center text-snl-accent font-mono text-xs">
-                S
-              </div>
+              <img
+                src="/images/logo.png"
+                alt="ShelNova Labs"
+                className="w-8 h-8 object-contain rounded-lg"
+              />
               <span>
                 Shel<span className="text-snl-accent">Nova</span> Labs
               </span>
