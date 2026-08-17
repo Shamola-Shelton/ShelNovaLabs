@@ -57,9 +57,9 @@ export const projectsData: CaseStudy[] = [
     primaryBadge: "AI Coach & Scripture Study",
     imageSrc: "/images/biblewise.jpg",
     galleryImages: [
+      "/images/biblewise.jpg",
       "/images/biblewise_1.jpg",
       "/images/biblewise_2.jpg",
-      "/images/biblewise_3.jpg",
     ],
   },
   {
