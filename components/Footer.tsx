@@ -15,10 +15,10 @@ export default function Footer() {
               className="flex items-center gap-3 font-heading font-bold text-xl text-snl-text tracking-tight select-none"
             >
               <img
-                src="/images/logo_icon.png"
+                src="/images/logo.png"
                 alt=""
                 aria-hidden="true"
-                className="w-8 h-8 md:w-9 md:h-9 object-contain drop-shadow-[0_0_10px_rgba(245,245,242,0.3)]"
+                className="h-10 w-auto md:h-12 object-contain drop-shadow-[0_0_10px_rgba(245,245,242,0.3)]"
               />
               <span>
                 Shel<span className="text-snl-accent">Nova</span> Labs
