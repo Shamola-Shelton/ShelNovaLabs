@@ -30,7 +30,7 @@ export async function POST(request: Request) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: "ShelNova Labs <onboarding@resend.dev>",
+            from: "ShelNova Labs <no-reply@shelnovalabs.com>",
             to: ["hello@shelnovalabs.com"],
             reply_to: email,
             subject: `New Project Inquiry (${projectType || "General"}) from ${name}`,
