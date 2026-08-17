@@ -40,9 +40,10 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
           className="group flex items-center gap-3 font-heading font-bold text-lg md:text-xl tracking-tight text-snl-text select-none"
         >
           <img
-            src="/images/logo.png"
-            alt="ShelNova Labs"
-            className="h-9 sm:h-10 w-auto object-contain rounded-lg transition-transform group-hover:scale-105"
+            src="/images/logo_icon.png"
+            alt=""
+            aria-hidden="true"
+            className="w-8 h-8 md:w-9 md:h-9 object-contain rounded-lg transition-transform group-hover:scale-105"
           />
           <span>
             Shel<span className="text-snl-accent">Nova</span> Labs
