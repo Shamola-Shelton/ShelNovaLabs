@@ -42,7 +42,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
           <img
             src="/images/logo.png"
             alt="ShelNova Labs"
-            className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-9 sm:h-10 w-auto object-contain rounded-lg transition-transform group-hover:scale-105"
           />
           <span>
             Shel<span className="text-snl-accent">Nova</span> Labs

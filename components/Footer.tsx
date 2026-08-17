@@ -17,7 +17,7 @@ export default function Footer() {
               <img
                 src="/images/logo.png"
                 alt="ShelNova Labs"
-                className="h-8 sm:h-9 w-auto object-contain"
+                className="h-9 sm:h-10 w-auto object-contain rounded-lg"
               />
               <span>
                 Shel<span className="text-snl-accent">Nova</span> Labs
