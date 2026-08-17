@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, MapPin, Globe, ArrowRight, CheckCircle2, X } from "lucide-react";
+import { Mail, MapPin, Globe, ArrowRight, CheckCircle2, X, AlertCircle } from "lucide-react";
 
 interface ContactCTAProps {
   isOpen?: boolean;
@@ -17,19 +16,42 @@ export default function ContactCTA({ isOpen: externalIsOpen, onClose: externalOn
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const isModalOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen;
   const handleClose = externalOnClose || (() => setInternalIsOpen(false));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage("");
 
-    // Clean inline submission state (no automatic window.location mailto trigger)
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          projectType,
+          message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(data.error || "Failed to send message. Please check your details.");
+      }
+    } catch (err) {
+      setErrorMessage("Network connection error. Please try again or email hello@shelnovalabs.com directly.");
+    } finally {
       setIsSubmitting(false);
-      setSubmitted(true);
-    }, 500);
+    }
   };
 
   return (
@@ -95,7 +117,7 @@ export default function ContactCTA({ isOpen: externalIsOpen, onClose: externalOn
                   Start a Conversation
                 </h3>
                 <p className="text-xs text-snl-subtle font-mono">
-                  We typically respond within 24 hours.
+                  Messages are delivered directly to hello@shelnovalabs.com
                 </p>
               </div>
               <button
@@ -113,7 +135,7 @@ export default function ContactCTA({ isOpen: externalIsOpen, onClose: externalOn
                   Message Sent!
                 </h4>
                 <p className="text-snl-muted text-sm max-w-xs mx-auto">
-                  Thank you for reaching out to ShelNova Labs. We will review your project requirements and follow up at <span className="text-snl-text font-medium">{email}</span>.
+                  Thank you for reaching out to ShelNova Labs. Your message has been sent to our team at <span className="text-snl-text font-medium">hello@shelnovalabs.com</span>. We will follow up at <span className="text-snl-text font-medium">{email}</span>.
                 </p>
                 <div className="pt-2 flex flex-col gap-2">
                   <button
@@ -132,6 +154,13 @@ export default function ContactCTA({ isOpen: externalIsOpen, onClose: externalOn
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                {errorMessage && (
+                  <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-xs flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+
                 <div>
                   <label className="block text-xs font-mono text-snl-subtle uppercase mb-1.5">
                     Your Name
@@ -197,7 +226,7 @@ export default function ContactCTA({ isOpen: externalIsOpen, onClose: externalOn
                   className="w-full py-3.5 bg-snl-accent hover:bg-snl-accent-hover disabled:opacity-50 text-white rounded-xl font-semibold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
-                    <span>Sending Inquiry...</span>
+                    <span>Delivering Message...</span>
                   ) : (
                     <>
                       <span>Send Project Details</span>
