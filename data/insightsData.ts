@@ -178,7 +178,7 @@ export const insightsArticles: InsightArticle[] = [
       },
     ],
     relatedServiceSlugs: ["mobile-applications", "product-engineering", "maintenance-scale"],
-    relatedProjectIds: ["biblewise", "kadi-party", "nyimbo-za-jeshi", "jiranify"],
+    relatedProjectIds: ["biblewise", "gist-and-gain", "nyimbo-za-jeshi", "jiranify"],
   },
   {
     slug: "website-vs-web-app-difference",
@@ -281,7 +281,7 @@ export const insightsArticles: InsightArticle[] = [
       },
     ],
     relatedServiceSlugs: ["ai-intelligent-systems", "mobile-applications", "product-engineering"],
-    relatedProjectIds: ["biblewise", "gist-and-gain", "kadi-party"],
+    relatedProjectIds: ["biblewise", "gist-and-gain", "career-ops"],
   },
   {
     slug: "choose-software-development-company-kenya",
@@ -336,7 +336,7 @@ export const insightsArticles: InsightArticle[] = [
       },
     ],
     relatedServiceSlugs: ["product-engineering", "web-applications", "maintenance-scale"],
-    relatedProjectIds: ["shelnova-os", "biblewise", "kadi-party"],
+    relatedProjectIds: ["shelnova-os", "biblewise", "greennexus"],
   },
   {
     slug: "flutter-vs-native-app-development",
@@ -367,7 +367,7 @@ export const insightsArticles: InsightArticle[] = [
       {
         question: "Is Flutter good enough for complex mobile applications?",
         answer:
-          "Yes. Global enterprises like Alibaba, Google Pay, BMW, and our own flagship apps like BibleWise and Kadi Classic run smoothly on Flutter, proving it can handle real-time sync, complex state, and massive user scale.",
+          "Yes. Global enterprises like Alibaba, Google Pay, BMW, and our own flagship apps like BibleWise and Gist & Gain run smoothly on Flutter, proving it can handle real-time sync, complex state, and massive user scale.",
       },
       {
         question: "Does a Flutter app look and feel truly native on iOS and Android?",
@@ -386,6 +386,6 @@ export const insightsArticles: InsightArticle[] = [
       },
     ],
     relatedServiceSlugs: ["mobile-applications", "product-engineering", "maintenance-scale"],
-    relatedProjectIds: ["kadi-party", "biblewise", "nyimbo-za-jeshi"],
+    relatedProjectIds: ["biblewise", "gist-and-gain", "nyimbo-za-jeshi"],
   },
 ];

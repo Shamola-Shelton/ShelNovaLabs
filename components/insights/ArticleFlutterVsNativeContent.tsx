@@ -155,7 +155,7 @@ export default function ArticleFlutterVsNativeContent() {
           </div>
           <div className="flex items-start gap-2.5 bg-[#0D0F12] border border-snl-border rounded-xl p-4">
             <CheckCircle2 className="w-4 h-4 text-snl-accent shrink-0 mt-0.5" />
-            <span><strong>Real-Time Multiplayer &amp; Gaming:</strong> Apps like <Link href="/projects/kadi-party" className="text-snl-accent underline">Kadi Classic</Link> featuring rapid 60 FPS animations and WebSocket state sync.</span>
+            <span><strong>Real-Time Telematics &amp; Microlearning:</strong> Apps like <Link href="/projects/gist-and-gain" className="text-snl-accent underline">Gist &amp; Gain</Link> featuring rapid AI audio synthesis and interactive spaced-repetition flashcards.</span>
           </div>
           <div className="flex items-start gap-2.5 bg-[#0D0F12] border border-snl-border rounded-xl p-4">
             <CheckCircle2 className="w-4 h-4 text-snl-accent shrink-0 mt-0.5" />
@@ -212,8 +212,8 @@ export default function ArticleFlutterVsNativeContent() {
             <p className="text-xs text-snl-muted">150K+ AI chats · 4.9★</p>
           </div>
           <div className="bg-[#0D0F12] border border-snl-border rounded-xl p-4 text-center space-y-1">
-            <p className="text-xl font-heading font-bold text-amber-400">Kadi Classic</p>
-            <p className="text-xs text-snl-muted">500K+ Matches · &lt;45ms</p>
+            <p className="text-xl font-heading font-bold text-amber-400">Gist &amp; Gain</p>
+            <p className="text-xs text-snl-muted">2,500+ Books · 3.2x Retention</p>
           </div>
           <div className="bg-[#0D0F12] border border-snl-border rounded-xl p-4 text-center space-y-1">
             <p className="text-xl font-heading font-bold text-emerald-400">Nyimbo za Jeshi</p>

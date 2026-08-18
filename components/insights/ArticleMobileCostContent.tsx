@@ -20,7 +20,7 @@ export default function ArticleMobileCostContent() {
         </p>
         <div className="bg-[#111318] border-l-4 border-snl-accent p-5 rounded-r-xl my-6">
           <p className="text-sm italic text-snl-text font-medium">
-            &ldquo;When building applications like BibleWise (150K+ AI conversations) and Kadi Classic (500K+ matches), we learned that the biggest cost driver isn&apos;t drawing screens — it is state management, offline resilience, and backend sync architecture.&rdquo;
+            &ldquo;When building applications like BibleWise (150K+ AI conversations) and ApexFleet OS (real-time IoT logistics telematics), we learned that the biggest cost driver isn&apos;t drawing screens — it is state management, offline resilience, and backend sync architecture.&rdquo;
           </p>
         </div>
       </section>
@@ -80,11 +80,11 @@ export default function ArticleMobileCostContent() {
               5. AI Integrations &amp; Real-Time Systems
             </h3>
             <p className="text-sm text-snl-muted mt-1.5">
-              Incorporating LLM conversational coaches, RAG search pipelines, or multiplayer WebSocket matchmaking (like{" "}
-              <Link href="/projects/kadi-party" className="text-snl-accent underline hover:text-white">
-                Kadi Classic
-              </Link>
-              ) involves prompt routing, token management, and sub-50ms socket latency engineering.
+              Incorporating LLM conversational coaches, RAG search pipelines, or real-time IoT WebSocket telemetry (like{" "}
+              <Link href="/projects/gist-and-gain" className="text-snl-accent underline hover:text-white">
+                Gist &amp; Gain
+              </Link>{" "}
+              and ApexFleet OS) involves prompt routing, vector embeddings, and sub-50ms sync latency engineering.
             </p>
           </div>
         </div>
@@ -207,11 +207,11 @@ export default function ArticleMobileCostContent() {
               <Link href="/projects/biblewise" className="text-snl-accent underline">
                 BibleWise
               </Link>
-              ), real-time multiplayer gaming (like{" "}
-              <Link href="/projects/kadi-party" className="text-snl-accent underline">
-                Kadi Classic
+              ), AI micro-learning platforms (like{" "}
+              <Link href="/projects/gist-and-gain" className="text-snl-accent underline">
+                Gist &amp; Gain
               </Link>
-              ), fintech wallets, and enterprise operations engines.
+              ), fintech wallets, and enterprise telematics engines.
             </p>
             <ul className="mt-3 space-y-1.5 text-xs text-snl-muted">
               <li className="flex items-center gap-2">

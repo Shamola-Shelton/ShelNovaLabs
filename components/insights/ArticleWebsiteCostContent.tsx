@@ -345,12 +345,12 @@ export default function ArticleWebsiteCostContent() {
           </Link>{" "}
           and{" "}
           <Link
-            href="/projects/kadi-party"
+            href="/projects/greennexus"
             className="text-snl-accent font-semibold underline hover:text-white"
           >
-            Kadi Classic
+            GreenNexus
           </Link>
-          , the systems required real-time state management, low-latency WebSocket synchronization, and custom backend infrastructure — far beyond static webpage generation.
+          , the platforms required real-time state management, predictive AI pipelines, and custom cloud infrastructure — far beyond static webpage generation.
         </p>
       </section>
 

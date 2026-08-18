@@ -289,7 +289,7 @@ export default function ArticleChooseCompanyContent() {
           </div>
           <div className="bg-[#0D0F12] border border-snl-border rounded-xl p-4">
             <h3 className="font-heading font-bold text-snl-text text-sm">🚀 Proven Live Products</h3>
-            <p className="text-xs text-snl-muted mt-1">From BibleWise (150K+ users) to Kadi Classic and ShelNova OS.</p>
+            <p className="text-xs text-snl-muted mt-1">From BibleWise (150K+ users) to GreenNexus and ShelNova OS.</p>
           </div>
           <div className="bg-[#0D0F12] border border-snl-border rounded-xl p-4">
             <h3 className="font-heading font-bold text-snl-text text-sm">🤝 Transparent Phased Sprints</h3>
