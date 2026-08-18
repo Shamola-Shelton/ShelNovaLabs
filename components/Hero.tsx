@@ -42,9 +42,9 @@ export default function Hero({ onOpenContact }: HeroProps) {
             {...fadeUp(0.24)}
             className="text-snl-muted text-base sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
           >
-            ShelNova Labs is a software engineering studio building websites,
-            mobile applications, platforms, and AI-powered solutions for ambitious
-            businesses.
+            ShelNova Labs is a software development company in Nairobi, Kenya building
+            modern websites, web applications, mobile apps, and AI-powered solutions for
+            ambitious businesses worldwide.
           </motion.p>
 
           {/* Action CTAs */}
@@ -60,7 +60,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
             <a
-              href="#work"
+              href="/projects"
               className="w-full sm:w-auto px-8 py-4 border border-snl-border hover:border-snl-border-light text-snl-text rounded-full font-medium text-sm tracking-wide transition-all duration-200 hover:bg-snl-card flex items-center justify-center gap-2"
             >
               View Our Work

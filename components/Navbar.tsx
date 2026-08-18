@@ -20,10 +20,10 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
   }, []);
 
   const navItems = [
-    { label: "Work", href: "#work" },
-    { label: "Services", href: "#services" },
-    { label: "About", href: "#about" },
-    { label: "Process", href: "#process" },
+    { label: "Work", href: "/projects" },
+    { label: "Services", href: "/services" },
+    { label: "About", href: "/#about" },
+    { label: "Process", href: "/#process" },
   ];
 
   useEffect(() => {

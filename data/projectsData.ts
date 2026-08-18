@@ -320,6 +320,43 @@ export const servicesData = [
     description:
       "From napkin idea to production-ready digital product. We handle full-lifecycle architecture, code quality, testing, and deployment.",
     icon: "Layers",
+    slug: "product-engineering",
+    seoTitle: "Product Engineering Company Nairobi | ShelNova Labs",
+    metaDescription:
+      "Full-lifecycle product engineering in Nairobi, Kenya — architecture, development, testing and deployment of reliable software products.",
+    intro:
+      "ShelNova Labs is a product engineering company in Nairobi, Kenya. We take products from idea to production, covering architecture, development, testing, deployment, and ongoing evolution.",
+    whatWeBuild: [
+      {
+        title: "MVP Development",
+        description: "Validate your idea fast with a lean, production-quality MVP you can ship to real users and investors.",
+      },
+      {
+        title: "Full-Product Builds",
+        description: "End-to-end construction of complex products with clean architecture, type-safe code, and automated testing.",
+      },
+      {
+        title: "Platform Architecture",
+        description: "Scalable system design — APIs, databases, cloud infrastructure, and CI/CD pipelines built to grow with you.",
+      },
+      {
+        title: "Product Evolution",
+        description: "Post-launch iteration driven by real usage data, performance optimization, and continuous feature releases.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does product engineering cost in Kenya?",
+        answer:
+          "Costs vary with scope and complexity. We typically scope fixed packages for MVPs and retainers for ongoing product work. Contact us for a tailored estimate.",
+      },
+      {
+        question: "How long does it take to build a product?",
+        answer:
+          "A focused MVP usually ships in 6-12 weeks depending on scope. Larger platforms are phased into milestones so you see working software early.",
+      },
+    ],
+    relatedProjectIds: ["shelnova-os", "career-ops"],
   },
   {
     index: "02",
@@ -327,6 +364,43 @@ export const servicesData = [
     description:
       "Fast, high-performance web platforms and SaaS dashboards built with Next.js, React, TypeScript, and modern backend infrastructure.",
     icon: "Globe",
+    slug: "web-applications",
+    seoTitle: "Web Application Development Kenya | ShelNova Labs",
+    metaDescription:
+      "Custom web applications and SaaS platforms built in Nairobi, Kenya with Next.js, React, Node.js and modern backend infrastructure.",
+    intro:
+      "ShelNova Labs builds custom web applications and SaaS platforms for businesses in Kenya and worldwide. From dashboards to marketplaces, we engineer fast, scalable, maintainable web products.",
+    whatWeBuild: [
+      {
+        title: "SaaS Platforms",
+        description: "Multi-tenant software products with subscription billing, role-based access, and real-time collaboration.",
+      },
+      {
+        title: "Business Dashboards",
+        description: "Operational cockpits that stream live analytics, usage metrics, and decision intelligence to leadership teams.",
+      },
+      {
+        title: "Portals & Marketplaces",
+        description: "Customer portals, vendor marketplaces, and two-sided platforms engineered for reliability and scale.",
+      },
+      {
+        title: "Custom Web Applications",
+        description: "Internal tools and line-of-business applications tailored to your organization's exact workflows.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What technologies do you use for web applications?",
+        answer:
+          "We build with Next.js, React, and TypeScript on the frontend, and Node.js, Laravel, or Go on the backend — with PostgreSQL, Redis, and cloud infrastructure on AWS or Vercel.",
+      },
+      {
+        question: "Do you build e-commerce websites?",
+        answer:
+          "Yes. We build custom e-commerce and marketplace platforms with secure payments, inventory management, and admin consoles tailored to your business.",
+      },
+    ],
+    relatedProjectIds: ["shelnova-os", "greennexus"],
   },
   {
     index: "03",
@@ -334,6 +408,43 @@ export const servicesData = [
     description:
       "Native-grade iOS and Android mobile apps engineered with Flutter and React Native for fluid 60 FPS user experiences.",
     icon: "Smartphone",
+    slug: "mobile-applications",
+    seoTitle: "Mobile App Development Kenya | ShelNova Labs",
+    metaDescription:
+      "Android and iOS app development in Nairobi, Kenya with Flutter. Business, consumer, e-commerce, and educational mobile applications.",
+    intro:
+      "ShelNova Labs designs and develops modern mobile applications for Android and iOS. We build apps for startups, businesses, and organizations using Flutter and user-focused design.",
+    whatWeBuild: [
+      {
+        title: "Business Applications",
+        description: "Operational apps that streamline field work, approvals, inventory, and internal communication.",
+      },
+      {
+        title: "Consumer Applications",
+        description: "Beautiful, engaging consumer apps with onboarding, push notifications, and social features.",
+      },
+      {
+        title: "E-commerce Applications",
+        description: "Mobile shopping experiences with secure payments, order tracking, and local delivery integration.",
+      },
+      {
+        title: "Educational & Community Applications",
+        description: "Learning, faith, and community platforms — including offline-first apps for low-connectivity regions.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you build for both Android and iOS?",
+        answer:
+          "Yes. We use Flutter to deliver a single codebase that runs natively on both Android and iOS, cutting time and cost in half.",
+      },
+      {
+        question: "Can the app work offline?",
+        answer:
+          "Yes. We build offline-first apps where needed, using local storage and sync engines — ideal for regions with unreliable connectivity.",
+      },
+    ],
+    relatedProjectIds: ["biblewise", "kadi-party", "jiranify", "gist-and-gain", "nyimbo-za-jeshi"],
   },
   {
     index: "04",
@@ -341,6 +452,43 @@ export const servicesData = [
     description:
       "Custom AI integrations, LLM workflows, RAG search pipelines, intelligent search engines, and smart automated agent systems.",
     icon: "Cpu",
+    slug: "ai-intelligent-systems",
+    seoTitle: "AI Development Company Kenya | ShelNova Labs",
+    metaDescription:
+      "Custom AI development in Nairobi, Kenya — LLM integrations, RAG pipelines, intelligent agents, and AI-powered product features.",
+    intro:
+      "ShelNova Labs builds AI-powered features and intelligent systems. From LLM integrations to RAG search pipelines, we engineer AI that is reliable, useful, and production-ready.",
+    whatWeBuild: [
+      {
+        title: "AI Coaches & Assistants",
+        description: "Conversational AI experiences grounded in your content with structured, verified answers.",
+      },
+      {
+        title: "RAG & Intelligent Search",
+        description: "Retrieval-augmented generation pipelines that search your data and answer with citations.",
+      },
+      {
+        title: "AI Agents & Automation",
+        description: "Multi-step automated workflows for document processing, job matching, and operations.",
+      },
+      {
+        title: "Predictive Analytics",
+        description: "ML models for forecasting, scoring, and classification applied to real business data.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What AI technologies do you use?",
+        answer:
+          "We work with OpenAI, Anthropic Claude, vector embeddings, RAG pipelines, and PyTorch — integrated into products with Node.js, Python, or Go backends.",
+      },
+      {
+        question: "Can you add AI to an existing product?",
+        answer:
+          "Yes. We integrate AI features into existing apps and platforms, adding assistants, search, and automation without a rewrite.",
+      },
+    ],
+    relatedProjectIds: ["biblewise", "gist-and-gain", "greennexus", "career-ops"],
   },
   {
     index: "05",
@@ -348,6 +496,38 @@ export const servicesData = [
     description:
       "Clean, intuitive, expensive-looking interface designs engineered around user ergonomics, speed, clarity, and conversion.",
     icon: "Layout",
+    slug: "uiux-product-design",
+    seoTitle: "UI/UX Design Company Kenya | ShelNova Labs",
+    metaDescription:
+      "Product design and UI/UX services in Nairobi, Kenya — interfaces engineered for clarity, speed, and conversion.",
+    intro:
+      "ShelNova Labs designs clean, intuitive interfaces engineered around user ergonomics, speed, clarity, and conversion. We turn complex workflows into simple, elegant experiences.",
+    whatWeBuild: [
+      {
+        title: "Product UX Strategy",
+        description: "User research, journeys, and information architecture that shape what you build.",
+      },
+      {
+        title: "UI Design & Design Systems",
+        description: "High-fidelity interfaces and reusable design systems that keep your product consistent as it scales.",
+      },
+      {
+        title: "Prototyping & Testing",
+        description: "Clickable prototypes validated with users before a single line of production code is written.",
+      },
+      {
+        title: "Design Engineering",
+        description: "Pixel-perfect implementation of designs in code, so what ships matches what was designed.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you offer design and development together?",
+        answer:
+          "Yes. Most projects include design and engineering in one workflow, which keeps the product consistent and speeds up delivery.",
+      },
+    ],
+    relatedProjectIds: ["kadi-party", "jiranify", "biblewise"],
   },
   {
     index: "06",
@@ -355,6 +535,38 @@ export const servicesData = [
     description:
       "Performance optimization, database refactoring, security audits, automated testing pipelines, and long-term product evolution.",
     icon: "ShieldCheck",
+    slug: "maintenance-scale",
+    seoTitle: "Software Maintenance & Support Kenya | ShelNova Labs",
+    metaDescription:
+      "Website and app maintenance, performance optimization, bug fixing, and security audits for businesses in Kenya and worldwide.",
+    intro:
+      "ShelNova Labs keeps existing products healthy. We diagnose and fix bugs, optimize performance, harden security, and evolve your software as your business grows.",
+    whatWeBuild: [
+      {
+        title: "Bug Fixing & Reliability",
+        description: "Rapid diagnosis and resolution of issues in your existing websites and applications.",
+      },
+      {
+        title: "Performance Optimization",
+        description: "Speed up slow pages, databases, and APIs with profiling, caching, and refactoring.",
+      },
+      {
+        title: "Security Audits & Hardening",
+        description: "Identify vulnerabilities, patch them, and add automated guardrails to your deployment.",
+      },
+      {
+        title: "Feature Evolution",
+        description: "Continuous product improvement — new features, integrations, and infrastructure upgrades.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you maintain software built by another team?",
+        answer:
+          "Yes. We take on existing codebases, audit their quality, fix bugs, and provide ongoing maintenance regardless of who built them.",
+      },
+    ],
+    relatedProjectIds: ["shelnova-os", "career-ops"],
   },
 ];
 

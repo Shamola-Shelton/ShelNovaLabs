@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Layers, Globe, Smartphone, Cpu, Layout, ShieldCheck, ArrowRight } from "lucide-react";
 import { servicesData } from "@/data/projectsData";
 
@@ -13,11 +14,7 @@ const iconMap = {
   ShieldCheck: ShieldCheck,
 };
 
-interface ServicesProps {
-  onOpenContact?: () => void;
-}
-
-export default function Services({ onOpenContact }: ServicesProps) {
+export default function Services() {
   return (
     <section id="services" className="py-24 px-6 md:px-10 bg-[#0D0F12]/50 border-y border-snl-border relative scroll-mt-20">
       <div className="max-w-7xl mx-auto">
@@ -40,42 +37,44 @@ export default function Services({ onOpenContact }: ServicesProps) {
           {servicesData.map((service, index) => {
             const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Layers;
             return (
-              <motion.button
+              <motion.div
                 key={service.index}
-                type="button"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                onClick={onOpenContact}
-                className="group cursor-pointer bg-[#111318] border border-snl-border hover:border-snl-accent/40 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-snl-accent/10 flex flex-col justify-between text-left"
               >
-                <div>
-                  {/* Card Header: Icon & Index Tag */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-snl-accent/10 border border-snl-accent/20 flex items-center justify-center text-snl-accent group-hover:bg-snl-accent group-hover:text-white transition-colors duration-300">
-                      <IconComponent className="w-6 h-6" />
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="group block cursor-pointer bg-[#111318] border border-snl-border hover:border-snl-accent/40 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-snl-accent/10 flex flex-col justify-between text-left"
+                >
+                  <div>
+                    {/* Card Header: Icon & Index Tag */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-snl-accent/10 border border-snl-accent/20 flex items-center justify-center text-snl-accent group-hover:bg-snl-accent group-hover:text-white transition-colors duration-300">
+                        <IconComponent className="w-6 h-6" />
+                      </div>
+                      <span className="font-mono text-xs font-bold text-snl-subtle group-hover:text-snl-accent transition-colors">
+                        {service.index}
+                      </span>
                     </div>
-                    <span className="font-mono text-xs font-bold text-snl-subtle group-hover:text-snl-accent transition-colors">
-                      {service.index}
-                    </span>
+
+                    {/* Title & Description */}
+                    <h3 className="font-heading text-xl font-bold text-snl-text mb-3 group-hover:text-snl-accent transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-snl-muted text-sm leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="font-heading text-xl font-bold text-snl-text mb-3 group-hover:text-snl-accent transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-snl-muted text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-
-                {/* Bottom Action Arrow */}
-                <div className="mt-8 pt-4 border-t border-snl-border/60 flex items-center justify-between text-xs font-mono text-snl-subtle group-hover:text-snl-accent transition-colors">
-                  <span>Inquire service</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </div>
-              </motion.button>
+                  {/* Bottom Action Arrow */}
+                  <div className="mt-8 pt-4 border-t border-snl-border/60 flex items-center justify-between text-xs font-mono text-snl-subtle group-hover:text-snl-accent transition-colors">
+                    <span>Learn more</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </Link>
+              </motion.div>
             );
           })}
         </div>

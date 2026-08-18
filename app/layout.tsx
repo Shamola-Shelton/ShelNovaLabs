@@ -24,9 +24,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ShelNova Labs — Software & Product Engineering Studio",
+  title: "ShelNova Labs | Web & Mobile App Development in Kenya",
   description:
-    "ShelNova Labs is a digital product engineering studio building mobile applications, scalable web platforms, SaaS systems, and AI-powered solutions for ambitious businesses.",
+    "ShelNova Labs is a software development company in Nairobi, Kenya building modern websites, web applications and mobile apps for businesses and organizations in Kenya and worldwide.",
   keywords: [
     "ShelNova Labs",
     "Product Engineering Studio",
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
-    title: "ShelNova Labs — Software & Product Engineering Studio",
+    title: "ShelNova Labs | Web & Mobile App Development in Kenya",
     description:
-      "We build digital products that move businesses forward. Mobile apps, web applications, SaaS platforms, and AI systems engineered for impact.",
+      "ShelNova Labs builds modern websites, web applications and mobile apps for businesses and organizations in Kenya and worldwide.",
     url: "https://shelnovalabs.com",
     siteName: "ShelNova Labs",
     type: "website",
@@ -71,9 +71,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ShelNova Labs — Software & Product Engineering Studio",
+    title: "ShelNova Labs | Web & Mobile App Development in Kenya",
     description:
-      "We build digital products that move businesses forward. Mobile apps, web applications, SaaS platforms, and AI systems.",
+      "ShelNova Labs builds modern websites, web applications and mobile apps for businesses in Kenya and worldwide.",
     creator: "@shelnovalabs",
     images: ["https://shelnovalabs.com/og.png"],
   },
@@ -93,6 +93,15 @@ export default function RootLayout({
     name: "ShelNova Labs",
     url: "https://shelnovalabs.com",
     logo: "https://shelnovalabs.com/og.png",
+    foundingDate: "2023",
+    description:
+      "Software development company in Nairobi, Kenya building modern websites, web applications, mobile apps, and AI-powered software.",
+    areaServed: "KE",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Nairobi",
+      addressCountry: "KE",
+    },
     sameAs: [
       "https://github.com/shelnovalabs",
       "https://www.linkedin.com/in/Shamola-Shelton",
@@ -105,13 +114,6 @@ export default function RootLayout({
       areaServed: "Worldwide",
       availableLanguage: "English",
     },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Nairobi",
-      addressCountry: "KE",
-    },
-    description:
-      "Digital product engineering studio building mobile apps, web platforms, SaaS systems, and AI-powered software.",
   };
 
   return (

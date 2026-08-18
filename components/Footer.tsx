@@ -28,7 +28,7 @@ export default function Footer() {
             </Link>
             <p className="text-sm text-snl-muted max-w-sm leading-relaxed">
               Building digital products for ambitious businesses — websites, mobile applications,
-              platforms, and AI-powered software systems.
+              platforms, and AI-powered software systems from Nairobi, Kenya.
             </p>
           </div>
 
@@ -38,12 +38,11 @@ export default function Footer() {
               Navigation
             </h4>
             <ul className="space-y-2 text-sm font-medium">
-              {[
-                { label: "Selected Work", href: "/#work" },
-                { label: "Our Services", href: "/#services" },
+              {[                 { label: "Our Work", href: "/projects" },
+                { label: "Our Services", href: "/services" },
                 { label: "Our Process", href: "/#process" },
                 { label: "About Studio", href: "/#about" },
-                { label: "Contact Us", href: "/#contact" },
+                { label: "Contact Us", href: "mailto:hello@shelnovalabs.com" },
               ].map((item) => (
                 <li key={item.label}>
                   <a href={item.href} className="hover:text-snl-text transition-colors">

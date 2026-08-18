@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { X, ExternalLink, ArrowLeft, CheckCircle2, ShieldAlert, Image as ImageIcon } from "lucide-react";
+import Link from "next/link";
+import { X, ExternalLink, ArrowLeft, ArrowUpRight, CheckCircle2, ShieldAlert, Image as ImageIcon } from "lucide-react";
 import { CaseStudy } from "@/data/projectsData";
 
 interface CaseStudyModalProps {
@@ -245,6 +246,17 @@ export default function CaseStudyModal({
               </button>
             </div>
           )}
+
+          {/* View full case study */}
+          <div className="pt-4 border-t border-snl-border">
+            <Link
+              href={`/projects/${project.id}`}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-snl-accent hover:text-snl-accent-hover transition-colors"
+            >
+              View Full Case Study
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

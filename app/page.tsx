@@ -36,7 +36,7 @@ export default function Home() {
         <SelectedWork onOpenContact={handleOpenContact} />
 
         {/* 02 / Services: What We Build */}
-        <Services onOpenContact={handleOpenContact} />
+        <Services />
 
         {/* 03 / Process: How We Work */}
         <HowWeWork onOpenContact={handleOpenContact} />
