@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { projectsData, servicesData } from "@/data/projectsData";
+import { insightsArticles } from "@/data/insightsData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://shelnovalabs.com";
@@ -19,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/projects`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/insights`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
@@ -63,5 +70,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...servicePages, ...projectPages];
+  const insightPages: MetadataRoute.Sitemap = insightsArticles.map((article) => ({
+    url: `${baseUrl}/insights/${article.slug}`,
+    lastModified: new Date(article.publishedDate),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...servicePages, ...projectPages, ...insightPages];
 }

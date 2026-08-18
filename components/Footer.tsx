@@ -38,8 +38,10 @@ export default function Footer() {
               Navigation
             </h4>
             <ul className="space-y-2 text-sm font-medium">
-              {[                 { label: "Our Work", href: "/projects" },
+              {[
+                { label: "Our Work", href: "/projects" },
                 { label: "Our Services", href: "/services" },
+                { label: "Insights", href: "/insights" },
                 { label: "About Studio", href: "/about" },
                 { label: "Our Process", href: "/#process" },
                 { label: "Contact Us", href: "/contact" },
