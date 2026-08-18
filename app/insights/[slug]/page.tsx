@@ -22,6 +22,7 @@ import ArticleMobileCostContent from "@/components/insights/ArticleMobileCostCon
 import ArticleWebsiteVsWebAppContent from "@/components/insights/ArticleWebsiteVsWebAppContent";
 import ArticleBibleWiseCaseStudyContent from "@/components/insights/ArticleBibleWiseCaseStudyContent";
 import ArticleChooseCompanyContent from "@/components/insights/ArticleChooseCompanyContent";
+import ArticleFlutterVsNativeContent from "@/components/insights/ArticleFlutterVsNativeContent";
 
 export function generateStaticParams() {
   return insightsArticles.map((article) => ({ slug: article.slug }));
@@ -255,6 +256,9 @@ export default async function InsightArticlePage({
               )}
               {article.slug === "choose-software-development-company-kenya" && (
                 <ArticleChooseCompanyContent />
+              )}
+              {article.slug === "flutter-vs-native-app-development" && (
+                <ArticleFlutterVsNativeContent />
               )}
 
               {/* Section: Frequently Asked Questions */}
