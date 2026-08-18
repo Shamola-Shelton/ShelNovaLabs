@@ -21,6 +21,7 @@ import ArticleWebsiteCostContent from "@/components/insights/ArticleWebsiteCostC
 import ArticleMobileCostContent from "@/components/insights/ArticleMobileCostContent";
 import ArticleWebsiteVsWebAppContent from "@/components/insights/ArticleWebsiteVsWebAppContent";
 import ArticleBibleWiseCaseStudyContent from "@/components/insights/ArticleBibleWiseCaseStudyContent";
+import ArticleChooseCompanyContent from "@/components/insights/ArticleChooseCompanyContent";
 
 export function generateStaticParams() {
   return insightsArticles.map((article) => ({ slug: article.slug }));
@@ -251,6 +252,9 @@ export default async function InsightArticlePage({
               )}
               {article.slug === "how-we-built-biblewise" && (
                 <ArticleBibleWiseCaseStudyContent />
+              )}
+              {article.slug === "choose-software-development-company-kenya" && (
+                <ArticleChooseCompanyContent />
               )}
 
               {/* Section: Frequently Asked Questions */}

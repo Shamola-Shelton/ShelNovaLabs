@@ -283,4 +283,59 @@ export const insightsArticles: InsightArticle[] = [
     relatedServiceSlugs: ["ai-intelligent-systems", "mobile-applications", "product-engineering"],
     relatedProjectIds: ["biblewise", "gist-and-gain", "kadi-party"],
   },
+  {
+    slug: "choose-software-development-company-kenya",
+    title: "How to Choose a Software Development Company in Kenya (2026 Buyer's Guide)",
+    seoTitle: "How to Choose a Software Development Company in Kenya | ShelNova Labs",
+    metaDescription:
+      "A practical buyer's guide for choosing a software development company in Kenya in 2026. Avoid lowball traps, evaluate technical competence, and protect your IP.",
+    category: "Business",
+    readTime: "8 min read",
+    publishedDate: "2026-08-19",
+    displayDate: "Aug 2026",
+    author: authors.shelton,
+    lead:
+      "Hiring the wrong software agency can cost your business months of delays and millions in wasted budget. Here is how to evaluate software development companies in Kenya, ask the right technical questions, and protect your intellectual property.",
+    heroImage: "/images/insights/choose-agency-kenya.jpg",
+    isFeatured: false,
+    toc: [
+      { id: "introduction", title: "Introduction" },
+      { id: "the-risks", title: "The Hidden Costs of Choosing the Wrong Team" },
+      { id: "key-evaluation-criteria", title: "6 Critical Criteria to Evaluate a Software Company" },
+      { id: "red-flags-to-watch", title: "Red Flags to Watch Out For" },
+      { id: "engagement-models", title: "Pricing Models: Fixed-Price vs. Dedicated Retainers" },
+      { id: "what-to-ask-in-interviews", title: "5 Essential Questions to Ask Before Signing" },
+      { id: "why-choose-shelnova", title: "Why Businesses Choose ShelNova Labs" },
+      { id: "frequently-asked-questions", title: "Frequently Asked Questions" },
+    ],
+    faqs: [
+      {
+        question: "How do I verify a software company's previous work in Kenya?",
+        answer:
+          "Ask for live production URLs, App Store links, and past client references. Test their live applications on both Android and iOS devices to verify speed, UI ergonomics, and error handling.",
+      },
+      {
+        question: "Who owns the source code and intellectual property upon delivery?",
+        answer:
+          "Your contract should explicitly state that 100% of the source code, repositories, design assets, and cloud deployment credentials transfer to your business upon milestone payment.",
+      },
+      {
+        question: "What is the difference between a freelancer and an engineering studio?",
+        answer:
+          "Freelancers are cost-effective for minor tweaks but carry high single-point-of-failure risks. A studio provides dedicated UI/UX designers, backend architects, QA engineers, and post-launch SLAs.",
+      },
+      {
+        question: "How do software agencies in Kenya structure payment milestones?",
+        answer:
+          "Standard industry practice uses phased milestone payments (e.g. 30% kickoff, 30% design & prototype approval, 40% testing & production deployment), ensuring you only pay for completed, working software.",
+      },
+      {
+        question: "What warranty or bug-fixing period should be included?",
+        answer:
+          "Professional software studios offer a 30 to 60-day post-launch warranty period to resolve unexpected edge cases at no additional cost.",
+      },
+    ],
+    relatedServiceSlugs: ["product-engineering", "web-applications", "maintenance-scale"],
+    relatedProjectIds: ["shelnova-os", "biblewise", "kadi-party"],
+  },
 ];
