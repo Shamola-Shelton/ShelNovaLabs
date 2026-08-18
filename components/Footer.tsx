@@ -40,9 +40,9 @@ export default function Footer() {
             <ul className="space-y-2 text-sm font-medium">
               {[                 { label: "Our Work", href: "/projects" },
                 { label: "Our Services", href: "/services" },
+                { label: "About Studio", href: "/about" },
                 { label: "Our Process", href: "/#process" },
-                { label: "About Studio", href: "/#about" },
-                { label: "Contact Us", href: "mailto:hello@shelnovalabs.com" },
+                { label: "Contact Us", href: "/contact" },
               ].map((item) => (
                 <li key={item.label}>
                   <a href={item.href} className="hover:text-snl-text transition-colors">

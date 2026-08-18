@@ -22,7 +22,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
   const navItems = [
     { label: "Work", href: "/projects" },
     { label: "Services", href: "/services" },
-    { label: "About", href: "/#about" },
+    { label: "About", href: "/about" },
     { label: "Process", href: "/#process" },
   ];
 
