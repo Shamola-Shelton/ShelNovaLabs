@@ -229,4 +229,58 @@ export const insightsArticles: InsightArticle[] = [
     relatedServiceSlugs: ["web-applications", "product-engineering", "maintenance-scale"],
     relatedProjectIds: ["shelnova-os", "greennexus", "career-ops"],
   },
+  {
+    slug: "how-we-built-biblewise",
+    title: "Case Study: How We Built BibleWise — AI Scripture Coach for 150K+ Conversations",
+    seoTitle: "How We Built BibleWise (AI Scripture Coach) | ShelNova Labs Case Study",
+    metaDescription:
+      "A deep-dive technical case study into engineering BibleWise: combining Flutter, RAG vector retrieval, and serverless Firestore sync to serve 150,000+ AI conversations.",
+    category: "Case Studies",
+    readTime: "10 min read",
+    publishedDate: "2026-08-19",
+    displayDate: "Aug 2026",
+    author: authors.shelton,
+    lead:
+      "How ShelNova Labs designed, architected, and scaled an AI-powered scripture study platform to 150K+ conversations with a 4.9★ rating on the Google Play Store.",
+    heroImage: "/images/insights/biblewise-case-study.jpg",
+    isFeatured: false,
+    toc: [
+      { id: "the-vision", title: "The Vision & The Problem" },
+      { id: "product-architecture", title: "System Architecture & Technology Stack" },
+      { id: "rag-theological-grounding", title: "AI Engineering: RAG & Context Routing" },
+      { id: "flutter-mobile-performance", title: "Mobile UI/UX: 60 FPS Flutter & Offline Resilience" },
+      { id: "scaling-lessons", title: "Real-World Metrics & Growth Results" },
+      { id: "key-takeaways", title: "Key Takeaways for Product Founders" },
+      { id: "frequently-asked-questions", title: "Frequently Asked Questions" },
+    ],
+    faqs: [
+      {
+        question: "How does BibleWise prevent AI hallucinations during scripture discussions?",
+        answer:
+          "BibleWise utilizes a deterministic Retrieval-Augmented Generation (RAG) pipeline with semantic vector chunking and strict prompt guardrails. Every answer is grounded directly in verified biblical texts with precise verse citations.",
+      },
+      {
+        question: "What backend technologies power BibleWise's real-time responses?",
+        answer:
+          "We use serverless Firebase Cloud Functions, Firestore real-time streaming, and LLM APIs (OpenAI & Anthropic Claude) optimized for sub-400ms token streaming latency.",
+      },
+      {
+        question: "How does the mobile app perform in low-connectivity areas?",
+        answer:
+          "All 1,189 chapter summaries, outlines, and cached conversation threads are stored locally in Hive/SQLite, enabling seamless offline reading and fast startup times.",
+      },
+      {
+        question: "What was the development timeline from concept to Google Play release?",
+        answer:
+          "The initial MVP was architected, designed in Figma, engineered in Flutter, tested, and published to the Google Play Store in under 8 weeks.",
+      },
+      {
+        question: "Can ShelNova Labs build a custom AI assistant for our business or industry?",
+        answer:
+          "Yes. We specialize in designing and deploying custom RAG pipelines, domain-specific AI assistants, and enterprise knowledge agents for businesses in East Africa and globally.",
+      },
+    ],
+    relatedServiceSlugs: ["ai-intelligent-systems", "mobile-applications", "product-engineering"],
+    relatedProjectIds: ["biblewise", "gist-and-gain", "kadi-party"],
+  },
 ];

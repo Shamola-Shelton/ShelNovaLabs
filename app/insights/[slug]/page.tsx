@@ -20,6 +20,7 @@ import { servicesData, projectsData } from "@/data/projectsData";
 import ArticleWebsiteCostContent from "@/components/insights/ArticleWebsiteCostContent";
 import ArticleMobileCostContent from "@/components/insights/ArticleMobileCostContent";
 import ArticleWebsiteVsWebAppContent from "@/components/insights/ArticleWebsiteVsWebAppContent";
+import ArticleBibleWiseCaseStudyContent from "@/components/insights/ArticleBibleWiseCaseStudyContent";
 
 export function generateStaticParams() {
   return insightsArticles.map((article) => ({ slug: article.slug }));
@@ -247,6 +248,9 @@ export default async function InsightArticlePage({
               )}
               {article.slug === "website-vs-web-app-difference" && (
                 <ArticleWebsiteVsWebAppContent />
+              )}
+              {article.slug === "how-we-built-biblewise" && (
+                <ArticleBibleWiseCaseStudyContent />
               )}
 
               {/* Section: Frequently Asked Questions */}
