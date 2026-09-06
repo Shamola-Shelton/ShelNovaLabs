@@ -45,6 +45,39 @@ export default function PrivacyPolicy() {
 
         <div className="space-y-10 text-snl-muted leading-relaxed">
 
+          <section className="bg-snl-card border border-snl-border rounded-xl p-6 mb-8">
+            <h2 className="font-heading text-lg font-bold text-snl-text mb-3">
+              App-Specific Privacy Policies
+            </h2>
+            <p className="text-sm text-snl-muted mb-4">
+              For detailed data handling, account deletion, and safety disclosures for our individual mobile applications, please select a product:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link
+                href="/sancta/privacy"
+                className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
+              >
+                <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">
+                  Sancta: Catholic Prayer &amp; Bible →
+                </p>
+                <p className="text-xs text-snl-muted mt-1">
+                  Privacy policy, data collection, and account deletion procedures for Sancta.
+                </p>
+              </Link>
+              <Link
+                href="/privacy/biblewise"
+                className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
+              >
+                <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">
+                  BibleWise: AI Bible Study →
+                </p>
+                <p className="text-xs text-snl-muted mt-1">
+                  Privacy policy, AI coach data, and user rights for BibleWise.
+                </p>
+              </Link>
+            </div>
+          </section>
+
           <section>
             <h2 className="font-heading text-xl font-bold text-snl-text mb-3">
               1. Introduction
@@ -55,7 +88,7 @@ export default function PrivacyPolicy() {
               Policy explains what information we collect, how we use it, and
               your rights in relation to it. It applies to this website
               (shelnovalabs.com) and all products developed by ShelNova Labs,
-              including Kadi Classic, JiraniFy, and Gist &amp; Gain.
+              including Sancta, BibleWise, Kadi Classic, JiraniFy, and Gist &amp; Gain.
             </p>
           </section>
 

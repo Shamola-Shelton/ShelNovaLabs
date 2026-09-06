@@ -27,8 +27,37 @@ export interface CaseStudy {
 
 export const projectsData: CaseStudy[] = [
   {
-    id: "biblewise",
+    id: "sancta",
     index: "01",
+    name: "Sancta",
+    tagline: "Catholic Prayer & Bible App — Daily Rosary, Scripture & Liturgical Celebrations.",
+    category: "mobile",
+    tags: ["Mobile App", "Faith & Culture", "Catholic Devotions", "Offline First"],
+    status: "live",
+    statusLabel: "Live on Play Store",
+    accentColor: "#6B21A8",
+    summary:
+      "A Catholic prayer, Holy Rosary, and Bible companion application featuring liturgical calendar celebration stories, daily scripture readings, offline audio prayers, intention tracking, and prayer streaks.",
+    challenge:
+      "Catholic believers seek a unified, beautifully designed digital companion for daily prayer, Rosary meditations, and liturgical saint stories that operates seamlessly offline.",
+    approach:
+      "Engineered an offline-first Flutter application with a curated General Roman Calendar story engine, audio Rosary decade player, offline Bible reader, and serverless Firebase synchronization for bookmarks and prayer progress.",
+    result:
+      "Published on mobile app stores providing thousands of faithful with a daily Catholic prayer sanctuary, complete liturgical calendar, and offline audio Rosary.",
+    metrics: [
+      { label: "Liturgical Celebrations", value: "218+" },
+      { label: "Offline Reliability", value: "100%" },
+      { label: "App Rating", value: "5.0 ★" },
+    ],
+    storeLinks: {
+      playStore: "https://play.google.com/store/apps/details?id=com.shelnovalabs.sancta",
+    },
+    mockupType: "mobile",
+    primaryBadge: "Catholic Prayer & Liturgy",
+  },
+  {
+    id: "biblewise",
+    index: "02",
     name: "BibleWise",
     tagline: "Ask. Learn. Grow in Faith. Get instant guidance from your AI Bible Coach.",
     category: "ai",
