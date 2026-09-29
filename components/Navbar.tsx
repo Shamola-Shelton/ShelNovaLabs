@@ -24,7 +24,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
     { label: "Services", href: "/services" },
     { label: "Insights", href: "/insights" },
     { label: "About", href: "/about" },
-    { label: "Process", href: "/#process" },
+
   ];
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#08090B]/85 backdrop-blur-md border-b border-snl-border shadow-xl py-3.5"
+          ? "bg-[#08090B]/75 backdrop-blur-xl border-b border-snl-border/70 shadow-lg py-3.5"
           : "bg-transparent py-5"
       }`}
     >
@@ -64,7 +64,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center gap-9">
+        <div className="hidden md:flex items-center gap-7 rounded-full border border-white/[0.06] bg-white/[0.025] px-6 py-3 backdrop-blur">
           {navItems.map(({ label, href }) => (
             <a
               key={label}
@@ -88,7 +88,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
 
           {/* Mobile Menu Toggle */}
           <button
-            aria-label="Toggle menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             onClick={() => setMenuOpen(!menuOpen)}

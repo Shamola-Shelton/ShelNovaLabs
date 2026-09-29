@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Search, Compass, Code, Rocket, TrendingUp, ArrowRight } from "lucide-react";
 import { workflowSteps } from "@/data/projectsData";
 
@@ -11,6 +11,7 @@ interface HowWeWorkProps {
 }
 
 export default function HowWeWork({ onOpenContact }: HowWeWorkProps) {
+  const reduceMotion = useReducedMotion();
   return (
     <section id="process" className="py-24 px-6 md:px-10 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto">
@@ -34,10 +35,10 @@ export default function HowWeWork({ onOpenContact }: HowWeWorkProps) {
             return (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 20 }}
+                initial={reduceMotion ? false : { opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : idx * 0.08 }}
                 className="bg-[#0D0F12] border border-snl-border hover:border-snl-accent/40 p-6 rounded-2xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>

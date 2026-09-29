@@ -40,7 +40,7 @@ export default function AboutSection() {
           {/* Left Column: Narrative */}
           <div className="lg:col-span-7 space-y-6">
             <span className="text-xs font-mono tracking-widest text-snl-accent uppercase block">
-              05 / ABOUT SHELNOVA LABS
+              04 / ABOUT SHELNOVA LABS
             </span>
             <h2 className="font-heading text-4xl sm:text-5xl font-bold text-snl-text tracking-tight">
               About ShelNova Labs

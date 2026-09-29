@@ -1,82 +1,51 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import { Layers, Globe, Smartphone, Cpu, Layout, ShieldCheck, ArrowRight } from "lucide-react";
-import { servicesData } from "@/data/projectsData";
+import { ArrowRight, Code2, Cpu, Layers, Smartphone } from "lucide-react";
 
-const iconMap = {
-  Layers: Layers,
-  Globe: Globe,
-  Smartphone: Smartphone,
-  Cpu: Cpu,
-  Layout: Layout,
-  ShieldCheck: ShieldCheck,
-};
+const capabilities = [
+  { title: "Product engineering", description: "A clear path from early idea to a dependable product in the hands of real users.", href: "/services/product-engineering", icon: Layers },
+  { title: "Web platforms", description: "Fast, thoughtful websites, customer portals, and SaaS platforms built to grow.", href: "/services/web-applications", icon: Code2 },
+  { title: "Mobile products", description: "Useful iOS and Android experiences designed for the way people actually live.", href: "/services/mobile-applications", icon: Smartphone },
+  { title: "AI systems", description: "Practical assistants, search, and automation that make complex work feel simpler.", href: "/services/ai-intelligent-systems", icon: Cpu },
+];
 
 export default function Services() {
+  const reduceMotion = useReducedMotion();
   return (
-    <section id="services" className="py-24 px-6 md:px-10 bg-[#0D0F12]/50 border-y border-snl-border relative scroll-mt-20">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono tracking-widest text-snl-accent uppercase block mb-3">
-            02 / WHAT WE BUILD
-          </span>
-          <h2 className="font-heading text-4xl sm:text-5xl font-bold text-snl-text tracking-tight">
-            Our Services
-          </h2>
-          <p className="text-snl-muted text-base sm:text-lg mt-3 leading-relaxed">
-            End-to-end technology solutions for modern businesses. We combine deep technical expertise
-            with a product-first mindset.
-          </p>
+    <section id="services" className="relative scroll-mt-20 border-y border-snl-border/80 bg-white/[0.015] px-6 py-24 md:px-10 md:py-28">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 grid gap-5 md:grid-cols-2 md:items-end">
+          <div>
+            <span className="mb-3 block text-xs font-mono uppercase tracking-[0.18em] text-snl-accent">02 / What we build</span>
+            <h2 className="font-heading text-4xl font-semibold tracking-tight text-snl-text sm:text-5xl">One team. The full journey.</h2>
+          </div>
+          <div className="md:justify-self-end md:text-right">
+            <p className="max-w-xl text-base leading-7 text-snl-muted md:ml-auto">
+              Product strategy, design, engineering, and the care that helps good software keep getting better.
+            </p>
+            <Link href="/services" className="group mt-4 inline-flex items-center gap-2 text-sm font-medium text-snl-text transition-colors hover:text-snl-accent">
+              Explore all services <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
 
-        {/* 6 Grid Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {servicesData.map((service, index) => {
-            const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Layers;
-            return (
-              <motion.div
-                key={service.index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-              >
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="group block cursor-pointer bg-[#111318] border border-snl-border hover:border-snl-accent/40 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-snl-accent/10 flex flex-col justify-between text-left"
-                >
-                  <div>
-                    {/* Card Header: Icon & Index Tag */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-snl-accent/10 border border-snl-accent/20 flex items-center justify-center text-snl-accent group-hover:bg-snl-accent group-hover:text-white transition-colors duration-300">
-                        <IconComponent className="w-6 h-6" />
-                      </div>
-                      <span className="font-mono text-xs font-bold text-snl-subtle group-hover:text-snl-accent transition-colors">
-                        {service.index}
-                      </span>
-                    </div>
-
-                    {/* Title & Description */}
-                    <h3 className="font-heading text-xl font-bold text-snl-text mb-3 group-hover:text-snl-accent transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-snl-muted text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Bottom Action Arrow */}
-                  <div className="mt-8 pt-4 border-t border-snl-border/60 flex items-center justify-between text-xs font-mono text-snl-subtle group-hover:text-snl-accent transition-colors">
-                    <span>Learn more</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </div>
-                </Link>
-              </motion.div>
-            );
-          })}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {capabilities.map(({ title, description, href, icon: Icon }, index) => (
+            <motion.div key={title} initial={reduceMotion ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: reduceMotion ? 0 : 0.45, delay: reduceMotion ? 0 : index * 0.07 }}>
+              <Link href={href} className="group flex h-full min-h-56 flex-col rounded-2xl border border-snl-border bg-snl-card/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-snl-accent/40 hover:bg-snl-card sm:p-7">
+                <span className="mb-8 grid h-11 w-11 place-items-center rounded-xl border border-snl-accent/20 bg-snl-accent/10 text-snl-accent transition-colors group-hover:bg-snl-accent group-hover:text-white">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <h3 className="font-heading text-lg font-semibold text-snl-text">{title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-6 text-snl-muted">{description}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-xs font-medium text-snl-subtle transition-colors group-hover:text-snl-accent">
+                  Learn more <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

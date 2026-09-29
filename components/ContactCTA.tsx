@@ -132,7 +132,7 @@ export default function ContactCTA({ isOpen: externalIsOpen, onClose: externalOn
 
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-8">
           <span className="text-xs font-mono tracking-widest text-snl-accent uppercase block">
-            06 / GET IN TOUCH
+            05 / GET IN TOUCH
           </span>
 
           <h2 className="font-heading text-4xl sm:text-6xl font-bold text-snl-text tracking-tight">
