@@ -52,7 +52,7 @@ export default function PrivacyPolicy() {
             <p className="text-sm text-snl-muted mb-4">
               For detailed data handling, account deletion, and safety disclosures for our individual mobile applications, please select a product:
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <Link
                 href="/sancta/privacy"
                 className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
@@ -84,6 +84,17 @@ export default function PrivacyPolicy() {
                 </p>
                 <p className="text-xs text-snl-muted mt-1">
                   Privacy policy, AdMob disclosures, and leaderboard data handling for WordNova.
+                </p>
+              </Link>
+              <Link
+                href="/wash-rush/privacy"
+                className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
+              >
+                <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">
+                  Wash Rush: Pressure Panic →
+                </p>
+                <p className="text-xs text-snl-muted mt-1">
+                  Privacy policy, AdMob advertising disclosures, and terms for Wash Rush: Pressure Panic.
                 </p>
               </Link>
             </div>
