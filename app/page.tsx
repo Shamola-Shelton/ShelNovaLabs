@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Code2, Users, Mail, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Code2, Users, Mail, MapPin, Sparkles, MessageCircle } from "lucide-react";
+import OrbitSkills, { AmbientEffects } from "@/components/home/OrbitSkills";
 import { projectsData } from "@/data/projectsData";
 import s from "./home.module.css";
 
@@ -21,7 +22,7 @@ export default function Home() {
   return (
     <div className={s.page}>
       <header className={s.nav}>
-        <nav aria-label="Main navigation"><Link href="/" aria-current="page">Home</Link><Link href="/projects">Projects</Link><Link href="/insights">Writing</Link><a href="#connect">Contact</a></nav>
+        <nav aria-label="Main navigation"><Link href="/" aria-current="page">Home</Link><Link href="/projects">Projects</Link><Link href="/insights">Writing</Link><a href="#skills-title">Skills</a><a href="#connect">Contact</a></nav>
         <a href="https://github.com/shelnovalabs" aria-label="ShelNovaLabs on GitHub"><Code2 size={17} /></a>
       </header>
       <main id="main" className={s.main}>
@@ -33,11 +34,14 @@ export default function Home() {
           </div>
           <div className={s.bio}><p>Hey, I’m Shelton — the founder of <a href="#studio">ShelNovaLabs</a>.</p><p>I turn ideas into <strong>web, mobile, and AI products</strong> that help people learn, connect, and get things done.</p><p>This is where I share what I’m building, what I’m learning, and the work behind it.</p></div>
           <div className={s.socials}>
-            <a href="https://www.linkedin.com/in/Shamola-Shelton" target="_blank" rel="noopener noreferrer"><Users size={21} /><span><strong>Let’s connect</strong><small>Find me on LinkedIn</small></span><ArrowUpRight size={17} /></a>
-            <a href="https://github.com/shelnovalabs" target="_blank" rel="noopener noreferrer"><Code2 size={21} /><span><strong>Behind the builds</strong><small>ShelNovaLabs on GitHub</small></span><ArrowUpRight size={17} /></a>
+            <a href="https://x.com/_shamolah_" target="_blank" rel="noopener noreferrer" aria-label="Follow Shelton on X"><span className={s.socialMark}>𝕏</span><span><strong>X</strong><small>@_shamolah_</small></span><ArrowUpRight size={17} /></a>
+            <a href="https://www.linkedin.com/in/shelton-shamola-b83bb4184/" target="_blank" rel="noopener noreferrer"><Users size={20} /><span><strong>LinkedIn</strong><small>Shelton Shamola</small></span><ArrowUpRight size={17} /></a>
+            <a href="https://github.com/Shamola-Shelton" target="_blank" rel="noopener noreferrer"><Code2 size={20} /><span><strong>GitHub</strong><small>Shamola-Shelton</small></span><ArrowUpRight size={17} /></a>
+            <a href="https://wa.me/254707605641" target="_blank" rel="noopener noreferrer"><MessageCircle size={20} /><span><strong>WhatsApp</strong><small>+254 707 605 641</small></span><ArrowUpRight size={17} /></a>
           </div>
           <div className={s.actions}><a className={s.primary} href="mailto:hello@shelnovalabs.com"><Mail size={15} /> Say hello</a><a className={s.secondary} href="#projects">Explore my work <ArrowRight size={15} /></a></div>
         </section>
+        <OrbitSkills />
         <section id="studio" className={s.section}>
           <Heading number="01">/about</Heading>
           <div className={s.studio}><div className={s.studioLabel}><Image src="/images/logo.png" alt="" width={32} height={28} /> THE STUDIO I’M BUILDING</div><h3>One curious mind.<br /><span>A whole world of possibilities.</span></h3><p>ShelNovaLabs is where I bring ideas to life. From a familiar Kenyan card game to tools for studying Scripture and running a business, the goal is simple: make useful things, and make them thoughtfully.</p><Link href="/about">More about ShelNovaLabs <ArrowUpRight size={15} /></Link></div>
@@ -55,8 +59,13 @@ export default function Home() {
         </section>
         <section id="connect" className={s.contact}><span className={s.eyebrow}>GOOD THINGS START WITH A CONVERSATION</span><h2>Let’s make something <span className={s.accent}>matter.</span></h2><p>Have an idea, a question, or just want to say hi?<br />I’d love to hear from you.</p><a className={s.primary} href="mailto:hello@shelnovalabs.com"><Mail size={16} /> Get in touch <ArrowUpRight size={15} /></a><a className={s.email} href="mailto:hello@shelnovalabs.com">hello@shelnovalabs.com</a></section>
       </main>
+      <AmbientEffects />
       <footer className={s.footer}><span>Shelton Shamola <span className={s.accent}>✳</span></span><span>Built with intention, in Nairobi.</span><Link href="/privacy">Privacy</Link><a href="#main">Back to top ↑</a></footer>
     </div>
   );
 }
+
+
+
+
 
