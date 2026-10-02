@@ -67,19 +67,19 @@ export default function OrbitSkills() {
   }, []);
   const featured = spotlightGroups[activeGroup];
   const satellites = skills.filter(skill => !featured.includes(skill));
-  const rings = [satellites.filter((_, index) => index % 2 === 0), satellites.filter((_, index) => index % 2 === 1)];
+  const rings = [0, 1, 2, 3].map(ring => satellites.filter((_, index) => index % 4 === ring));
 
   return (
     <section className={s.section} aria-labelledby="skills-title">
       <div className={s.titleRow}><h2 id="skills-title">My skills</h2><span>50 skills · always learning</span></div>
       <div className={s.orbitWindow}>
         <div className={s.orbitStage}>
-          <div className={`${s.orbit} ${s.orbitInner}`} role="list" aria-label="More skills circling the spotlight">
-            {rings[0].map((skill, index) => <SkillOrbitItem key={skill.icon} skill={skill} index={index} total={rings[0].length} />)}
-          </div>
-          <div className={`${s.orbit} ${s.orbitOuter}`} role="list" aria-label="More skills circling the spotlight">
-            {rings[1].map((skill, index) => <SkillOrbitItem key={skill.icon} skill={skill} index={index} total={rings[1].length} outer />)}
-          </div>
+          {rings.map((ringSkills, ringIndex) => {
+            const ringClass = [s.orbitInner, s.orbitMiddle, s.orbitOuter, s.orbitFarthest][ringIndex];
+            return <div className={`${s.orbit} ${ringClass}`} role="list" aria-label={`Orbiting skills ${ringIndex + 1}`} key={ringIndex}>
+              {ringSkills.map((skill, index) => <SkillOrbitItem key={skill.icon} skill={skill} index={index} total={ringSkills.length} ringIndex={ringIndex} />)}
+            </div>;
+          })}
           <div className={s.spotlight} aria-live="polite" aria-atomic="true">
             <div className={s.spotlightEyebrow}>IN MY TOOLKIT <span>{String(activeGroup + 1).padStart(2, "0")} / {String(spotlightGroups.length).padStart(2, "0")}</span></div>
             <div className={s.spotlightSkills}>
@@ -96,10 +96,13 @@ export default function OrbitSkills() {
   );
 }
 
-function SkillOrbitItem({ skill, index, total, outer = false }: { skill: Skill; index: number; total: number; outer?: boolean }) {
+function SkillOrbitItem({ skill, index, total, ringIndex }: { skill: Skill; index: number; total: number; ringIndex: number }) {
   const angle = (360 / total) * index;
-  return <span role="listitem" aria-label={skill.name} title={skill.name} className={s.skillPosition} style={{ "--angle": `${angle}deg` } as React.CSSProperties}>
-    <img className={outer ? s.orbitIconOuter : s.orbitIconInner} src={`/images/skills/${skill.icon}.svg`} alt="" aria-hidden="true" />
+  return <span role="listitem" aria-label={skill.name} title={skill.name} className={s.skillPosition} style={{ "--angle": `${angle}deg`, "--skill-color": skill.color } as React.CSSProperties}>
+    <span className={`${s.orbitTag} ${ringIndex % 2 ? s.tagReverse : s.tagForward}`}>
+      <img src={`/images/skills/${skill.icon}.svg`} alt="" aria-hidden="true" />
+      <span>{skill.name}</span>
+    </span>
   </span>;
 }
 
@@ -134,5 +137,6 @@ export function AmbientEffects() {
   }, []);
   return <div className={s.effects} aria-hidden="true">{sparks.map(spark => <span key={spark.id} className={s.burst} style={{ left: spark.x, top: spark.y, "--hue": spark.hue } as React.CSSProperties}>{Array.from({ length: 14 }, (_, i) => <i key={i} style={{ "--angle": `${i * (360 / 14)}deg`, "--distance": `${32 + (i % 3) * 13}px` } as React.CSSProperties} />)}<b>✦</b></span>)}</div>;
 }
+
 
 
