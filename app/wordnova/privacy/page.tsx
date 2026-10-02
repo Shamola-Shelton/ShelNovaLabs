@@ -11,7 +11,7 @@ export default function WordNovaPrivacyPolicy() {
   const updated = "17 September 2026";
 
   return (
-    <div className="min-h-screen bg-snl-bg text-snl-text">
+    <div data-snl-legal className="min-h-screen bg-snl-bg text-snl-text">
       {/* Top bar */}
       <div className="border-b border-snl-border">
         <div className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">

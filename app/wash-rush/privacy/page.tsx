@@ -11,7 +11,7 @@ export default function WashRushPrivacyAndTerms() {
   const updated = "1 October 2026";
 
   return (
-    <div className="min-h-screen bg-snl-bg text-snl-text">
+    <div data-snl-legal className="min-h-screen bg-snl-bg text-snl-text">
       {/* Top bar */}
       <div className="border-b border-snl-border sticky top-0 z-30 bg-snl-bg/90 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">

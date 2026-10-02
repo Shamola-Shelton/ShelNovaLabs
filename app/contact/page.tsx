@@ -29,7 +29,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-[#08090B] text-[#F5F5F2] selection:bg-[#635BFF]/30 selection:text-[#F5F5F2]">
       <JsonLd data={jsonLd} />
       <Navbar />
-      <main id="main" className="pt-28 pb-16 px-6 md:px-10">
+      <main id="main" data-snl-page className="pt-28 pb-16 px-6 md:px-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left: Header + details */}

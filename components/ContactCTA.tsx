@@ -127,7 +127,7 @@ export default function ContactCTA({ isOpen: externalIsOpen, onClose: externalOn
   return (
     <>
       {/* Footer CTA Banner */}
-      <section id="contact" className="py-28 px-6 md:px-10 bg-[#08090B] relative overflow-hidden border-t border-snl-border scroll-mt-20">
+      <section id="contact" className="snl-contact-cta py-28 px-6 md:px-10 bg-[#08090B] relative overflow-hidden border-t border-snl-border scroll-mt-20">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-snl-accent/10 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-8">

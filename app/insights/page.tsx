@@ -48,7 +48,7 @@ export default function InsightsPage() {
       <JsonLd data={breadcrumbJsonLd} />
       <Navbar />
 
-      <main id="main" className="pt-32 pb-24 px-6 md:px-10">
+      <main id="main" data-snl-page className="pt-32 pb-24 px-6 md:px-10">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Header Section */}
           <div className="max-w-3xl space-y-4">

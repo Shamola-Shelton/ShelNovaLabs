@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
   const updated = "25 May 2025";
 
   return (
-    <div className="min-h-screen bg-snl-bg text-snl-text">
+    <div data-snl-legal className="min-h-screen bg-snl-bg text-snl-text">
       {/* Top bar */}
       <div className="border-b border-snl-border">
         <div className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">

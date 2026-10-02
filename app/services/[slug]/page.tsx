@@ -82,7 +82,7 @@ export default async function ServicePage({
       <JsonLd data={serviceJsonLd} />
       <JsonLd data={faqJsonLd} />
       <Navbar />
-      <main id="main" className="pt-28 pb-16 px-6 md:px-10">
+      <main id="main" data-snl-page className="pt-28 pb-16 px-6 md:px-10">
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="text-xs font-mono text-snl-subtle mb-8">
