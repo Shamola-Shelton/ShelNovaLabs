@@ -97,6 +97,17 @@ export default function PrivacyPolicy() {
                   Privacy policy, AdMob advertising disclosures, and terms for Wash Rush: Pressure Panic.
                 </p>
               </Link>
+              <Link
+                href="/pupgrid/privacy"
+                className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
+              >
+                <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">
+                  PupGrid: Puppy Sudoku →
+                </p>
+                <p className="text-xs text-snl-muted mt-1">
+                  Privacy policy, leaderboard and analytics data, AdMob disclosures, and terms for PupGrid.
+                </p>
+              </Link>
             </div>
           </section>
 
