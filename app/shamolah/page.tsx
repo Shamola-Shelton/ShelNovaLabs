@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Code2, Users, Mail, MapPin, Sparkles, MessageCircle } from "lucide-react";
 import OrbitSkills, { AmbientEffects } from "@/components/home/OrbitSkills";
 import { projectsData } from "@/data/projectsData";
+import { insightsArticles } from "@/data/insightsData";
 import JsonLd from "@/components/JsonLd";
 import s from "../home.module.css";
 
@@ -29,7 +30,14 @@ const personJsonLd = {
     "https://github.com/Shamola-Shelton",
   ],
 };
-const featured = ["biblewise", "kadi-party", "jiranify", "career-ops"].flatMap(id => projectsData.filter(p => p.id === id));
+// The studio homepage shows the full project cards; here it's a short index.
+const built = projectsData.filter(p => p.status !== "dev");
+const writing = ["how-we-built-biblewise", "flutter-vs-native-app-development", "website-vs-web-app-difference"].flatMap(slug => insightsArticles.filter(a => a.slug === slug));
+const now = [
+  ["Shipping", "PupGrid, WordNova and Wash Rush — three small games, now on Google Play."],
+  ["Building", "ShelNova OS, the dashboard I use to run the studio's apps in one place."],
+  ["Writing", "Notes on building software in Kenya: costs, tools and what I learn shipping apps."],
+];
 function Heading({ children, number }: { children: React.ReactNode; number: string }) {
   return <div className={s.heading}><h2>{children}</h2><span>{number}</span></div>;
 }
@@ -39,7 +47,7 @@ export default function ShamolahPage() {
     <div className={s.page}>
       <JsonLd data={personJsonLd} />
       <header className={s.nav}>
-        <nav aria-label="Main navigation"><Link href="/shamolah" aria-current="page">Home</Link><Link href="/">Studio</Link><Link href="/projects">Projects</Link><Link href="/insights">Writing</Link><a href="#skills-title">Skills</a><a href="#connect">Contact</a></nav>
+        <nav aria-label="Main navigation"><Link href="/shamolah" aria-current="page">Home</Link><Link href="/">Studio</Link><a href="#now">Now</a><a href="#built">Built</a><a href="#writing">Writing</a><a href="#connect">Contact</a></nav>
         <a href="https://github.com/Shamola-Shelton" target="_blank" rel="noopener noreferrer" aria-label="Shelton on GitHub"><Code2 size={17} /></a>
       </header>
       <main id="main" className={s.main}>
@@ -56,23 +64,26 @@ export default function ShamolahPage() {
             <a href="https://github.com/Shamola-Shelton" target="_blank" rel="noopener noreferrer"><Code2 size={20} /><span><strong>GitHub</strong><small>Shamola-Shelton</small></span><ArrowUpRight size={17} /></a>
             <a href="https://wa.me/254707605641" target="_blank" rel="noopener noreferrer"><MessageCircle size={20} /><span><strong>WhatsApp</strong><small>+254 707 605 641</small></span><ArrowUpRight size={17} /></a>
           </div>
-          <div className={s.actions}><Link className={s.primary} href="/contact"><Mail size={15} /> Say hello</Link><a className={s.secondary} href="#projects">Explore my work <ArrowRight size={15} /></a></div>
+          <div className={s.actions}><Link className={s.primary} href="/contact"><Mail size={15} /> Say hello</Link><Link className={s.secondary} href="/">Visit the studio <ArrowRight size={15} /></Link></div>
         </section>
         <OrbitSkills />
+        <section id="now" className={s.section}>
+          <Heading number="01">/now</Heading><p className={s.note}>What I&apos;m focused on right now · Oct 2026</p>
+          <div className={`${s.capabilities} ${s.now}`}>{now.map(([label, text]) => <div key={label}><span>{label.toLowerCase()}</span><div><p className={s.nowText}>{text}</p></div></div>)}</div>
+        </section>
         <section id="studio" className={s.section}>
-          <Heading number="01">/about</Heading>
+          <Heading number="02">/about</Heading>
           <div className={s.studio}><div className={s.studioLabel}><Image src="/images/logo.png" alt="" width={32} height={28} /> THE STUDIO I’M BUILDING</div><h3>One curious mind.<br /><span>A whole world of possibilities.</span></h3><p>ShelNova Labs is where I bring ideas to life. From a familiar Kenyan card game and puppy-themed puzzles to tools for studying Scripture and prayer, the goal is simple: make useful things, and make them thoughtfully.</p><Link href="/">Visit ShelNova Labs <ArrowUpRight size={15} /></Link></div>
         </section>
-        <section id="projects" className={s.section}>
-          <Heading number="02">/selected-projects</Heading><p className={s.note}>A few ideas that made it out of the notebook.</p>
-          <div className={s.projects}>{featured.map(p => <article className={s.project} key={p.id}>
-            <Link className={s.projectImage} href={`/projects/${p.id}`} aria-label={`Explore ${p.name}`}><Image src={p.imageSrc ?? "/images/logo.png"} alt={`${p.name} product preview`} fill sizes="(max-width:600px) 90vw, 360px" /><span><ArrowUpRight size={18} /></span></Link>
-            <div className={s.projectBody}><div className={s.projectTitle}><h3><Link href={`/projects/${p.id}`}>{p.name}</Link></h3><span>{p.status === "dev" ? "In progress" : p.status === "beta" ? "Beta" : "Live"}</span></div><p>{p.tagline}</p><div className={s.tags}>{p.tags.slice(0,3).map(tag => <span key={tag}>{tag}</span>)}</div></div>
-          </article>)}</div><Link className={s.more} href="/projects">All projects <ArrowRight size={15} /></Link>
+        <section id="built" className={s.section}>
+          <Heading number="03">/things-i&apos;ve-built</Heading><p className={s.note}>Shipped through ShelNova Labs. Full case studies live on the studio site.</p>
+          <ul className={s.index}>{built.map(p => <li key={p.id}><Link href={`/projects/${p.id}`}><strong>{p.name}</strong><span>{p.tagline}</span><small>{p.category === "game" ? "Game" : p.category === "open-source" ? "Open source" : p.platforms === "Web" ? "Web" : "App"}</small></Link></li>)}</ul>
+          <Link className={s.more} href="/projects">All case studies <ArrowRight size={15} /></Link>
         </section>
-        <section className={s.section}>
-          <Heading number="03">/what-i-build</Heading>
-          <div className={s.capabilities}>{[["01","Web experiences","Thoughtful websites and applications that make complex things feel simple."],["02","Mobile products","Useful everyday companions, built to feel at home in your hands."],["03","AI-powered tools","Practical intelligence that helps people find answers and move forward."]].map(([n,name,text]) => <div key={n}><span>{n}</span><div><h3>{name}</h3><p>{text}</p></div><ArrowUpRight size={17} /></div>)}</div><Link className={s.more} href="/services">Explore studio services <ArrowRight size={15} /></Link>
+        <section id="writing" className={s.section}>
+          <Heading number="04">/writing</Heading>
+          <ul className={s.index}>{writing.map(a => <li key={a.slug}><Link href={`/insights/${a.slug}`}><strong>{a.title}</strong><small>{a.displayDate} · {a.readTime}</small></Link></li>)}</ul>
+          <Link className={s.more} href="/insights">All writing <ArrowRight size={15} /></Link>
         </section>
         <section id="connect" className={s.contact}><span className={s.eyebrow}>GOOD THINGS START WITH A CONVERSATION</span><h2>Let’s make something <span className={s.accent}>matter.</span></h2><p>Have an idea, a question, or just want to say hi?<br />I’d love to hear from you.</p><Link className={s.primary} href="/contact"><Mail size={16} /> Get in touch <ArrowUpRight size={15} /></Link><a className={s.email} href="mailto:hello@shelnovalabs.com">hello@shelnovalabs.com</a></section>
       </main>
