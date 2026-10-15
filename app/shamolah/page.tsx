@@ -21,6 +21,7 @@ const personJsonLd = {
   "@type": "Person",
   name: "Shelton Shamola",
   url: "https://shelnovalabs.com/shamolah",
+  image: "https://shelnovalabs.com/images/shelton-sketch.jpg",
   jobTitle: "Founder",
   worksFor: { "@type": "Organization", name: "ShelNova Labs", url: "https://shelnovalabs.com" },
   address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" },
@@ -54,7 +55,7 @@ export default function ShamolahPage() {
         <section className={s.intro} aria-labelledby="profile-name">
           <div className={s.eyebrow}><span /> A little corner of the internet</div>
           <div className={s.profile}>
-            <div className={s.avatar} aria-label="Shelton Shamola monogram">ss<span><Sparkles size={15} /></span></div>
+            <div className={s.avatar}><Image className={s.avatarPhoto} src="/images/shelton-sketch.jpg" alt="Sketch portrait of Shelton Shamola" fill sizes="110px" priority /><span><Sparkles size={15} /></span></div>
             <div><h1 id="profile-name">Shelton Shamola<span className={s.accent}>.</span></h1><p className={s.role}>Founder <span>/</span> Builder <span>/</span> Curious human</p><div className={s.location}><MapPin size={13} /> Nairobi, Kenya <span>·</span> Building ShelNova Labs</div></div>
           </div>
           <div className={s.bio}><p>Hey, I’m Shelton — the founder of <a href="#studio">ShelNova Labs</a>.</p><p>I turn ideas into <strong>web, mobile, and AI products</strong> that help people learn, connect, and get things done.</p><p>This is where I share what I’m building, what I’m learning, and the work behind it.</p></div>

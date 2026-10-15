@@ -20,3 +20,4 @@
 .index{list-style:none;margin:0;padding:0;border-top:1px dashed var(--line)}.index li{border-bottom:1px dashed var(--line)}.index a{display:flex;align-items:baseline;gap:14px;padding:12px 2px;transition:background .2s}.index a:hover{background:#18171b}.index strong{flex:0 1 auto;min-width:0;font-size:13px;font-weight:500;color:#e8e6ec}.index a:hover strong{color:var(--accent)}.index span{flex:1;min-width:0;font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.index small{margin-left:auto;flex-shrink:0;font:9px var(--font-mono);color:#9c95a6}
 @media(max-width:600px){.index a{flex-wrap:wrap;gap:4px 10px}.index span{flex-basis:100%;order:3;white-space:normal}}
 .now>div{align-items:baseline!important}.now>div>span{min-width:62px;padding-top:0!important}
+.avatarPhoto{object-fit:cover;object-position:50% 30%;border-radius:12px}.avatar>span{z-index:1}
