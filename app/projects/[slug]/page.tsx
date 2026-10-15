@@ -115,12 +115,20 @@ export default async function ProjectPage({
 
           {/* Main Image */}
           {project.imageSrc && (
-            <div className="relative w-full h-64 sm:h-96 rounded-2xl overflow-hidden border border-snl-border mt-10">
+            <div
+              className={
+                project.mockupType === "mobile"
+                  ? "relative w-full mx-auto aspect-[9/16] rounded-2xl overflow-hidden border border-snl-border mt-10"
+                  : "relative w-full h-64 sm:h-96 rounded-2xl overflow-hidden border border-snl-border mt-10"
+              }
+              // Inline so the page frame's max-w-* override in globals.css doesn't widen it.
+              style={project.mockupType === "mobile" ? { maxWidth: 320 } : undefined}
+            >
               <Image
                 src={project.imageSrc}
                 alt={`${project.name} product showcase`}
                 fill
-                sizes="(max-width: 768px) 100vw, 896px"
+                sizes={project.mockupType === "mobile" ? "320px" : "(max-width: 768px) 100vw, 896px"}
                 className="object-cover object-top"
               />
             </div>
@@ -179,13 +187,15 @@ export default async function ProjectPage({
                 {project.galleryImages.map((img, i) => (
                   <div
                     key={img}
-                    className="relative h-48 rounded-xl overflow-hidden border border-snl-border bg-snl-card"
+                    className={`relative rounded-xl overflow-hidden border border-snl-border bg-snl-card ${
+                      project.mockupType === "mobile" ? "aspect-[9/16]" : "h-48"
+                    }`}
                   >
                     <Image
                       src={img}
                       alt={`${project.name} screenshot ${i + 1}`}
                       fill
-                      sizes="(max-width: 640px) 100vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, 260px"
                       className="object-cover object-top"
                     />
                   </div>

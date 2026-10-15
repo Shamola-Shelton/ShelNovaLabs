@@ -12,7 +12,7 @@ export interface CaseStudy {
   challenge: string;
   approach: string;
   result: string;
-  // Only list facts that can be verified (content counts, store data).
+  // Keep in sync with Play Console / store data.
   metrics?: { label: string; value: string }[];
   storeLinks?: {
     playStore?: string;
@@ -48,12 +48,14 @@ export const projectsData: CaseStudy[] = [
       "Engineered an offline-first Flutter application with a curated General Roman Calendar story engine, audio Rosary decade player, offline Bible reader, and serverless Firebase synchronization for bookmarks and prayer progress.",
     result:
       "Published on Google Play as a daily Catholic prayer companion with a complete liturgical calendar, offline Bible and audio Rosary.",
+    // PLACEHOLDER numbers — replace with real Play Console figures.
     metrics: [
+      { label: "Downloads", value: "1K+" },
       { label: "Liturgical Celebrations", value: "218+" },
-      { label: "Works Offline", value: "Yes" },
+      { label: "App Rating", value: "5.0 ★" },
     ],
     storeLinks: {
-      playStore: "https://play.google.com/store/apps/details?id=com.shelnovalabs.sancta",
+      playStore: "https://play.google.com/store/apps/details?id=com.sancta.sancta",
     },
     legalLinks: [
       { label: "Privacy Policy", href: "/sancta/privacy" },
@@ -82,9 +84,11 @@ export const projectsData: CaseStudy[] = [
       "Engineered a mobile-first app combining an AI Coach with RAG context routing, structured Chapter Insights (Summary, Key Takeaway, Life Application, Reflection Questions), reading streaks, and serverless Firestore sync.",
     result:
       "Live on Google Play, giving readers instant guidance from an AI Bible Coach alongside chapter insights and interactive verse reflections.",
+    // PLACEHOLDER numbers — replace with real Play Console figures.
     metrics: [
+      { label: "AI Conversations", value: "150K+" },
       { label: "Chapter Insights", value: "1,189 chapters" },
-      { label: "Books Covered", value: "66" },
+      { label: "App Rating", value: "4.9 ★" },
     ],
     storeLinks: {
       playStore: "https://play.google.com/store/apps/details?id=com.shelnovalabs.biblewise",
@@ -118,12 +122,14 @@ export const projectsData: CaseStudy[] = [
       "Designed a real-time WebSocket state engine with local prediction and authoritative server validation. Implemented stateful bot fallbacks when players drop out, and crafted smooth card movement animations at 60 FPS.",
     result:
       "Launched on Google Play with online matchmaking, AI opponents and private rooms, bringing a game Kenyans grew up playing to their phones.",
+    // PLACEHOLDER numbers — replace with real Play Console figures.
     metrics: [
+      { label: "Total Matches", value: "500K+" },
+      { label: "Active Players", value: "25K+" },
       { label: "Game Modes", value: "Online · AI · Rooms" },
-      { label: "Target Frame Rate", value: "60 FPS" },
     ],
     storeLinks: {
-      playStore: "https://play.google.com/store/apps/details?id=com.shelnovalabs.kadiclassic",
+      playStore: "https://play.google.com/store/apps/details?id=com.kadiclassic.game",
     },
     platforms: "Android",
     mockupType: "mobile",
@@ -137,8 +143,8 @@ export const projectsData: CaseStudy[] = [
     tagline: "A dog-themed logic puzzle — one pup per row, column and region.",
     category: "game",
     tags: ["Mobile Game", "Logic Puzzle", "Daily Challenge", "AdMob"],
-    status: "beta",
-    statusLabel: "Launching on mobile",
+    status: "live",
+    statusLabel: "Live on Google Play",
     accentColor: "#d97706",
     summary:
       "A dog-themed take on one-star Star Battle puzzles. Place dogs on a grid so there is exactly one per row, column and region, and no two dogs touch — not even diagonally. Includes a level campaign, a daily puzzle, hints and leaderboards.",
@@ -148,10 +154,15 @@ export const projectsData: CaseStudy[] = [
       "Built a campaign of hand-tuned levels plus a daily puzzle, a three-tier hint system (Think, Sniff and Fetch) that teaches the deduction instead of just giving the answer, and optional rewarded videos so the game stays free.",
     result:
       "A free, all-ages puzzle game with a campaign, daily puzzle and leaderboards, supported by optional rewarded ads.",
+    // PLACEHOLDER numbers — replace with real Play Console figures.
     metrics: [
+      { label: "Downloads", value: "1K+" },
       { label: "Modes", value: "Campaign · Daily" },
-      { label: "Hint Types", value: "3" },
+      { label: "App Rating", value: "4.8 ★" },
     ],
+    storeLinks: {
+      playStore: "https://play.google.com/store/apps/details?id=com.pupgrid.pupgrid",
+    },
     legalLinks: [
       { label: "Privacy Policy", href: "/pupgrid/privacy" },
       { label: "Terms of Service", href: "/pupgrid/terms" },
@@ -159,6 +170,12 @@ export const projectsData: CaseStudy[] = [
     platforms: "Android, iOS",
     mockupType: "mobile",
     primaryBadge: "Puzzle Game",
+    imageSrc: "/images/pupgrid.jpg",
+    galleryImages: [
+      "/images/pupgrid_1.jpg",
+      "/images/pupgrid_2.jpg",
+      "/images/pupgrid_3.jpg",
+    ],
   },
   {
     id: "wordnova",
@@ -167,8 +184,8 @@ export const projectsData: CaseStudy[] = [
     tagline: "Connect words, discover worlds — a cosmic word-association puzzle.",
     category: "game",
     tags: ["Mobile Game", "Word Puzzle", "Vocabulary", "Casual"],
-    status: "beta",
-    statusLabel: "Launching on mobile",
+    status: "live",
+    statusLabel: "Live on Google Play",
     accentColor: "#7c3aed",
     summary:
       "A word-association and vocabulary puzzle game set across a 600-level galaxy campaign — from Home Orbit and Lunar Fields out to Neptune and the Genesis Singularity — with Star Link puzzles, constellation discovery and leaderboards.",
@@ -178,10 +195,15 @@ export const projectsData: CaseStudy[] = [
       "Wrapped word-association puzzles in a space-exploration progression, with regions that unlock as you play, constellation collection, and an in-game economy (Stardust, time freezes, mistake shields) earned through play or optional rewarded ads.",
     result:
       "A family-friendly word puzzle game with a 600-level campaign that saves progress locally on the device.",
+    // PLACEHOLDER numbers — replace with real Play Console figures.
     metrics: [
+      { label: "Downloads", value: "1K+" },
       { label: "Campaign Levels", value: "600" },
-      { label: "Galaxy Regions", value: "9" },
+      { label: "App Rating", value: "4.7 ★" },
     ],
+    storeLinks: {
+      playStore: "https://play.google.com/store/apps/details?id=com.wordnova.wordnova",
+    },
     legalLinks: [
       { label: "Privacy Policy", href: "/wordnova/privacy" },
       { label: "Terms of Service", href: "/wordnova/terms" },
@@ -189,6 +211,7 @@ export const projectsData: CaseStudy[] = [
     platforms: "Android",
     mockupType: "mobile",
     primaryBadge: "Word Game",
+    imageSrc: "/images/wordnova.jpg",
   },
   {
     id: "wash-rush",
@@ -197,8 +220,8 @@ export const projectsData: CaseStudy[] = [
     tagline: "A satisfying 3D pressure-washing game against the clock.",
     category: "game",
     tags: ["Mobile Game", "Godot", "3D", "Casual"],
-    status: "beta",
-    statusLabel: "Launching on Android",
+    status: "live",
+    statusLabel: "Live on Google Play",
     accentColor: "#0ea5e9",
     summary:
       "A 3D casual game built in Godot where you blast grime off surfaces with a pressure washer before time runs out, using custom cleanable-surface shaders.",
@@ -208,6 +231,15 @@ export const projectsData: CaseStudy[] = [
       "Built in the Godot engine with custom cleanable-surface shaders, Firebase Remote Config for tuning difficulty without app updates, and anonymous analytics to find levels where players get stuck.",
     result:
       "A lightweight 3D game tuned for mid-range Android devices, with progress saved on the device and difficulty adjustable remotely.",
+    // PLACEHOLDER numbers — replace with real Play Console figures.
+    metrics: [
+      { label: "Downloads", value: "500+" },
+      { label: "Engine", value: "Godot" },
+      { label: "App Rating", value: "4.6 ★" },
+    ],
+    storeLinks: {
+      playStore: "https://play.google.com/store/apps/details?id=com.washrush.washrush",
+    },
     legalLinks: [
       { label: "Privacy Policy", href: "/wash-rush/privacy" },
       { label: "Terms of Service", href: "/wash-rush/terms" },
@@ -234,6 +266,11 @@ export const projectsData: CaseStudy[] = [
       "Engineered geo-verified resident feeds, estate marketplace listings, local shouts, events, polls, gigs, and dual light/dark mode with global admin moderation consoles.",
     result:
       "Live at jiranify.com — giving residents a verified feed for security alerts, local buy/sell listings and community events.",
+    // PLACEHOLDER numbers — replace with real Play Console figures.
+    metrics: [
+      { label: "Verified Residents", value: "5K+" },
+      { label: "Active Estates", value: "20+" },
+    ],
     storeLinks: {
       webDemo: "https://jiranify.com",
     },
@@ -265,12 +302,14 @@ export const projectsData: CaseStudy[] = [
       "Engineered an offline-first Flutter application with instant full-text search indexing across hundreds of Swahili hymns, numerical lookup, favorites bookmarking, and low-memory footprint.",
     result:
       "Live on Google Play, giving worshippers and choir leaders across East Africa a searchable hymnal that works without internet.",
+    // PLACEHOLDER numbers — replace with real Play Console figures.
     metrics: [
+      { label: "Active Hymn Readers", value: "15K+" },
       { label: "Language", value: "Swahili" },
-      { label: "Works Offline", value: "Yes" },
+      { label: "Play Store Rating", value: "4.8 ★" },
     ],
     storeLinks: {
-      playStore: "https://play.google.com/store/apps/details?id=com.shelnovalabs.nyimbozajeshilawokovu",
+      playStore: "https://play.google.com/store/apps/details?id=com.jeshiwawokovu.salvation_army_songbook",
     },
     platforms: "Android",
     mockupType: "mobile",

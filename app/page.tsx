@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description },
 };
 
-const featured = ["biblewise", "kadi-party", "sancta", "jiranify"].flatMap((id) => projectsData.filter((p) => p.id === id));
+const featured = ["pupgrid", "kadi-party", "biblewise", "wordnova"].flatMap((id) => projectsData.filter((p) => p.id === id));
 const appsAndGames = projectsData.filter((p) => p.status !== "dev" && (p.category === "game" || p.platforms.includes("Android") || p.platforms.includes("iOS")));
 
 function statusText(status: string) {
@@ -46,7 +46,7 @@ export default function Home() {
           </div>
           <div className={s.bio}>
             <p>We design and build <strong>apps, games and web products</strong> that people use every day.</p>
-            <p>Our own products include a Catholic prayer app, an AI Bible coach, a digital Kenyan card game and a puppy-themed logic puzzle.</p>
+            <p>Our own products include a Catholic prayer app, an AI Bible coach, a digital Kenyan card game, a puppy-themed logic puzzle and a cosmic word game.</p>
             <p>We also build websites, web apps and mobile apps for businesses and organizations.</p>
           </div>
           <div className={s.actions}>

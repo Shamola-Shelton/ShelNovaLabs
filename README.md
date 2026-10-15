@@ -12,9 +12,9 @@ Live at [shelnovalabs.com](https://shelnovalabs.com). Founder portfolio at [shel
 | BibleWise | AI Bible coach | Live on Google Play |
 | Kadi Classic | Kenyan card game, multiplayer | Live on Google Play |
 | Nyimbo za Jeshi la Wokovu | Swahili hymnal | Live on Google Play |
-| PupGrid: Puppy Sudoku | Logic puzzle game | Launching |
-| WordNova | Word puzzle game | Launching |
-| Wash Rush: Pressure Panic | 3D casual game | Launching |
+| PupGrid: Puppy Sudoku | Logic puzzle game | Live on Google Play |
+| WordNova | Word puzzle game | Live on Google Play |
+| Wash Rush: Pressure Panic | 3D casual game | Live on Google Play |
 | JiraniFy | Neighborhood platform | Live at jiranify.com |
 | CareerOps | Open-source AI job search tool | On GitHub |
 
