@@ -30,8 +30,8 @@ export default function ProjectsPage() {
       item: {
         "@type": "SoftwareApplication",
         name: p.name,
-        applicationCategory: "BusinessApplication",
-        operatingSystem: "Web, Android, iOS",
+        applicationCategory: p.category === "game" ? "GameApplication" : "LifestyleApplication",
+        operatingSystem: p.platforms,
         url: `https://shelnovalabs.com/projects/${p.id}`,
         description: p.summary,
       },
@@ -118,13 +118,13 @@ export default function ProjectsPage() {
             <p className="text-snl-muted mt-3 max-w-xl mx-auto">
               From idea to deployment — let&apos;s create something worth using.
             </p>
-            <a
-              href="mailto:hello@shelnovalabs.com"
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 mt-6 px-8 py-4 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-full font-medium text-sm tracking-wide transition-colors"
             >
               Start a Project
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </section>
         </div>
       </main>

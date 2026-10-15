@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const isDev = process.env.NODE_ENV !== "production";
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -19,9 +20,10 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      gaId ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com" : "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+      // React's dev tooling needs eval; production builds do not.
+      `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}${gaId ? " https://www.googletagmanager.com" : ""}`,
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob:",
+      gaId ? "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com" : "img-src 'self' data: blob:",
       "font-src 'self' data:",
       gaId
         ? "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com"

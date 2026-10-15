@@ -10,6 +10,7 @@ const navItems = [
   { label: "Services", href: "/services" },
   { label: "Writing", href: "/insights" },
   { label: "About", href: "/about" },
+  { label: "Founder", href: "/shamolah" },
 ];
 
 export default function Navbar() {
@@ -27,9 +28,9 @@ export default function Navbar() {
   return (
     <header className="snl-inner-nav">
       <div className="snl-inner-nav__inner">
-        <Link href="/" className="snl-inner-nav__brand" aria-label="Shelton Shamola, home">
-          <strong>Shelton Shamola</strong>
-          <small>Founder · ShelNova Labs</small>
+        <Link href="/" className="snl-inner-nav__brand" aria-label="ShelNova Labs, home">
+          <strong>ShelNova Labs</strong>
+          <small>Product studio · Nairobi</small>
         </Link>
 
         <nav aria-label="Main navigation" className="snl-inner-nav__links">

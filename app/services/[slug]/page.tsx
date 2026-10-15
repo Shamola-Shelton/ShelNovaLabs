@@ -222,13 +222,13 @@ export default async function ServicePage({
             <p className="text-snl-muted mt-3 max-w-xl mx-auto">
               Tell us what you want to build and we&apos;ll take it from there.
             </p>
-            <a
-              href="mailto:hello@shelnovalabs.com"
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 mt-6 px-8 py-4 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-full font-medium text-sm tracking-wide transition-colors"
             >
               Start a Project
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </section>
         </div>
       </main>

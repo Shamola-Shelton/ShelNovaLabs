@@ -203,21 +203,21 @@ export default function ArticleFlutterVsNativeContent() {
           Our Experience Building Apps with Flutter at ShelNova Labs
         </h2>
         <p>
-          Across our shipping mobile product portfolio, Flutter has enabled us to achieve exceptional performance metrics:
+          Across our shipping mobile product portfolio, Flutter lets us ship one codebase that stays fast on budget Android phones:
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="bg-[#0D0F12] border border-snl-border rounded-xl p-4 text-center space-y-1">
             <p className="text-xl font-heading font-bold text-snl-accent">BibleWise</p>
-            <p className="text-xs text-snl-muted">150K+ AI chats · 4.9★</p>
+            <p className="text-xs text-snl-muted">AI Bible coach · Live on Google Play</p>
           </div>
           <div className="bg-[#0D0F12] border border-snl-border rounded-xl p-4 text-center space-y-1">
             <p className="text-xl font-heading font-bold text-amber-400">Gist &amp; Gain</p>
-            <p className="text-xs text-snl-muted">2,500+ Books · 3.2x Retention</p>
+            <p className="text-xs text-snl-muted">Audio micro-lessons · In development</p>
           </div>
           <div className="bg-[#0D0F12] border border-snl-border rounded-xl p-4 text-center space-y-1">
             <p className="text-xl font-heading font-bold text-emerald-400">Nyimbo za Jeshi</p>
-            <p className="text-xs text-snl-muted">15K+ Active · 4.8★</p>
+            <p className="text-xs text-snl-muted">Swahili hymnal · Works offline</p>
           </div>
         </div>
 

@@ -7,8 +7,8 @@ export default function Footer() {
     <footer className="snl-inner-footer">
       <div className="snl-inner-footer__top">
         <div>
-          <Link href="/" className="snl-inner-footer__name">Shelton Shamola <span aria-hidden="true">✳</span></Link>
-          <div style={{ marginTop: 5 }}>Founder, ShelNova Labs · Nairobi, Kenya</div>
+          <Link href="/" className="snl-inner-footer__name">ShelNova Labs <span aria-hidden="true">✳</span></Link>
+          <div style={{ marginTop: 5 }}>Product studio · Nairobi, Kenya · Founded by <Link href="/shamolah">Shelton Shamola</Link></div>
         </div>
         <nav aria-label="Footer navigation" className="snl-inner-footer__links">
           <Link href="/projects">Work</Link>
@@ -27,8 +27,7 @@ export default function Footer() {
           <a href="https://wa.me/254707605641" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </nav>
         <nav aria-label="Legal pages" className="snl-inner-footer__links">
-          <Link href="/privacy">Privacy</Link>
-          <Link href="/privacy/biblewise">BibleWise privacy</Link>
+          <Link href="/privacy">Privacy &amp; app policies</Link>
         </nav>
       </div>
     </footer>

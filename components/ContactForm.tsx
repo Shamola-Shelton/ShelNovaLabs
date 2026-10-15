@@ -14,6 +14,7 @@ export default function ContactForm({ compact = false }: { compact?: boolean }) 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const website = new FormData(e.currentTarget as HTMLFormElement).get("website");
     setIsSubmitting(true);
     setErrorMessage("");
 
@@ -28,6 +29,7 @@ export default function ContactForm({ compact = false }: { compact?: boolean }) 
           email,
           projectType,
           message,
+          website,
         }),
       });
 
@@ -73,7 +75,12 @@ export default function ContactForm({ compact = false }: { compact?: boolean }) 
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="relative space-y-4">
+      {/* Honeypot: hidden from people, bots tend to fill it in. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+        <label htmlFor="contact-website">Website</label>
+        <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
       {errorMessage && (
         <div role="alert" className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-xs flex items-center gap-2">
           <AlertCircle className="w-4 h-4 shrink-0" />

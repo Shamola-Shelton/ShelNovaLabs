@@ -1,87 +1,64 @@
-# ShelNova Labs — Company Website
+# ShelNova Labs — Website
 
-Official website for **ShelNova Labs Ltd.** — a digital product studio building apps for communities, learners, and players.
+Website for **ShelNova Labs Ltd.**, a product studio in Nairobi, Kenya building mobile apps, games, websites and AI tools.
 
-Live at: [shelnovalabs.com](https://shelnovalabs.com)
+Live at [shelnovalabs.com](https://shelnovalabs.com). Founder portfolio at [shelnovalabs.com/shamolah](https://shelnovalabs.com/shamolah).
 
----
+## Products
 
-## About
+| Product | Type | Status |
+|---|---|---|
+| Sancta | Catholic prayer & Bible app | Live on Google Play |
+| BibleWise | AI Bible coach | Live on Google Play |
+| Kadi Classic | Kenyan card game, multiplayer | Live on Google Play |
+| Nyimbo za Jeshi la Wokovu | Swahili hymnal | Live on Google Play |
+| PupGrid: Puppy Sudoku | Logic puzzle game | Launching |
+| WordNova | Word puzzle game | Launching |
+| Wash Rush: Pressure Panic | 3D casual game | Launching |
+| JiraniFy | Neighborhood platform | Live at jiranify.com |
+| CareerOps | Open-source AI job search tool | On GitHub |
 
-ShelNova Labs engineers digital experiences that simplify complexity, empower communities, and transform everyday challenges into intuitive, elegant solutions.
+Project content lives in `data/projectsData.ts`.
 
-**Our Apps:**
-- **Kadi Classic** — Fast-paced digital card game with multiplayer, AI, and online matchmaking. Live on app stores.
-- **JiraniFy** — Neighborhood social platform for local communities to connect, chat, and discover nearby opportunities. In development.
-- **Gist & Gain** — AI-powered self-improvement app with book summaries, podcasts, flashcards, and quizzes in Gist and Deep modes. In development.
+## Store policy pages
 
----
+These URLs are linked from Google Play / App Store listings. **Do not move, rename or delete them.**
 
-## Tech Stack
+- `/privacy` (index of all policies), `/privacy/biblewise`
+- `/sancta/privacy`, `/sancta/terms`, `/sancta/delete-account`
+- `/pupgrid/privacy`, `/pupgrid/terms`
+- `/wordnova/privacy`, `/wordnova/terms`
+- `/wash-rush/privacy`, `/wash-rush/terms`
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 16 (App Router) |
-| Styling | Tailwind CSS v4 |
-| Animations | Framer Motion |
-| Language | TypeScript |
-| Fonts | Space Grotesk + Inter |
-| Hosting | Vercel |
+## Tech stack
 
----
+Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, hosted on Vercel.
 
-## Getting Started
+## Getting started
 
 ```bash
-# Install dependencies
 npm install
-
-# Run development server
-npm run dev
-# Open http://localhost:3000
-
-# Production build
+npm run dev        # http://localhost:3000
+npm run typecheck
 npm run build
 ```
 
----
-
-## Project Structure
+## Structure
 
 ```
 app/
-  layout.tsx        # Root layout, fonts, SEO metadata
-  page.tsx          # Page assembly
-  globals.css       # Brand tokens (Tailwind v4), base styles
-
-components/
-  Navbar.tsx        # Sticky glassmorphism navigation
-  Hero.tsx          # Animated hero section
-  AppsShowcase.tsx  # App portfolio cards
-  About.tsx         # Mission, vision, and values
-  Team.tsx          # Meet the team
-  Contact.tsx       # Contact form
-  Footer.tsx        # Footer
+  page.tsx            # Studio homepage
+  shamolah/page.tsx   # Founder portfolio
+  projects/           # Project list and case studies
+  services/           # Service pages
+  insights/           # Articles
+  contact/            # Contact form (POST /api/contact)
+  <app>/privacy|terms # Store policy pages
+components/           # Navbar, Footer, ContactForm, ContactCTA, insights articles
+data/                 # projectsData.ts, insightsData.ts
 ```
 
----
+## Environment variables
 
-## Brand Colors
-
-| Token | Value | Use |
-|---|---|---|
-| `snl-violet` | `#6c63ff` | Primary accent |
-| `snl-cyan` | `#00d4ff` | Secondary accent |
-| `snl-bg` | `#0a0a0f` | Background |
-| `snl-card` | `#111118` | Card surface |
-| `snl-text` | `#e2e8f0` | Body text |
-
----
-
-## Contact
-
-hello@shelnovalabs.com
-
----
-
-© 2025 ShelNova Labs Ltd. All rights reserved.
+- `RESEND_API_KEY` or `WEB3FORMS_ACCESS_KEY` — contact form email delivery
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` — Google Analytics (optional)

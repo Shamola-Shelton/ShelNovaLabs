@@ -231,17 +231,17 @@ export const insightsArticles: InsightArticle[] = [
   },
   {
     slug: "how-we-built-biblewise",
-    title: "Case Study: How We Built BibleWise — AI Scripture Coach for 150K+ Conversations",
+    title: "Case Study: How We Built BibleWise — an AI Scripture Coach",
     seoTitle: "How We Built BibleWise (AI Scripture Coach) | ShelNova Labs Case Study",
     metaDescription:
-      "A deep-dive technical case study into engineering BibleWise: combining Flutter, RAG vector retrieval, and serverless Firestore sync to serve 150,000+ AI conversations.",
+      "A deep-dive technical case study into engineering BibleWise: combining Flutter, RAG vector retrieval, and serverless Firestore sync.",
     category: "Case Studies",
     readTime: "10 min read",
     publishedDate: "2026-08-19",
     displayDate: "Aug 2026",
     author: authors.shelton,
     lead:
-      "How ShelNova Labs designed, architected, and scaled an AI-powered scripture study platform to 150K+ conversations with a 4.9★ rating on the Google Play Store.",
+      "How ShelNova Labs designed, architected, and shipped an AI-powered scripture study platform to the Google Play Store.",
     heroImage: "/images/insights/biblewise-case-study.jpg",
     isFeatured: false,
     toc: [

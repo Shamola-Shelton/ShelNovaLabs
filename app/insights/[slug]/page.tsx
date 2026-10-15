@@ -340,13 +340,13 @@ export default async function InsightArticlePage({
                   Whether you are starting from an idea or scaling an existing mobile or web product, ShelNova Labs can help you design, build, and launch it.
                 </p>
                 <div className="pt-2">
-                  <a
-                    href="mailto:hello@shelnovalabs.com"
+                  <Link
+                    href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-full font-semibold text-sm tracking-wide uppercase transition-all duration-200 shadow-xl shadow-snl-accent/25 hover:scale-105"
                   >
                     <span>Start a Project</span>
                     <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </Link>
                 </div>
               </section>
 

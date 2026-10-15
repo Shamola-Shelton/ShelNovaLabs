@@ -161,17 +161,17 @@ export default function ArticleBibleWiseCaseStudyContent() {
       {/* Section: Real-World Metrics & Scaling */}
       <section id="scaling-lessons" className="space-y-6 scroll-mt-28">
         <h2 className="font-heading text-2xl sm:text-3xl font-bold text-snl-text">
-          Real-World Metrics &amp; Growth Results
+          What Shipped
         </h2>
         <p>
-          Since its release on the Google Play Store, BibleWise has achieved remarkable user engagement:
+          BibleWise is live on the Google Play Store. Here is what the first release covers:
         </p>
 
         {/* Metrics Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="bg-[#0D0F12] border border-snl-border rounded-xl p-5 text-center space-y-1">
-            <p className="text-2xl sm:text-3xl font-heading font-bold text-snl-accent">150,000+</p>
-            <p className="text-xs font-mono text-snl-subtle uppercase">AI Conversations Served</p>
+            <p className="text-2xl sm:text-3xl font-heading font-bold text-snl-accent">66</p>
+            <p className="text-xs font-mono text-snl-subtle uppercase">Books Covered</p>
           </div>
           <div className="bg-[#0D0F12] border border-snl-border rounded-xl p-5 text-center space-y-1">
             <p className="text-2xl sm:text-3xl font-heading font-bold text-emerald-400">1,189</p>
@@ -179,9 +179,9 @@ export default function ArticleBibleWiseCaseStudyContent() {
           </div>
           <div className="bg-[#0D0F12] border border-snl-border rounded-xl p-5 text-center space-y-1 flex flex-col items-center justify-center">
             <p className="text-2xl sm:text-3xl font-heading font-bold text-amber-400 flex items-center gap-1">
-              4.9 <Star className="w-5 h-5 fill-current text-amber-400 inline" />
+              24/7 <Star className="w-5 h-5 fill-current text-amber-400 inline" />
             </p>
-            <p className="text-xs font-mono text-snl-subtle uppercase">Play Store Rating</p>
+            <p className="text-xs font-mono text-snl-subtle uppercase">AI Coach Availability</p>
           </div>
         </div>
 

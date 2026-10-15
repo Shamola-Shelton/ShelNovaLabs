@@ -61,9 +61,9 @@ export default async function ProjectPage({
     "@type": "SoftwareApplication",
     name: project.name,
     description: project.summary,
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web, Android, iOS",
-    url: `https://shelnovalabs.com/projects/${project.id}`,
+    applicationCategory: project.category === "game" ? "GameApplication" : "LifestyleApplication",
+    operatingSystem: project.platforms,
+    url: project.storeLinks?.playStore ?? `https://shelnovalabs.com/projects/${project.id}`,
     author: { "@type": "Organization", name: "ShelNova Labs", url: "https://shelnovalabs.com" },
   };
 
@@ -212,7 +212,7 @@ export default async function ProjectPage({
           {/* Store / Demo Links */}
           {project.storeLinks && (
             <div className="flex flex-wrap gap-3 mt-10 pt-8 border-t border-snl-border">
-              {project.storeLinks.webDemo && project.storeLinks.webDemo !== "#" && (
+              {project.storeLinks.webDemo && (
                 <a
                   href={project.storeLinks.webDemo}
                   target="_blank"
@@ -223,7 +223,7 @@ export default async function ProjectPage({
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               )}
-              {project.storeLinks.playStore && project.storeLinks.playStore !== "#" && (
+              {project.storeLinks.playStore && (
                 <a
                   href={project.storeLinks.playStore}
                   target="_blank"
@@ -246,6 +246,17 @@ export default async function ProjectPage({
                 </a>
               )}
             </div>
+          )}
+
+          {/* Store policy pages */}
+          {project.legalLinks && project.legalLinks.length > 0 && (
+            <nav aria-label={`${project.name} policies`} className="flex flex-wrap gap-4 mt-6 text-xs font-mono">
+              {project.legalLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="text-snl-muted underline hover:text-snl-text">
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
           )}
 
           {/* Related Services */}
@@ -284,13 +295,13 @@ export default async function ProjectPage({
             <p className="text-snl-muted mt-3 max-w-xl mx-auto">
               Let&apos;s create something worth using.
             </p>
-            <a
-              href="mailto:hello@shelnovalabs.com"
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 mt-6 px-8 py-4 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-full font-medium text-sm tracking-wide transition-colors"
             >
               Start a Project
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </section>
         </div>
       </main>

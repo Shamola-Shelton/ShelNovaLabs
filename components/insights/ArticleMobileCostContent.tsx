@@ -20,7 +20,7 @@ export default function ArticleMobileCostContent() {
         </p>
         <div className="bg-[#111318] border-l-4 border-snl-accent p-5 rounded-r-xl my-6">
           <p className="text-sm italic text-snl-text font-medium">
-            &ldquo;When building applications like BibleWise (150K+ AI conversations) and ApexFleet OS (real-time IoT logistics telematics), we learned that the biggest cost driver isn&apos;t drawing screens — it is state management, offline resilience, and backend sync architecture.&rdquo;
+            &ldquo;When building applications like BibleWise (an AI Bible coach) and Kadi Classic (real-time multiplayer), we learned that the biggest cost driver isn&apos;t drawing screens — it is state management, offline resilience, and backend sync architecture.&rdquo;
           </p>
         </div>
       </section>
@@ -84,7 +84,7 @@ export default function ArticleMobileCostContent() {
               <Link href="/projects/gist-and-gain" className="text-snl-accent underline hover:text-white">
                 Gist &amp; Gain
               </Link>{" "}
-              and ApexFleet OS) involves prompt routing, vector embeddings, and sub-50ms sync latency engineering.
+              and Kadi Classic) involves prompt routing, vector embeddings, and sub-50ms sync latency engineering.
             </p>
           </div>
         </div>

@@ -50,7 +50,7 @@ function validateAndClean(input: unknown): { ok: boolean; error?: string; data?:
 }
 
 export async function POST(request: Request) {
-  let ip = getIp(request);
+  const ip = getIp(request);
   try {
     if (isRateLimited(ip)) {
       return NextResponse.json(
@@ -60,6 +60,11 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
+
+    // Honeypot field: real visitors never see it, so a value means a bot. Pretend success.
+    if (typeof body?.website === "string" && body.website.trim() !== "") {
+      return NextResponse.json({ success: true, message: "Thank you! Your message has been submitted successfully." });
+    }
 
     const result = validateAndClean(body);
     if (!result.ok) {

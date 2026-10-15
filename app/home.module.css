@@ -12,3 +12,7 @@
 @media(max-width:600px){.nav{padding:20px}.nav nav{gap:21px}.nav nav a{font-size:12px}.main{margin:0 15px;padding:0 19px}.intro{padding-top:35px}.profile{gap:17px;align-items:flex-start}.avatar{width:73px;height:82px;font-size:37px}.profile h1{font-size:27px}.role{font-size:10px}.role>span{margin:0 3px}.location{font-size:10px}.socials{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}.projectImage{aspect-ratio:1.75}.projectBody p{min-height:0;font-size:12px}.studio{padding:19px}.studio h3{font-size:24px}.contact h2{font-size:28px}.footer{flex-wrap:wrap;padding-inline:25px}.footer>span:nth-child(2){order:3;width:100%}}
 @media(prefers-reduced-motion:reduce){.page *{transition:none}}
 
+.projectFallback{position:absolute;inset:0!important;display:grid!important;place-items:center;width:auto!important;height:auto!important;background:#1b1a1e!important;border:0!important;font-family:var(--font-heading);font-size:56px;font-weight:600}
+.badge{margin-left:6px;font:9px var(--font-mono);color:#bcb4cd;font-weight:400}.capabilities h3 a:hover{color:var(--accent)}
+.appLinks{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;font:10px var(--font-mono)}.appLinks a{color:#b5b0bf;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#4a4550}.appLinks a:hover{color:#fff}
+.contactActions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}

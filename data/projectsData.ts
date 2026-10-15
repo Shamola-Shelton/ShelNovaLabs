@@ -3,7 +3,7 @@ export interface CaseStudy {
   index: string;
   name: string;
   tagline: string;
-  category: "mobile" | "web" | "saas" | "ai" | "open-source";
+  category: "mobile" | "web" | "saas" | "ai" | "open-source" | "game";
   tags: string[];
   status: "live" | "dev" | "beta";
   statusLabel: string;
@@ -12,6 +12,7 @@ export interface CaseStudy {
   challenge: string;
   approach: string;
   result: string;
+  // Only list facts that can be verified (content counts, store data).
   metrics?: { label: string; value: string }[];
   storeLinks?: {
     playStore?: string;
@@ -19,6 +20,9 @@ export interface CaseStudy {
     webDemo?: string;
     github?: string;
   };
+  // Policy pages linked from store listings. Never remove or rename these paths.
+  legalLinks?: { label: string; href: string }[];
+  platforms: string;
   mockupType: "mobile" | "dashboard" | "dual";
   primaryBadge: string;
   imageSrc?: string;
@@ -34,7 +38,7 @@ export const projectsData: CaseStudy[] = [
     category: "mobile",
     tags: ["Mobile App", "Faith & Culture", "Catholic Devotions", "Offline First"],
     status: "live",
-    statusLabel: "Live on Play Store",
+    statusLabel: "Live on Google Play",
     accentColor: "#6B21A8",
     summary:
       "A Catholic prayer, Holy Rosary, and Bible companion application featuring liturgical calendar celebration stories, daily scripture readings, offline audio prayers, intention tracking, and prayer streaks.",
@@ -43,15 +47,20 @@ export const projectsData: CaseStudy[] = [
     approach:
       "Engineered an offline-first Flutter application with a curated General Roman Calendar story engine, audio Rosary decade player, offline Bible reader, and serverless Firebase synchronization for bookmarks and prayer progress.",
     result:
-      "Published on mobile app stores providing thousands of faithful with a daily Catholic prayer sanctuary, complete liturgical calendar, and offline audio Rosary.",
+      "Published on Google Play as a daily Catholic prayer companion with a complete liturgical calendar, offline Bible and audio Rosary.",
     metrics: [
       { label: "Liturgical Celebrations", value: "218+" },
-      { label: "Offline Reliability", value: "100%" },
-      { label: "App Rating", value: "5.0 ★" },
+      { label: "Works Offline", value: "Yes" },
     ],
     storeLinks: {
       playStore: "https://play.google.com/store/apps/details?id=com.shelnovalabs.sancta",
     },
+    legalLinks: [
+      { label: "Privacy Policy", href: "/sancta/privacy" },
+      { label: "Terms of Service", href: "/sancta/terms" },
+      { label: "Delete Account", href: "/sancta/delete-account" },
+    ],
+    platforms: "Android",
     mockupType: "mobile",
     primaryBadge: "Catholic Prayer & Liturgy",
   },
@@ -63,7 +72,7 @@ export const projectsData: CaseStudy[] = [
     category: "ai",
     tags: ["Mobile App", "AI Coach", "Chapter Insights", "EdTech"],
     status: "live",
-    statusLabel: "Live on Play Store",
+    statusLabel: "Live on Google Play",
     accentColor: "#0F4C3A",
     summary:
       "An AI-powered Bible study platform featuring conversational AI Coach guidance, structured chapter insights (Summary, Main Idea, Timeline, Cross-Refs), daily reflection prompts, and reading plans.",
@@ -72,16 +81,16 @@ export const projectsData: CaseStudy[] = [
     approach:
       "Engineered a mobile-first app combining an AI Coach with RAG context routing, structured Chapter Insights (Summary, Key Takeaway, Life Application, Reflection Questions), reading streaks, and serverless Firestore sync.",
     result:
-      "Helping thousands of believers grow in their faith daily with instant guidance from their AI Bible Coach, chapter insights, and interactive verse reflections.",
+      "Live on Google Play, giving readers instant guidance from an AI Bible Coach alongside chapter insights and interactive verse reflections.",
     metrics: [
-      { label: "AI Conversations", value: "150K+" },
-      { label: "Chapter Insights", value: "1,189 Books" },
-      { label: "App Rating", value: "4.9 ★" },
+      { label: "Chapter Insights", value: "1,189 chapters" },
+      { label: "Books Covered", value: "66" },
     ],
     storeLinks: {
       playStore: "https://play.google.com/store/apps/details?id=com.shelnovalabs.biblewise",
-      appStore: "#",
     },
+    legalLinks: [{ label: "Privacy Policy", href: "/privacy/biblewise" }],
+    platforms: "Android",
     mockupType: "mobile",
     primaryBadge: "AI Coach & Scripture Study",
     imageSrc: "/images/biblewise.jpg",
@@ -93,72 +102,127 @@ export const projectsData: CaseStudy[] = [
   },
   {
     id: "kadi-party",
-    index: "02",
+    index: "03",
     name: "Kadi Classic",
     tagline: "The fast-paced Kenyan card game, digitally reimagined.",
-    category: "mobile",
-    tags: ["Mobile App", "Real-Time Multiplayer", "Gaming", "Consumer"],
+    category: "game",
+    tags: ["Mobile Game", "Real-Time Multiplayer", "Gaming", "Consumer"],
     status: "live",
-    statusLabel: "Live on App Stores",
+    statusLabel: "Live on Google Play",
     accentColor: "#f59e0b",
     summary:
       "A digital version of the traditional Kenyan Kadi card game featuring instant online matchmaking, smart AI opponents, custom rooms, and global leaderboards.",
     challenge:
-      "Translating a high-speed physical card game into a real-time multiplayer mobile app required ultra-low latency state synchronization, cheat prevention, and seamless fallback when users lose cellular connection.",
+      "Translating a high-speed physical card game into a real-time multiplayer mobile app required low-latency state synchronization, cheat prevention, and seamless fallback when users lose cellular connection.",
     approach:
-      "Designed a real-time WebSocket state engine with local prediction and authoritative server validation. Implemented stateful bot fallbacks when players drop out, and crafted smooth card movement animations with 60 FPS performance.",
+      "Designed a real-time WebSocket state engine with local prediction and authoritative server validation. Implemented stateful bot fallbacks when players drop out, and crafted smooth card movement animations at 60 FPS.",
     result:
-      "Successfully launched Kadi Classic across mobile app stores, attracting thousands of daily active card players with smooth multiplayer matchmaking.",
+      "Launched on Google Play with online matchmaking, AI opponents and private rooms, bringing a game Kenyans grew up playing to their phones.",
     metrics: [
-      { label: "Total Matches", value: "500K+" },
-      { label: "Active Players", value: "25K+" },
-      { label: "Multiplayer Latency", value: "< 45ms" },
+      { label: "Game Modes", value: "Online · AI · Rooms" },
+      { label: "Target Frame Rate", value: "60 FPS" },
     ],
     storeLinks: {
       playStore: "https://play.google.com/store/apps/details?id=com.shelnovalabs.kadiclassic",
-      appStore: "#",
     },
+    platforms: "Android",
     mockupType: "mobile",
     primaryBadge: "Gaming & Multiplayer",
     imageSrc: "/images/kadi_classic.jpg",
   },
   {
-    id: "shelnova-os",
-    index: "03",
-    name: "ShelNova OS (FlowDesk)",
-    tagline: "All-in-one business operations, analytics, and revenue engine.",
-    category: "saas",
-    tags: ["Web App", "SaaS", "Dashboard", "Product Engineering"],
-    status: "dev",
-    statusLabel: "Internal SaaS Platform",
-    accentColor: "#06b6d4",
+    id: "pupgrid",
+    index: "04",
+    name: "PupGrid: Puppy Sudoku",
+    tagline: "A dog-themed logic puzzle — one pup per row, column and region.",
+    category: "game",
+    tags: ["Mobile Game", "Logic Puzzle", "Daily Challenge", "AdMob"],
+    status: "beta",
+    statusLabel: "Launching on mobile",
+    accentColor: "#d97706",
     summary:
-      "A scalable SaaS dashboard built to manage digital products, monitor real-time subscription revenue, automate customer support workflows, and track product health.",
+      "A dog-themed take on one-star Star Battle puzzles. Place dogs on a grid so there is exactly one per row, column and region, and no two dogs touch — not even diagonally. Includes a level campaign, a daily puzzle, hints and leaderboards.",
     challenge:
-      "Growing product studios need unified visibility into active users, recurring revenue, system uptime, and AI usage metrics across multiple client and internal applications without juggling 10 separate dashboards.",
+      "Logic puzzles like Star Battle are satisfying but intimidating for casual players. The goal was to make the rules click instantly and keep players returning every day without paywalls.",
     approach:
-      "Architected a unified Next.js App Router dashboard with Server Actions, role-based access control (RBAC), multi-tenant data isolation in PostgreSQL, and real-time streaming charts for financial and usage analytics.",
+      "Built a campaign of hand-tuned levels plus a daily puzzle, a three-tier hint system (Think, Sniff and Fetch) that teaches the deduction instead of just giving the answer, and optional rewarded videos so the game stays free.",
     result:
-      "Delivered a centralized operational cockpit that reduces administrative overhead by 60% and provides real-time decision intelligence for company leadership.",
+      "A free, all-ages puzzle game with a campaign, daily puzzle and leaderboards, supported by optional rewarded ads.",
     metrics: [
-      { label: "Data Throughput", value: "1M+ events/day" },
-      { label: "Latency", value: "< 120ms" },
-      { label: "Time Saved", value: "15 hrs/wk" },
+      { label: "Modes", value: "Campaign · Daily" },
+      { label: "Hint Types", value: "3" },
     ],
-    storeLinks: {
-      webDemo: "#",
-    },
-    mockupType: "dashboard",
-    primaryBadge: "SaaS & Product Engineering",
-    imageSrc: "/images/shelnova_os.jpg",
+    legalLinks: [
+      { label: "Privacy Policy", href: "/pupgrid/privacy" },
+      { label: "Terms of Service", href: "/pupgrid/terms" },
+    ],
+    platforms: "Android, iOS",
+    mockupType: "mobile",
+    primaryBadge: "Puzzle Game",
+  },
+  {
+    id: "wordnova",
+    index: "05",
+    name: "WordNova",
+    tagline: "Connect words, discover worlds — a cosmic word-association puzzle.",
+    category: "game",
+    tags: ["Mobile Game", "Word Puzzle", "Vocabulary", "Casual"],
+    status: "beta",
+    statusLabel: "Launching on mobile",
+    accentColor: "#7c3aed",
+    summary:
+      "A word-association and vocabulary puzzle game set across a 600-level galaxy campaign — from Home Orbit and Lunar Fields out to Neptune and the Genesis Singularity — with Star Link puzzles, constellation discovery and leaderboards.",
+    challenge:
+      "Word games are crowded. WordNova needed a sense of journey and discovery that keeps players moving level after level, while staying friendly for all ages.",
+    approach:
+      "Wrapped word-association puzzles in a space-exploration progression, with regions that unlock as you play, constellation collection, and an in-game economy (Stardust, time freezes, mistake shields) earned through play or optional rewarded ads.",
+    result:
+      "A family-friendly word puzzle game with a 600-level campaign that saves progress locally on the device.",
+    metrics: [
+      { label: "Campaign Levels", value: "600" },
+      { label: "Galaxy Regions", value: "9" },
+    ],
+    legalLinks: [
+      { label: "Privacy Policy", href: "/wordnova/privacy" },
+      { label: "Terms of Service", href: "/wordnova/terms" },
+    ],
+    platforms: "Android",
+    mockupType: "mobile",
+    primaryBadge: "Word Game",
+  },
+  {
+    id: "wash-rush",
+    index: "06",
+    name: "Wash Rush: Pressure Panic",
+    tagline: "A satisfying 3D pressure-washing game against the clock.",
+    category: "game",
+    tags: ["Mobile Game", "Godot", "3D", "Casual"],
+    status: "beta",
+    statusLabel: "Launching on Android",
+    accentColor: "#0ea5e9",
+    summary:
+      "A 3D casual game built in Godot where you blast grime off surfaces with a pressure washer before time runs out, using custom cleanable-surface shaders.",
+    challenge:
+      "Pressure-washing games live or die on how satisfying the cleaning feels. That needs real-time surface cleaning that still runs smoothly on budget Android phones.",
+    approach:
+      "Built in the Godot engine with custom cleanable-surface shaders, Firebase Remote Config for tuning difficulty without app updates, and anonymous analytics to find levels where players get stuck.",
+    result:
+      "A lightweight 3D game tuned for mid-range Android devices, with progress saved on the device and difficulty adjustable remotely.",
+    legalLinks: [
+      { label: "Privacy Policy", href: "/wash-rush/privacy" },
+      { label: "Terms of Service", href: "/wash-rush/terms" },
+    ],
+    platforms: "Android",
+    mockupType: "mobile",
+    primaryBadge: "3D Casual Game",
   },
   {
     id: "jiranify",
-    index: "04",
+    index: "07",
     name: "JiraniFy",
     tagline: "Explore your neighborhood — trusted local tools & verified resident signals.",
-    category: "mobile",
-    tags: ["Mobile App", "Hyperlocal Social", "Community Marketplace", "Verified Resident Feed"],
+    category: "web",
+    tags: ["Web App", "Hyperlocal Social", "Community Marketplace", "Verified Resident Feed"],
     status: "live",
     statusLabel: "Live at jiranify.com",
     accentColor: "#f97316",
@@ -167,17 +231,13 @@ export const projectsData: CaseStudy[] = [
     challenge:
       "Urban estates and neighborhood communities rely on fragmented, unverified chat groups plagued by spam, security risks, and poor local commerce discovery.",
     approach:
-      "Engineered geo-verified resident feeds (e.g., TSAVO Sunset), estate marketplace listings, local shouts, events, polls, gigs, and dual light/dark mode with global admin moderation consoles.",
+      "Engineered geo-verified resident feeds, estate marketplace listings, local shouts, events, polls, gigs, and dual light/dark mode with global admin moderation consoles.",
     result:
-      "Successfully launched live at jiranify.com — delivering trusted resident signals, estate security coordination, and local buy/sell listings directly to community pockets.",
-    metrics: [
-      { label: "Verified Residents", value: "5K+" },
-      { label: "Active Estates", value: "20+" },
-      { label: "Local Commerce", value: "KSh 2.5M+" },
-    ],
+      "Live at jiranify.com — giving residents a verified feed for security alerts, local buy/sell listings and community events.",
     storeLinks: {
       webDemo: "https://jiranify.com",
     },
+    platforms: "Web",
     mockupType: "mobile",
     primaryBadge: "Community & Local Commerce",
     imageSrc: "/images/jiranify.jpg",
@@ -188,43 +248,14 @@ export const projectsData: CaseStudy[] = [
     ],
   },
   {
-    id: "gist-and-gain",
-    index: "05",
-    name: "Gist & Gain",
-    tagline: "Learn more in less time through AI-curated audio & micro-insights.",
-    category: "ai",
-    tags: ["Mobile App", "AI & ML", "EdTech", "Content"],
-    status: "dev",
-    statusLabel: "In Development",
-    accentColor: "#ec4899",
-    summary:
-      "An AI-powered self-improvement platform delivering key book summaries, interactive audio podcasts, smart flashcards, and retention quizzes in Gist (5-min) and Deep (15-min) modes.",
-    challenge:
-      "Traditional learning summaries are static text files. Users desire interactive audio micro-lessons that adapt to their personal retention rate and daily commute schedule.",
-    approach:
-      "Utilized LLM pipelines for automatic key takeaway extraction, text-to-speech audio synthesis for instant podcast creation, and spaced-repetition algorithms for flashcard review cycles.",
-    result:
-      "Built a seamless mobile learning pipeline capable of converting lengthy business & tech literature into bite-sized audio and quiz formats.",
-    metrics: [
-      { label: "Books Summarized", value: "2,500+" },
-      { label: "Retention Rate", value: "3.2x" },
-    ],
-    storeLinks: {
-      webDemo: "#",
-    },
-    mockupType: "mobile",
-    primaryBadge: "EdTech & Microlearning",
-    imageSrc: "/images/gist_gain.jpg",
-  },
-  {
     id: "nyimbo-za-jeshi",
-    index: "06",
+    index: "08",
     name: "Nyimbo za Jeshi la Wokovu",
     tagline: "Digital Swahili songbook & hymnal app for Salvation Army congregations.",
     category: "mobile",
     tags: ["Mobile App", "Faith & Culture", "Swahili Hymnal", "Offline First"],
     status: "live",
-    statusLabel: "Live on Play Store",
+    statusLabel: "Live on Google Play",
     accentColor: "#dc2626",
     summary:
       "A digital Swahili hymnal and songbook application serving Salvation Army congregations with instant song search by number/title, offline access, and audio tunes.",
@@ -233,48 +264,21 @@ export const projectsData: CaseStudy[] = [
     approach:
       "Engineered an offline-first Flutter application with instant full-text search indexing across hundreds of Swahili hymns, numerical lookup, favorites bookmarking, and low-memory footprint.",
     result:
-      "Live on the Google Play Store, serving thousands of active worshippers and choir leaders across East Africa with 99.9% offline reliability.",
+      "Live on Google Play, giving worshippers and choir leaders across East Africa a searchable hymnal that works without internet.",
     metrics: [
-      { label: "Active Hymn Readers", value: "15K+" },
-      { label: "Play Store Rating", value: "4.8 ★" },
+      { label: "Language", value: "Swahili" },
+      { label: "Works Offline", value: "Yes" },
     ],
     storeLinks: {
       playStore: "https://play.google.com/store/apps/details?id=com.shelnovalabs.nyimbozajeshilawokovu",
     },
+    platforms: "Android",
     mockupType: "mobile",
     primaryBadge: "Faith & Localization",
   },
   {
-    id: "greennexus",
-    index: "07",
-    name: "GreenNexus",
-    tagline: "AI-powered environmental data & climate intelligence platform.",
-    category: "web",
-    tags: ["Web App", "AI & ClimateTech", "Open Data", "Environmental Analytics"],
-    status: "dev",
-    statusLabel: "In Development",
-    accentColor: "#10b981",
-    summary:
-      "An intelligent climate data platform analyzing regional environmental metrics, carbon monitoring, and sustainability compliance through predictive AI modeling.",
-    challenge:
-      "Organizations and environmental researchers face fragmented climate datasets across government portals without unified analytical modeling or actionable sustainability insights.",
-    approach:
-      "Developed a Next.js + Python platform that ingests open satellite telemetry, processes carbon metrics, and provides interactive geospatial mapping dashboards.",
-    result:
-      "Empowering sustainability researchers and policy teams with real-time environmental intelligence and automated climate impact reports.",
-    metrics: [
-      { label: "Data Sources", value: "50+" },
-      { label: "Predictive Accuracy", value: "94.2%" },
-    ],
-    storeLinks: {
-      webDemo: "#",
-    },
-    mockupType: "dashboard",
-    primaryBadge: "AI & ClimateTech",
-  },
-  {
     id: "career-ops",
-    index: "08",
+    index: "09",
     name: "CareerOps",
     tagline: "AI-powered career operations engine & automated job search OS.",
     category: "open-source",
@@ -283,23 +287,90 @@ export const projectsData: CaseStudy[] = [
     statusLabel: "Open Source Project",
     accentColor: "#059669",
     summary:
-      "An advanced AI career operations platform built on Claude Code featuring 14 skill modes, Go dashboard, PDF resume synthesis, and batch application processing.",
+      "An AI career operations platform built on Claude Code featuring 14 skill modes, a Go dashboard, PDF resume synthesis, and batch application processing.",
     challenge:
       "Job seekers waste dozens of hours tailoring CVs, managing applications across fragmented sites, and preparing for technical interviews without data feedback.",
     approach:
       "Developed a CLI + Web system written in Go and Node, executing multi-step LLM workflows for resume parsing, vacancy alignment scoring, and PDF generation.",
     result:
-      "Published as a flagship open-source project for developer productivity, demonstrating advanced AI agent orchestration and CLI/Web dashboard integration.",
-    metrics: [
-      { label: "Skill Modes", value: "14" },
-      { label: "Batch Speed", value: "10x Faster" },
-    ],
+      "Published as an open-source project for developer productivity, demonstrating AI agent orchestration and CLI/Web dashboard integration.",
+    metrics: [{ label: "Skill Modes", value: "14" }],
     storeLinks: {
       github: "https://github.com/Shamola-Shelton/career-ops",
     },
+    platforms: "CLI, Web",
     mockupType: "dashboard",
     primaryBadge: "Open Source & AI Agent",
     imageSrc: "/images/career_ops.jpg",
+  },
+  {
+    id: "shelnova-os",
+    index: "10",
+    name: "ShelNova OS (FlowDesk)",
+    tagline: "All-in-one business operations, analytics, and revenue engine.",
+    category: "saas",
+    tags: ["Web App", "SaaS", "Dashboard", "Product Engineering"],
+    status: "dev",
+    statusLabel: "In Development",
+    accentColor: "#06b6d4",
+    summary:
+      "A SaaS dashboard being built to manage digital products, monitor subscription revenue, automate customer support workflows, and track product health.",
+    challenge:
+      "Growing product studios need unified visibility into active users, recurring revenue, system uptime, and AI usage across multiple applications without juggling separate dashboards.",
+    approach:
+      "Architecting a Next.js App Router dashboard with Server Actions, role-based access control (RBAC), multi-tenant data isolation in PostgreSQL, and streaming charts for financial and usage analytics.",
+    result:
+      "In active development as the internal operations cockpit for ShelNova Labs products.",
+    platforms: "Web",
+    mockupType: "dashboard",
+    primaryBadge: "SaaS & Product Engineering",
+    imageSrc: "/images/shelnova_os.jpg",
+  },
+  {
+    id: "gist-and-gain",
+    index: "11",
+    name: "Gist & Gain",
+    tagline: "Learn more in less time through AI-curated audio & micro-insights.",
+    category: "ai",
+    tags: ["Mobile App", "AI & ML", "EdTech", "Content"],
+    status: "dev",
+    statusLabel: "In Development",
+    accentColor: "#ec4899",
+    summary:
+      "An AI-powered self-improvement app delivering key book summaries, audio lessons, smart flashcards, and retention quizzes in Gist (5-min) and Deep (15-min) modes.",
+    challenge:
+      "Traditional learning summaries are static text. Learners want interactive audio micro-lessons that fit their commute and help them actually remember what they read.",
+    approach:
+      "Using LLM pipelines for key-takeaway extraction, text-to-speech for instant audio lessons, and spaced-repetition scheduling for flashcard reviews.",
+    result:
+      "In development: a mobile learning pipeline that turns long business and tech books into bite-sized audio and quiz formats.",
+    metrics: [{ label: "Lesson Modes", value: "5 min · 15 min" }],
+    platforms: "Android, iOS",
+    mockupType: "mobile",
+    primaryBadge: "EdTech & Microlearning",
+    imageSrc: "/images/gist_gain.jpg",
+  },
+  {
+    id: "greennexus",
+    index: "12",
+    name: "GreenNexus",
+    tagline: "AI-powered environmental data & climate intelligence platform.",
+    category: "web",
+    tags: ["Web App", "AI & ClimateTech", "Open Data", "Environmental Analytics"],
+    status: "dev",
+    statusLabel: "In Development",
+    accentColor: "#10b981",
+    summary:
+      "A climate data platform in development for analyzing regional environmental metrics, carbon monitoring, and sustainability compliance.",
+    challenge:
+      "Organizations and environmental researchers face fragmented climate datasets across government portals without unified analysis or actionable sustainability insights.",
+    approach:
+      "Building a Next.js + Python platform that ingests open satellite data, processes carbon metrics, and provides interactive geospatial dashboards.",
+    result:
+      "In development, aimed at giving sustainability researchers and policy teams one place to explore environmental data.",
+    platforms: "Web",
+    mockupType: "dashboard",
+    primaryBadge: "AI & ClimateTech",
   },
 ];
 
@@ -473,7 +544,7 @@ export const servicesData = [
           "Yes. We build offline-first apps where needed, using local storage and sync engines — ideal for regions with unreliable connectivity.",
       },
     ],
-    relatedProjectIds: ["biblewise", "kadi-party", "jiranify", "gist-and-gain", "nyimbo-za-jeshi"],
+    relatedProjectIds: ["sancta", "biblewise", "kadi-party", "pupgrid", "wordnova", "nyimbo-za-jeshi"],
   },
   {
     index: "04",

@@ -105,13 +105,13 @@ export default function ServicesPage() {
           {/* CTA */}
           <div className="mt-16 text-center">
             <p className="text-snl-muted text-lg">Not sure which service you need?</p>
-            <a
-              href="mailto:hello@shelnovalabs.com"
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 mt-4 px-8 py-4 bg-snl-accent hover:bg-snl-accent-hover text-white rounded-full font-medium text-sm tracking-wide transition-colors"
             >
               Talk to us about your project
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </main>

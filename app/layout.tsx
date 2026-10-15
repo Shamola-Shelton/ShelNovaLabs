@@ -37,13 +37,12 @@ export const metadata: Metadata = {
     "AI Product Development",
     "Kadi Classic",
     "BibleWise AI",
+    "Sancta",
+    "PupGrid",
   ],
   authors: [{ name: "ShelNova Labs Ltd.", url: "https://shelnovalabs.com" }],
   creator: "ShelNova Labs Ltd.",
   publisher: "ShelNova Labs Ltd.",
-  alternates: {
-    canonical: "https://shelnovalabs.com",
-  },
   icons: {
     icon: [
       { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
@@ -74,7 +73,7 @@ export const metadata: Metadata = {
     title: "ShelNova Labs | Web & Mobile App Development in Kenya",
     description:
       "ShelNova Labs builds modern websites, web applications and mobile apps for businesses in Kenya and worldwide.",
-    creator: "@shelnovalabs",
+    creator: "@_shamolah_",
     images: ["https://shelnovalabs.com/og.png"],
   },
   metadataBase: new URL("https://shelnovalabs.com"),
@@ -92,7 +91,12 @@ export default function RootLayout({
     "@type": "Organization",
     name: "ShelNova Labs",
     url: "https://shelnovalabs.com",
-    logo: "https://shelnovalabs.com/og.png",
+    logo: "https://shelnovalabs.com/icon-512.png",
+    founder: {
+      "@type": "Person",
+      name: "Shelton Shamola",
+      url: "https://shelnovalabs.com/shamolah",
+    },
     foundingDate: "2023",
     description:
       "Software development company in Nairobi, Kenya building modern websites, web applications, mobile apps, and AI-powered software.",
@@ -102,11 +106,7 @@ export default function RootLayout({
       addressLocality: "Nairobi",
       addressCountry: "KE",
     },
-    sameAs: [
-      "https://github.com/shelnovalabs",
-      "https://www.linkedin.com/in/Shamola-Shelton",
-      "https://x.com/shelnovalabs",
-    ],
+    sameAs: ["https://github.com/shelnovalabs"],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
