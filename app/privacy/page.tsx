@@ -108,6 +108,17 @@ export default function PrivacyPolicy() {
                   Privacy policy, leaderboard and analytics data, AdMob disclosures, and terms for PupGrid.
                 </p>
               </Link>
+              <Link
+                href="/ciudadano/privacy"
+                className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
+              >
+                <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">
+                  Ciudadano: Citizenship Test →
+                </p>
+                <p className="text-xs text-snl-muted mt-1">
+                  Privacy policy, speech recognition and analytics data, Pass Pack purchase, and terms for Ciudadano.
+                </p>
+              </Link>
             </div>
           </section>
 
