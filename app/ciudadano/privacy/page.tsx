@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Ciudadano: Citizenship Test | ShelNova Labs",
+  title: "Privacy Policy — US Citizenship Test 2026 | ShelNova Labs",
   description:
-    "Privacy Policy for Ciudadano: Citizenship Test (Ciudadano 128), developed by ShelNova Labs Ltd. How the app handles your study progress, spoken answers, anonymous analytics, crash reports and the Pass Pack purchase.",
+    "Privacy Policy for US Citizenship Test 2026, developed by ShelNova Labs Ltd. How the app handles your study progress, spoken answers, anonymous analytics, crash reports and the Pass Pack purchase.",
 };
 
 export default function CiudadanoPrivacyPolicy() {
@@ -33,7 +33,7 @@ export default function CiudadanoPrivacyPolicy() {
       <div className="max-w-3xl mx-auto px-6 py-16">
         <div className="mb-10">
           <p className="text-snl-accent text-sm font-medium tracking-widest uppercase mb-3">
-            Legal · Ciudadano
+            Legal · US Citizenship Test 2026
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-snl-text mb-3">
             Privacy Policy
@@ -48,11 +48,11 @@ export default function CiudadanoPrivacyPolicy() {
             <h2 className="font-heading text-xl font-bold text-snl-text mb-3">1. Introduction</h2>
             <p>
               ShelNova Labs Ltd. (&quot;ShelNova Labs&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) develops and operates{" "}
-              <span className="text-snl-text font-medium">Ciudadano: Citizenship Test</span>, also shown as Ciudadano 128 (&quot;Ciudadano&quot; or &quot;the App&quot;),
+              <span className="text-snl-text font-medium">US Citizenship Test 2026</span> (&quot;the App&quot;),
               a study app for the U.S. naturalization civics test, available on Android and iOS. This policy explains what information the App handles, why, and the choices you have.
             </p>
             <p className="mt-3">
-              Ciudadano is an independent study app. It is not affiliated with, endorsed by or connected to U.S. Citizenship and Immigration Services (USCIS) or any government agency, and it never asks for your immigration details, case number or A-number.
+              The App is an independent study app. It is not affiliated with, endorsed by or connected to U.S. Citizenship and Immigration Services (USCIS) or any government agency, and it never asks for your immigration details, case number or A-number.
             </p>
           </section>
 
@@ -67,7 +67,7 @@ export default function CiudadanoPrivacyPolicy() {
 
             <h3 className="text-snl-text font-semibold mb-2 mt-4">2.2 Microphone and Speech Recognition</h3>
             <p>
-              When you answer out loud in the Speak or mock interview modes, the App asks for microphone permission and uses your phone&apos;s built-in speech recognition (provided by Apple on iOS and by Google or your device maker on Android) to turn your answer into text. The App compares that text with the accepted answers on your device and then discards it. Ciudadano does not record, save or upload your voice or your transcripts.
+              When you answer out loud in the Speak or mock interview modes, the App asks for microphone permission and uses your phone&apos;s built-in speech recognition (provided by Apple on iOS and by Google or your device maker on Android) to turn your answer into text. The App compares that text with the accepted answers on your device and then discards it. The App does not record, save or upload your voice or your transcripts.
             </p>
             <p className="mt-3">
               Depending on your phone and settings, the speech recognition service may process your audio on its own servers under its provider&apos;s privacy policy. You can deny or withdraw microphone permission at any time in your phone&apos;s settings and still mark your own answers.
@@ -95,7 +95,7 @@ export default function CiudadanoPrivacyPolicy() {
 
             <h3 className="text-snl-text font-semibold mb-2 mt-4">2.7 What We Do Not Collect</h3>
             <p>
-              Ciudadano has no advertising and no accounts. It does not access your contacts, camera, photos or location, and it does not sell or share data for advertising.
+              The App has no advertising and no accounts. It does not access your contacts, camera, photos or location, and it does not sell or share data for advertising.
             </p>
           </section>
 
@@ -126,7 +126,7 @@ export default function CiudadanoPrivacyPolicy() {
           <section>
             <h2 className="font-heading text-xl font-bold text-snl-text mb-3">5. Children</h2>
             <p>
-              Ciudadano is meant for adults preparing for the naturalization interview. It is not directed to children under 13, and we do not knowingly collect personal information from them. If you believe a child has given us personal information, contact us and we will remove it.
+              The App is meant for adults preparing for the naturalization interview. It is not directed to children under 13, and we do not knowingly collect personal information from them. If you believe a child has given us personal information, contact us and we will remove it.
             </p>
           </section>
 
@@ -156,7 +156,7 @@ export default function CiudadanoPrivacyPolicy() {
               We rely on the security of our providers and send data over encrypted connections. No system is perfectly secure, so we cannot guarantee absolute security.
             </p>
             <p className="mt-3">
-              We may update this policy as the App changes. The date above shows the latest version, and continued use of Ciudadano after an update means you accept it.
+              We may update this policy as the App changes. The date above shows the latest version, and continued use of the App after an update means you accept it.
             </p>
           </section>
 

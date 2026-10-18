@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Ciudadano: Citizenship Test | ShelNova Labs",
+  title: "Terms of Service — US Citizenship Test 2026 | ShelNova Labs",
   description:
-    "Terms of Service for Ciudadano: Citizenship Test (Ciudadano 128), a U.S. civics test study app by ShelNova Labs Ltd. Not affiliated with USCIS.",
+    "Terms of Service for US Citizenship Test 2026, a U.S. civics test study app by ShelNova Labs Ltd. Not affiliated with USCIS.",
 };
 
 export default function CiudadanoTerms() {
@@ -33,7 +33,7 @@ export default function CiudadanoTerms() {
       <div className="max-w-3xl mx-auto px-6 py-16">
         <div className="mb-10">
           <p className="text-snl-accent text-sm font-medium tracking-widest uppercase mb-3">
-            Legal · Ciudadano
+            Legal · US Citizenship Test 2026
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-snl-text mb-3">
             Terms of Service
@@ -48,7 +48,7 @@ export default function CiudadanoTerms() {
             <h2 className="font-heading text-xl font-bold text-snl-text mb-3">1. Acceptance of Terms</h2>
             <p>
               By downloading, installing or using{" "}
-              <span className="text-snl-text font-medium">Ciudadano: Citizenship Test</span>, also shown as Ciudadano 128 (&quot;the App&quot;), developed and operated by
+              <span className="text-snl-text font-medium">US Citizenship Test 2026</span> (&quot;the App&quot;), developed and operated by
               ShelNova Labs Ltd. (&quot;ShelNova Labs&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), you agree to these Terms of Service (&quot;Terms&quot;).
               If you do not agree, please do not use the App.
             </p>
@@ -58,7 +58,7 @@ export default function CiudadanoTerms() {
           <section>
             <h2 className="font-heading text-xl font-bold text-snl-text mb-3">2. Independent Study App, Not Legal Advice</h2>
             <p>
-              Ciudadano helps you study for the civics part of the U.S. naturalization test. It is an independent product and is{" "}
+              The App helps you study for the civics part of the U.S. naturalization test. It is an independent product and is{" "}
               <span className="text-snl-text font-medium">not affiliated with, endorsed by or connected to U.S. Citizenship and Immigration Services (USCIS)</span>{" "}
               or any government agency.
             </p>

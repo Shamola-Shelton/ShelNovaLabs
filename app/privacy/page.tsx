@@ -113,10 +113,10 @@ export default function PrivacyPolicy() {
                 className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
               >
                 <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">
-                  Ciudadano: Citizenship Test →
+                  US Citizenship Test 2026 →
                 </p>
                 <p className="text-xs text-snl-muted mt-1">
-                  Privacy policy, speech recognition and analytics data, Pass Pack purchase, and terms for Ciudadano.
+                  Privacy policy, speech recognition and analytics data, Pass Pack purchase, and terms for US Citizenship Test 2026.
                 </p>
               </Link>
             </div>
