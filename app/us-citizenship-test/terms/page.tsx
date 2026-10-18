@@ -19,7 +19,7 @@ export default function CiudadanoTerms() {
             Shel<span className="text-snl-accent">Nova</span> Labs
           </Link>
           <div className="flex items-center gap-4 text-sm">
-            <Link href="/ciudadano/privacy" className="text-snl-muted hover:text-snl-text transition-colors">
+            <Link href="/us-citizenship-test/privacy" className="text-snl-muted hover:text-snl-text transition-colors">
               Privacy Policy
             </Link>
             <Link href="/privacy" className="text-snl-muted hover:text-snl-text transition-colors">
@@ -98,7 +98,7 @@ export default function CiudadanoTerms() {
             <h2 className="font-heading text-xl font-bold text-snl-text mb-3">5. Progress on Your Device</h2>
             <p>
               The App has no accounts. Your progress is stored only on your device and is lost if you uninstall the App or lose the device. A purchased Pass Pack can be restored, but study progress cannot. Our{" "}
-              <Link href="/ciudadano/privacy" className="text-snl-accent hover:underline">Privacy Policy</Link>{" "}
+              <Link href="/us-citizenship-test/privacy" className="text-snl-accent hover:underline">Privacy Policy</Link>{" "}
               explains how the App handles information, including spoken answers.
             </p>
           </section>
@@ -170,7 +170,7 @@ export default function CiudadanoTerms() {
         <div className="max-w-3xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-snl-muted">© {new Date().getFullYear()} ShelNova Labs Ltd.</p>
           <div className="flex items-center gap-4 text-xs">
-            <Link href="/ciudadano/privacy" className="text-snl-muted hover:text-snl-text transition-colors">
+            <Link href="/us-citizenship-test/privacy" className="text-snl-muted hover:text-snl-text transition-colors">
               Privacy Policy
             </Link>
             <Link href="/" className="text-snl-muted hover:text-snl-text transition-colors">

@@ -42,6 +42,13 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      // The app was first published as "Ciudadano"; keep old links working.
+      { source: "/ciudadano/privacy", destination: "/us-citizenship-test/privacy", permanent: true },
+      { source: "/ciudadano/terms", destination: "/us-citizenship-test/terms", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

@@ -19,7 +19,7 @@ export default function CiudadanoPrivacyPolicy() {
             Shel<span className="text-snl-accent">Nova</span> Labs
           </Link>
           <div className="flex items-center gap-4 text-sm">
-            <Link href="/ciudadano/terms" className="text-snl-muted hover:text-snl-text transition-colors">
+            <Link href="/us-citizenship-test/terms" className="text-snl-muted hover:text-snl-text transition-colors">
               Terms of Service
             </Link>
             <Link href="/privacy" className="text-snl-muted hover:text-snl-text transition-colors">
@@ -187,7 +187,7 @@ export default function CiudadanoPrivacyPolicy() {
         <div className="max-w-3xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-snl-muted">© {new Date().getFullYear()} ShelNova Labs Ltd.</p>
           <div className="flex items-center gap-4 text-xs">
-            <Link href="/ciudadano/terms" className="text-snl-muted hover:text-snl-text transition-colors">
+            <Link href="/us-citizenship-test/terms" className="text-snl-muted hover:text-snl-text transition-colors">
               Terms of Service
             </Link>
             <Link href="/" className="text-snl-muted hover:text-snl-text transition-colors">

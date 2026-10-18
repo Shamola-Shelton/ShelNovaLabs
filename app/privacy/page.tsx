@@ -109,7 +109,7 @@ export default function PrivacyPolicy() {
                 </p>
               </Link>
               <Link
-                href="/ciudadano/privacy"
+                href="/us-citizenship-test/privacy"
                 className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
               >
                 <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">

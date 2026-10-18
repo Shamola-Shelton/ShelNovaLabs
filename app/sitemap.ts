@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/about`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/contact`, lastModified: siteUpdated, changeFrequency: "yearly", priority: 0.8 },
     { url: `${baseUrl}/privacy`, lastModified: siteUpdated, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${baseUrl}/us-citizenship-test`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
   ];
 
   // Store-linked policy pages. Keep these paths stable.
@@ -30,6 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/wash-rush/terms",
     "/pupgrid/privacy",
     "/pupgrid/terms",
+    "/us-citizenship-test/privacy",
+    "/us-citizenship-test/terms",
   ].map((path) => ({ url: `${baseUrl}${path}`, lastModified: siteUpdated, changeFrequency: "yearly" as const, priority: 0.4 }));
 
   const servicePages: MetadataRoute.Sitemap = servicesData.map((service) => ({
