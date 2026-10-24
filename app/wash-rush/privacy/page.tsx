@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy & Terms of Service — Wash Rush: Pressure Panic | ShelNova Labs",
+  title: "Privacy Policy & Terms of Service — Wash Rush: Car Wash Tycoon | ShelNova Labs",
   description:
-    "Official Privacy Policy and Terms of Service for Wash Rush: Pressure Panic, developed by ShelNova Labs Ltd. Learn how we handle your gameplay data, AdMob advertising, and terms of play.",
+    "Official Privacy Policy and Terms of Service for Wash Rush: Car Wash Tycoon, developed by ShelNova Labs Ltd. Learn how we handle your gameplay data, Firebase analytics and crash reports, AdMob advertising, and terms of play.",
 };
 
 export default function WashRushPrivacyAndTerms() {
-  const updated = "1 October 2026";
+  const updated = "24 October 2026";
 
   return (
     <div data-snl-legal className="min-h-screen bg-snl-bg text-snl-text">
@@ -43,7 +43,7 @@ export default function WashRushPrivacyAndTerms() {
               Legal Disclosures
             </span>
             <span className="text-snl-subtle text-xs">•</span>
-            <span className="text-snl-subtle text-xs font-mono">Wash Rush: Pressure Panic</span>
+            <span className="text-snl-subtle text-xs font-mono">Wash Rush: Car Wash Tycoon</span>
           </div>
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-snl-text mb-4 tracking-tight">
             Privacy Policy &amp; Terms of Service
@@ -82,7 +82,7 @@ export default function WashRushPrivacyAndTerms() {
               Privacy Policy
             </h2>
             <p className="text-sm text-snl-muted mt-1">
-              How ShelNova Labs Ltd. collects, protects, and handles player data in Wash Rush: Pressure Panic.
+              How ShelNova Labs Ltd. collects, protects, and handles player data in Wash Rush: Car Wash Tycoon.
             </p>
           </div>
 
@@ -93,14 +93,14 @@ export default function WashRushPrivacyAndTerms() {
             </h3>
             <p className="mb-3">
               ShelNova Labs Ltd. (&quot;ShelNova Labs&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) develops and operates{" "}
-              <span className="text-snl-text font-medium">Wash Rush: Pressure Panic</span> (&quot;Wash Rush&quot; or &quot;the Game&quot;),
-              an arcade simulation mobile game available on Android devices.
+              <span className="text-snl-text font-medium">Wash Rush: Car Wash Tycoon</span> (&quot;Wash Rush&quot; or &quot;the Game&quot;),
+              a car wash tycoon mobile game available on Android devices. This is the current version of the app that was previously published as Wash Rush: Pressure Panic; this policy replaces the earlier version of the policy.
             </p>
             <p className="mb-3">
-              This Privacy Policy explains what information we collect when you install and play Wash Rush: Pressure Panic, how that information is used, and the privacy controls available to you. We are committed to transparency and respecting your digital privacy.
+              This Privacy Policy explains what information we collect when you install and play Wash Rush: Car Wash Tycoon, how that information is used, and the privacy controls available to you. We are committed to transparency and respecting your digital privacy.
             </p>
             <p>
-              By installing, downloading, or playing the Game, you acknowledge and agree to the practices described in this Privacy Policy. If you do not agree with any part of this policy, please do not install or play Wash Rush: Pressure Panic.
+              By installing, downloading, or playing the Game, you acknowledge and agree to the practices described in this Privacy Policy. If you do not agree with any part of this policy, please do not install or play Wash Rush: Car Wash Tycoon.
             </p>
           </div>
 
@@ -116,13 +116,13 @@ export default function WashRushPrivacyAndTerms() {
                   2.1 Local Game Progress (On-Device Storage)
                 </h4>
                 <p className="text-sm mb-3">
-                  Wash Rush: Pressure Panic does not require personal account creation, email registration, or social media logins. All gameplay progress is saved locally within your device&apos;s isolated application storage sandbox (<code className="text-xs bg-snl-bg px-1.5 py-0.5 rounded text-snl-accent font-mono">user://</code> directory). This includes:
+                  Wash Rush: Car Wash Tycoon does not require personal account creation, email registration, or social media logins. All gameplay progress is saved locally within your device&apos;s isolated application storage. This includes:
                 </p>
                 <ul className="list-disc list-inside space-y-1.5 text-sm ml-2">
-                  <li>Clean coins balance and stars earned per job</li>
-                  <li>Unlocked pressure washers, spray nozzles (0°, 15°, 25°, 40°, turbo), and washer skins</li>
-                  <li>Completed campaign levels, timed job best scores, and campaign progression</li>
-                  <li>Sound effects, music volume, and vibration preferences</li>
+                  <li>Your cash and gems balance, and your rank</li>
+                  <li>Wash stations, upgrades, crew members and the locations you have built or unlocked</li>
+                  <li>Completed campaign levels, wages owed, and campaign progression</li>
+                  <li>Sound, music and vibration preferences, and whether you have removed ads</li>
                 </ul>
                 <p className="text-xs text-snl-subtle mt-3">
                   Because this data is stored locally on your device, deleting the app or clearing app storage will reset your save data.
@@ -143,7 +143,7 @@ export default function WashRushPrivacyAndTerms() {
                   2.3 Gameplay Telemetry &amp; Analytics (Firebase Analytics)
                 </h4>
                 <p className="text-sm">
-                  We collect aggregated, pseudonymous gameplay telemetry using Google Firebase Analytics. This includes non-personal interaction events such as jobs initiated, jobs completed, surface cleaning percentages, wash completion duration, and equipment selection. This data is used solely to balance game difficulty curves, identify frustrating levels, and optimize performance.
+                  We collect aggregated, pseudonymous gameplay telemetry using Google Firebase Analytics. This includes non-personal interaction events such as levels started, completed and failed, how long levels take, which stations are built and upgraded, and whether ads were offered, watched or skipped. This data is used solely to balance game difficulty, identify frustrating levels, tune the advertising, and optimize performance.
                 </p>
               </div>
 
@@ -152,7 +152,7 @@ export default function WashRushPrivacyAndTerms() {
                   2.4 Advertising Data (Google AdMob)
                 </h4>
                 <p className="text-sm mb-3">
-                  Wash Rush: Pressure Panic is supported by advertisements served through Google AdMob (Publisher ID: <code className="text-xs bg-snl-bg px-1.5 py-0.5 rounded text-snl-accent font-mono">ca-app-pub-7925163364817373</code>). AdMob may collect and process:
+                  Wash Rush: Car Wash Tycoon is supported by advertisements (rewarded video ads that you choose to watch, and full-screen ads between some levels) served through Google AdMob (Publisher ID: <code className="text-xs bg-snl-bg px-1.5 py-0.5 rounded text-snl-accent font-mono">ca-app-pub-7925163364817373</code>). AdMob may collect and process:
                 </p>
                 <ul className="list-disc list-inside space-y-1.5 text-sm ml-2">
                   <li>Your device&apos;s Google Advertising ID (GAID)</li>
@@ -160,7 +160,7 @@ export default function WashRushPrivacyAndTerms() {
                   <li>Ad viewability metrics, impressions, and user interactions with ad units</li>
                 </ul>
                 <p className="text-sm mt-3">
-                  The Game utilizes Google&apos;s User Messaging Platform (UMP) SDK. When required by applicable law (such as under the European Union GDPR or UK GDPR), players are presented with a consent dialogue upon launch to choose between personalized ads, non-personalized ads, or to manage privacy preferences.
+                  The Game utilizes Google&apos;s User Messaging Platform (UMP) SDK. When required by applicable law (such as under the European Union GDPR or UK GDPR), players are presented with a consent dialogue upon launch to choose between personalized ads, non-personalized ads, or to manage privacy preferences. The Game is intended for players aged 13 and over: ad requests are marked as not child-directed and are limited to content rated for teens or younger.
                 </p>
               </div>
 
@@ -169,7 +169,7 @@ export default function WashRushPrivacyAndTerms() {
                   2.5 Push Notifications (Firebase Cloud Messaging)
                 </h4>
                 <p className="text-sm">
-                  If you grant notification permissions on supported Android devices (Android 13+), we may send optional reminders regarding daily cleaning jobs or updates via Firebase Cloud Messaging (topic: <code className="text-xs bg-snl-bg px-1.5 py-0.5 rounded text-snl-accent font-mono">daily_job</code>). You can disable notifications at any time via Android System Settings.
+                  If you grant notification permissions on supported Android devices (Android 13+), we may send optional reminders about daily rewards, new locations or updates via Firebase Cloud Messaging. You can disable notifications at any time via Android System Settings.
                 </p>
               </div>
             </div>
@@ -181,14 +181,14 @@ export default function WashRushPrivacyAndTerms() {
               3. Information We Do NOT Collect
             </h3>
             <p className="mb-3">
-              To minimize data processing and safeguard your privacy, Wash Rush: Pressure Panic does <strong className="text-snl-text">not</strong>:
+              To minimize data processing and safeguard your privacy, Wash Rush: Car Wash Tycoon does <strong className="text-snl-text">not</strong>:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-2">
               <li>Require user registration, passwords, phone numbers, or email addresses</li>
               <li>Collect physical home addresses, real names, or government identity numbers</li>
               <li>Access device contacts, photo galleries, camera, or microphone</li>
               <li>Track precise GPS location coordinates</li>
-              <li>Collect, store, or process credit card numbers or financial banking details</li>
+              <li>Collect, store, or process credit card numbers or financial banking details (any purchase, such as removing ads, is handled by Google Play)</li>
               <li>Sell, rent, or trade player data to data brokers or advertising exchanges</li>
             </ul>
           </div>
@@ -209,19 +209,23 @@ export default function WashRushPrivacyAndTerms() {
                 <tbody className="divide-y divide-snl-border">
                   <tr>
                     <td className="p-3 font-mono text-xs text-snl-accent">android.permission.INTERNET</td>
-                    <td className="p-3">Enables fetching remote game balancing configs, serving AdMob ads, and sending anonymized crash reports.</td>
+                    <td className="p-3">Enables fetching remote game settings, serving AdMob ads, and sending anonymized analytics and crash reports.</td>
                   </tr>
                   <tr>
                     <td className="p-3 font-mono text-xs text-snl-accent">android.permission.ACCESS_NETWORK_STATE</td>
-                    <td className="p-3">Allows the Game to check network availability before requesting ad fill or remote balance updates.</td>
+                    <td className="p-3">Allows the Game to check network availability before requesting ads or remote settings.</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-mono text-xs text-snl-accent">com.google.android.gms.permission.AD_ID</td>
+                    <td className="p-3">Lets Google AdMob read the Google Advertising ID to serve and measure ads. You can reset or delete it in Android settings.</td>
                   </tr>
                   <tr>
                     <td className="p-3 font-mono text-xs text-snl-accent">android.permission.VIBRATE</td>
-                    <td className="p-3">Provides tactile haptic feedback during pressure washer trigger operation and surface cleaning.</td>
+                    <td className="p-3">Provides light haptic feedback when you collect cash, finish a wash, or unlock something.</td>
                   </tr>
                   <tr>
                     <td className="p-3 font-mono text-xs text-snl-accent">android.permission.POST_NOTIFICATIONS</td>
-                    <td className="p-3">Optional Android 13+ permission for daily challenge reminder alerts (can be denied without impacting gameplay).</td>
+                    <td className="p-3">Optional Android 13+ permission for reminder alerts (can be denied without impacting gameplay).</td>
                   </tr>
                 </tbody>
               </table>
@@ -268,25 +272,24 @@ export default function WashRushPrivacyAndTerms() {
           {/* 6. Children's Privacy */}
           <div>
             <h3 className="font-heading text-xl font-bold text-snl-text mb-3">
-              6. Children&apos;s Privacy (COPPA &amp; GDPR-K)
+              6. Children&apos;s Privacy
             </h3>
             <p className="mb-3">
-              Wash Rush: Pressure Panic is designed for general audiences and casual game enthusiasts. We do not knowingly solicit or collect personal information from children under the age of 13 (or under 16 in the European Union and United Kingdom).
+              Wash Rush: Car Wash Tycoon is intended for players aged 13 and over. It is not directed at children, and we do not knowingly collect personal information from anyone under 13 (or under the minimum age of digital consent in your country, which is up to 16 in some parts of the European Union and the United Kingdom).
             </p>
             <p>
-              In accordance with Google Play Designed for Families and COPPA guidelines, our ad requests are configured to prevent behavioral profiling of young audiences. If you believe that a child has inadvertently provided us with personal data, please contact us immediately at{" "}
+              Ad requests are marked as not child-directed and limited to content suitable for teenagers. If you believe that a child under the permitted age has provided us with personal data, please contact us immediately at{" "}
               <a href="mailto:legal@shelnovalabs.com" className="text-snl-accent hover:underline">legal@shelnovalabs.com</a>, and we will promptly take steps to delete any such data.
             </p>
           </div>
 
-          {/* 7. Player Privacy Rights */}
           <div>
             <h3 className="font-heading text-xl font-bold text-snl-text mb-3">
               7. Your Rights &amp; Privacy Choices
             </h3>
             <p className="mb-3">Depending on your geographic jurisdiction (such as under GDPR, UK GDPR, or CCPA/CPRA), you have specific privacy rights:</p>
             <ul className="list-disc list-inside space-y-2 ml-2 mb-4">
-              <li><strong className="text-snl-text">Revoking Ad Consent:</strong> Players in the EEA and UK can adjust or revoke their advertising consent choices at any time via the in-game &quot;Privacy Options&quot; button or by clearing app data.</li>
+              <li><strong className="text-snl-text">Revoking Ad Consent:</strong> Players in the EEA and UK can adjust or revoke their advertising consent choices at any time via the in-game &quot;Privacy Options&quot; button in Settings or by clearing app data.</li>
               <li><strong className="text-snl-text">Resetting Advertising ID:</strong> You can reset or delete your Google Advertising ID on your Android device by navigating to: <code className="text-xs bg-snl-bg px-1.5 py-0.5 rounded text-snl-accent font-mono">Settings &gt; Google &gt; Ads &gt; Reset advertising ID</code>.</li>
               <li><strong className="text-snl-text">Opting Out of Notifications:</strong> You can revoke notification permissions at any time through <code className="text-xs bg-snl-bg px-1.5 py-0.5 rounded text-snl-accent font-mono">Settings &gt; Apps &gt; Wash Rush &gt; Notifications</code>.</li>
               <li><strong className="text-snl-text">Data Deletion:</strong> Because all game save data is stored locally on your device, you have complete autonomous control to delete your data at any time by uninstalling the Game or clearing the app storage.</li>
@@ -316,7 +319,7 @@ export default function WashRushPrivacyAndTerms() {
               Terms of Service
             </h2>
             <p className="text-sm text-snl-muted mt-1">
-              Terms and conditions governing the use, play, and virtual economy of Wash Rush: Pressure Panic.
+              Terms and conditions governing the use, play, and virtual economy of Wash Rush: Car Wash Tycoon.
             </p>
           </div>
 
@@ -328,10 +331,10 @@ export default function WashRushPrivacyAndTerms() {
             <p className="mb-3">
               These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;Player&quot;, &quot;User&quot;, or &quot;you&quot;) and{" "}
               <span className="text-snl-text font-medium">ShelNova Labs Ltd.</span> (&quot;ShelNova Labs&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), governing your download, installation, access, and play of{" "}
-              <span className="text-snl-text font-medium">Wash Rush: Pressure Panic</span> (&quot;the Game&quot;).
+              <span className="text-snl-text font-medium">Wash Rush: Car Wash Tycoon</span> (&quot;the Game&quot;).
             </p>
             <p>
-              By downloading, installing, or playing Wash Rush: Pressure Panic, you agree to be bound by these Terms. If you do not agree to these Terms, do not install, copy, or play the Game.
+              By downloading, installing, or playing Wash Rush: Car Wash Tycoon, you agree to be bound by these Terms. If you do not agree to these Terms, do not install, copy, or play the Game.
             </p>
           </div>
 
@@ -344,7 +347,7 @@ export default function WashRushPrivacyAndTerms() {
               Subject to your ongoing compliance with these Terms, ShelNova Labs Ltd. grants you a limited, revocable, non-exclusive, non-transferable, non-sublicensable personal license to install and play the Game on personal Android devices solely for personal, non-commercial entertainment purposes.
             </p>
             <p className="mb-3">
-              The Game, including but not limited to its software code, Godot engine assets, 3D meshes, cleanable surface shaders, audio effects, musical compositions, UI artwork, textures, game mechanics, animations, and the &quot;Wash Rush: Pressure Panic&quot; trademark, are the sole and exclusive intellectual property of ShelNova Labs Ltd. and its licensors.
+              The Game, including but not limited to its software code, game engine assets, 3D models, shaders, audio effects, musical compositions, UI artwork, textures, game mechanics, animations, and the &quot;Wash Rush: Car Wash Tycoon&quot; trademark, are the sole and exclusive intellectual property of ShelNova Labs Ltd. and its licensors.
             </p>
             <p>
               All rights not expressly granted to you under these Terms are reserved by ShelNova Labs Ltd.
@@ -359,8 +362,8 @@ export default function WashRushPrivacyAndTerms() {
             <p className="mb-3">To maintain fair and safe gameplay for everyone, you agree that you will not:</p>
             <ul className="list-disc list-inside space-y-2 ml-2">
               <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code or proprietary shaders of the Game</li>
-              <li>Modify, distribute, sell, lease, sublicense, or create derivative works based on Wash Rush: Pressure Panic</li>
-              <li>Use automation tools, bots, memory editors, speed hacks, or third-party cheat engines to falsify cleaning completion percentages, coin balances, or star ratings</li>
+              <li>Modify, distribute, sell, lease, sublicense, or create derivative works based on Wash Rush: Car Wash Tycoon</li>
+              <li>Use automation tools, bots, memory editors, speed hacks, or third-party cheat engines to falsify level progress, cash or gem balances, or ratings</li>
               <li>Circumvent, disable, or tamper with security controls, AdMob ad serving integrations, or remote configuration servers</li>
               <li>Use the Game for any unlawful, commercial, or unauthorized purpose</li>
             </ul>
@@ -372,12 +375,12 @@ export default function WashRushPrivacyAndTerms() {
               4. Virtual Currency &amp; Local Save Data
             </h3>
             <p className="mb-3">
-              Wash Rush: Pressure Panic includes in-game virtual currency (&quot;Clean Coins&quot;), stars, washer equipment upgrades, spray nozzles, and equipment skins. You acknowledge and agree that:
+              Wash Rush: Car Wash Tycoon includes in-game virtual currency (&quot;Cash&quot; and &quot;Gems&quot;), stations, upgrades, crew members and locations. You acknowledge and agree that:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-2 mb-3">
               <li>Virtual currency and equipment upgrades have no real-world monetary value and cannot be redeemed, transferred, or exchanged for fiat currency or real property.</li>
-              <li>Clean Coins are earned strictly through gameplay progression or voluntarily watching rewarded video advertisements.</li>
-              <li>All game progress is saved locally on your device storage. ShelNova Labs does not maintain a centralized cloud database of your personal save progress. If you uninstall the Game, clear device application storage, or switch to a new phone without a system backup, your virtual currency and unlocked equipment will be permanently lost. ShelNova Labs is not liable for lost local data.</li>
+              <li>Cash and Gems are earned through gameplay progression or by voluntarily watching rewarded video advertisements.</li>
+              <li>All game progress is saved locally on your device storage. ShelNova Labs does not maintain a centralized cloud database of your personal save progress. If you uninstall the Game, clear device application storage, or switch to a new phone without a system backup, your virtual currency and unlocked progress will be permanently lost. ShelNova Labs is not liable for lost local data.</li>
             </ul>
           </div>
 
@@ -387,7 +390,7 @@ export default function WashRushPrivacyAndTerms() {
               5. In-Game Advertisements
             </h3>
             <p className="mb-3">
-              Wash Rush: Pressure Panic is provided free of charge, supported by third-party advertising via Google AdMob. Ads may appear between cleaning jobs or as voluntary rewarded video opportunities to earn bonus clean coins or equipment access.
+              Wash Rush: Car Wash Tycoon is provided free of charge, supported by third-party advertising via Google AdMob. Full-screen ads may appear between some levels, and rewarded video ads are always optional, for example to double a level reward. Players can remove the full-screen ads with an optional purchase when it is offered; rewarded ads remain optional either way.
             </p>
             <p>
               ShelNova Labs does not endorse, guarantee, or assume responsibility for any products, services, or representations made in third-party advertisements displayed within the Game. Your interactions with advertisers are solely between you and the respective third party.

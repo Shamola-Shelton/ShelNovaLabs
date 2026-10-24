@@ -91,10 +91,10 @@ export default function PrivacyPolicy() {
                 className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
               >
                 <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">
-                  Wash Rush: Pressure Panic →
+                  Wash Rush: Car Wash Tycoon →
                 </p>
                 <p className="text-xs text-snl-muted mt-1">
-                  Privacy policy, AdMob advertising disclosures, and terms for Wash Rush: Pressure Panic.
+                  Privacy policy, AdMob advertising disclosures, and terms for Wash Rush: Car Wash Tycoon.
                 </p>
               </Link>
               <Link
