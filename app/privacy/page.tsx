@@ -98,6 +98,17 @@ export default function PrivacyPolicy() {
                 </p>
               </Link>
               <Link
+                href="/jobfind/privacy"
+                className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
+              >
+                <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">
+                  Jobfind: AI Job Search &amp; CV Assistant →
+                </p>
+                <p className="text-xs text-snl-muted mt-1">
+                  Privacy policy, terms, AI processing, AdMob disclosures, and account deletion for Jobfind.
+                </p>
+              </Link>
+              <Link
                 href="/pupgrid/privacy"
                 className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
               >

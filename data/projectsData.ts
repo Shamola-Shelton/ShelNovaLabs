@@ -411,6 +411,33 @@ export const projectsData: CaseStudy[] = [
     mockupType: "dashboard",
     primaryBadge: "AI & ClimateTech",
   },
+  {
+    id: "jobfind",
+    index: "13",
+    name: "Jobfind",
+    tagline: "AI job search and CV assistant that prepares applications for you to approve.",
+    category: "ai",
+    tags: ["Mobile App", "AI & Careers", "Flutter", "Firebase"],
+    status: "dev",
+    statusLabel: "In Development",
+    accentColor: "#4263EB",
+    summary:
+      "A mobile app for finding jobs worldwide, building and tailoring a CV, practicing interviews and tracking applications, with AI that suggests and you decide.",
+    challenge:
+      "Job seekers juggle many boards, rewrite the same CV for every role, and lose track of where they applied, while generic AI tools can invent experience they do not have.",
+    approach:
+      "A Flutter app on Firebase with server-side AI. Listings are aggregated from open job feeds, CV and job text is treated as untrusted data with contact details stripped before AI calls, and AutoApply rules prepare application packages for review instead of sending anything automatically.",
+    result:
+      "In development: CV import, editing and export, job fit scoring, tailored CV versions, cover letters, an interview coach and application tracking, in five languages.",
+    platforms: "Android, iOS",
+    mockupType: "mobile",
+    primaryBadge: "AI & Careers",
+    legalLinks: [
+      { label: "Privacy Policy", href: "/jobfind/privacy" },
+      { label: "Terms of Service", href: "/jobfind/terms" },
+      { label: "Delete Account", href: "/jobfind/delete-account" },
+    ],
+  },
 ];
 
 export const teamMembers = [
