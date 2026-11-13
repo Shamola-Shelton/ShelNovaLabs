@@ -50,12 +50,14 @@ export default function SdaPrivacyPolicy() {
         </p>
         <ul className="list-disc list-inside space-y-2 ml-2">
           <li>
-            <span className={strong}>Firebase Analytics</span> (Google): usage events such as screens opened, device model,
-            operating system version, language, approximate location derived from IP address, and an app-instance identifier.
+            <span className={strong}>Firebase Analytics</span> (Google): an app-instance identifier, device model, operating
+            system version, approximate location derived from IP address, and usage events: screens viewed, hymns opened,
+            Bible chapters read, content shared, services presented, premium screens viewed, and ads shown or rewarded. It
+            also records two settings: your app language and whether Supporter Premium is active.
           </li>
           <li>
-            <span className={strong}>Firebase Crashlytics</span> (Google): crash reports and diagnostics, including device
-            model, OS version, and app state at the time of a crash.
+            <span className={strong}>Firebase Crashlytics</span> (Google, release versions only): crash reports and
+            diagnostics, including an installation identifier, device model, OS version, and app state at the time of a crash.
           </li>
           <li>
             <span className={strong}>Firebase Cloud Messaging</span> (Google): a push-notification token so we can send you
