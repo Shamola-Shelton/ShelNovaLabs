@@ -65,6 +65,17 @@ export default function PrivacyPolicy() {
                 </p>
               </Link>
               <Link
+                href="/sda/privacy"
+                className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
+              >
+                <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">
+                  SDA Worship and Hymnal →
+                </p>
+                <p className="text-xs text-snl-muted mt-1">
+                  Privacy policy, terms, and data deletion for the SDA Worship and Hymnal app.
+                </p>
+              </Link>
+              <Link
                 href="/privacy/biblewise"
                 className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
               >
