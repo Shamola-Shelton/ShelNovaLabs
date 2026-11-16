@@ -109,6 +109,17 @@ export default function PrivacyPolicy() {
                 </p>
               </Link>
               <Link
+                href="/ai-interview/privacy"
+                className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
+              >
+                <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">
+                  AI Interview: Practice with AI →
+                </p>
+                <p className="text-xs text-snl-muted mt-1">
+                  Privacy policy, terms, AI processing, subscriptions, and data deletion for AI Interview.
+                </p>
+              </Link>
+              <Link
                 href="/jobfind/privacy"
                 className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
               >
