@@ -43,7 +43,7 @@ export default function WashRushTermsOfService() {
             Terms of Service
           </h1>
           <p className="text-snl-muted text-sm font-mono">
-            Package ID: com.washrush.washrush · Last updated: {updated}
+            Last updated: {updated}
           </p>
         </div>
 
