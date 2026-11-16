@@ -80,7 +80,7 @@ export default function PupGridPrivacyPolicy() {
               <li>your points, stars, hints used, time taken, and the level or daily date.</li>
             </ul>
             <p className="mt-3">
-              Display names and scores are <span className="text-snl-text font-medium">public</span> to other players. Do not put personal information in your display name. If a name is offensive or you want your scores removed, contact us (section 10).
+              Display names and scores are <span className="text-snl-text font-medium">public</span> to other players. Do not put personal information in your display name. To report an offensive name, long-press it on a leaderboard and choose <span className="text-snl-text font-medium">Report</span>; the report (the reported player&apos;s identifier and name, and your identifier) is reviewed by us, and that player is hidden from your boards.
             </p>
 
             <h3 className="text-snl-text font-semibold mb-2 mt-4">2.4 Analytics and Crash Reports</h3>
@@ -157,7 +157,8 @@ export default function PupGridPrivacyPolicy() {
             <h2 className="font-heading text-xl font-bold text-snl-text mb-3">7. How Long We Keep Data</h2>
             <ul className="list-disc list-inside space-y-2 ml-2">
               <li><span className="text-snl-text font-medium">On your device:</span> until you clear the App&apos;s data or uninstall it.</li>
-              <li><span className="text-snl-text font-medium">Leaderboard entries:</span> until you ask us to remove them, or until the puzzle&apos;s leaderboard is retired.</li>
+              <li><span className="text-snl-text font-medium">Leaderboard entries:</span> until you delete them in the App (pause menu → <span className="text-snl-text font-medium">Delete my leaderboard data</span>), ask us to remove them, or the board is retired.</li>
+              <li><span className="text-snl-text font-medium">Name reports:</span> until we have reviewed them, and no longer than 12 months.</li>
               <li><span className="text-snl-text font-medium">Analytics and crash reports:</span> kept by Google for the period set in its Firebase settings, then deleted.</li>
             </ul>
           </section>
@@ -166,7 +167,7 @@ export default function PupGridPrivacyPolicy() {
           <section>
             <h2 className="font-heading text-xl font-bold text-snl-text mb-3">8. Your Rights</h2>
             <p>
-              Depending on where you live (for example under the GDPR, the UK GDPR, or the CCPA/CPRA), you may have the right to access, correct or delete your personal information, to object to or restrict its use, to withdraw consent, and to complain to your local data protection authority. Most of this is available directly in the App: turn off anonymous stats in the pause menu, change your ad choices, or clear the App&apos;s data. For anything else, contact us.
+              Depending on where you live (for example under the GDPR, the UK GDPR, or the CCPA/CPRA), you may have the right to access, correct or delete your personal information, to object to or restrict its use, to withdraw consent, and to complain to your local data protection authority. Most of this is available directly in the App: delete your online data (pause menu → <span className="text-snl-text font-medium">Delete my leaderboard data</span>, which removes your display name, scores and leaderboard entries from our servers and deletes the anonymous account), turn off anonymous stats, change your ad choices, or clear the App&apos;s data. For anything else, contact us.
             </p>
           </section>
 

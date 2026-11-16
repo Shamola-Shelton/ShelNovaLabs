@@ -266,3 +266,14 @@ body {
   [data-snl-legal] > div:first-child > div { padding:14px 20px; gap:12px; }
   [data-snl-legal] > div:nth-child(2) { width:calc(100% - 28px); padding:30px 19px 42px; }
 }
+
+
+/* Monochrome treatment for photographic and product-screen assets. */
+img[src*=".jpg"], img[src*=".jpeg"], img[src*=".webp"] { filter: grayscale(1); }
+
+.founder-timeline { position:relative; display:grid; gap:0; margin:24px 0 0; padding:0; list-style:none; }
+.founder-timeline::before { content:""; position:absolute; left:17px; top:18px; bottom:22px; border-left:1px dashed #49454e; }
+.founder-timeline li { position:relative; display:grid; grid-template-columns:36px 1fr; gap:15px; padding:0 0 24px; }
+.founder-timeline__marker { z-index:1; display:grid; place-items:center; width:35px; height:35px; border:1px solid #49454e; border-radius:50%; background:#18181a; color:#c3b3fc; font:10px var(--font-jetbrains-mono),monospace; }
+.founder-timeline h3 { margin:2px 0 4px; color:#ededee; font:500 15px var(--font-space-grotesk),system-ui,sans-serif; }
+.founder-timeline p { color:#a0a0a7; font-size:12px; line-height:1.8; }
