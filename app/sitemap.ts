@@ -30,6 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/sda/delete-data",
     "/wordnova/privacy",
     "/wordnova/terms",
+    "/etymon/privacy",
+    "/etymon/terms",
     "/wash-rush/privacy",
     "/wash-rush/terms",
     "/ai-interview/privacy",

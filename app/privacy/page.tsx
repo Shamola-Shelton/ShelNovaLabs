@@ -87,6 +87,17 @@ export default function PrivacyPolicy() {
                 </p>
               </Link>
               <Link
+                href="/etymon/privacy"
+                className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
+              >
+                <p className="text-snl-text font-bold group-hover:text-snl-violet transition-colors">
+                  Etymon: Word Puzzle Battle →
+                </p>
+                <p className="text-xs text-snl-muted mt-1">
+                  Privacy policy, terms, AdMob disclosures, and online play data for Etymon.
+                </p>
+              </Link>
+              <Link
                 href="/wordnova/privacy"
                 className="block p-4 border border-snl-border rounded-lg bg-snl-bg hover:border-snl-violet transition-colors group"
               >
