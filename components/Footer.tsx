@@ -28,6 +28,7 @@ export default function Footer() {
         </nav>
         <nav aria-label="Legal pages" className="snl-inner-footer__links">
           <Link href="/privacy">Privacy &amp; app policies</Link>
+          <Link href="/terms">Terms</Link>
         </nav>
       </div>
     </footer>

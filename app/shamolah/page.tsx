@@ -89,7 +89,7 @@ export default function ShamolahPage() {
         <section id="connect" className={s.contact}><span className={s.eyebrow}>GOOD THINGS START WITH A CONVERSATION</span><h2>Let’s make something <span className={s.accent}>matter.</span></h2><p>Have an idea, a question, or just want to say hi?<br />I’d love to hear from you.</p><Link className={s.primary} href="/contact"><Mail size={16} /> Get in touch <ArrowUpRight size={15} /></Link><a className={s.email} href="mailto:hello@shelnovalabs.com">hello@shelnovalabs.com</a></section>
       </main>
       <AmbientEffects />
-      <footer className={s.footer}><span>Shelton Shamola <span className={s.accent}>✳</span></span><span>Built with intention, in Nairobi.</span><Link href="/privacy">Privacy</Link><a href="#main">Back to top ↑</a></footer>
+      <footer className={s.footer}><span>Shelton Shamola <span className={s.accent}>✳</span></span><span>Built with intention, in Nairobi.</span><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><a href="#main">Back to top ↑</a></footer>
     </div>
   );
 }

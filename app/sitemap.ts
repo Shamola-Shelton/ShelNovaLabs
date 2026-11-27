@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/about`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/contact`, lastModified: siteUpdated, changeFrequency: "yearly", priority: 0.8 },
     { url: `${baseUrl}/privacy`, lastModified: siteUpdated, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${baseUrl}/terms`, lastModified: new Date("2026-11-27"), changeFrequency: "yearly", priority: 0.3 },
     { url: `${baseUrl}/us-citizenship-test`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
   ];
 
